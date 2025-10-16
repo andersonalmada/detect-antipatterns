@@ -1,0 +1,22 @@
+groups:
+  - name: test
+    rules:
+      - alert: TestAlert
+        expr: vector(1)
+        for: 1s
+        labels:
+          severity: critical
+          id: 1
+        annotations:
+          summary: "Alerta de teste disparado"
+          description: "Este alerta é apenas para teste do Alertmanager"       
+
+      - alert: TestAlert
+        expr: vector(1)
+        for: 1s
+        labels:
+          severity: critical
+          id: 2
+        annotations:
+          summary: "Alerta de teste disparado"
+          description: "Este alerta é apenas para teste do Alertmanager"       
