@@ -1,0 +1,7 @@
+Flask
+requests
+psycopg2-binary
+SQLAlchemy
+flask_sqlalchemy
+pandas
+scikit-learn

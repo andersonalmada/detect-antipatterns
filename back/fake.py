@@ -74,7 +74,76 @@ alertas = [
         "state": "pending",
         "activeAt": "2025-10-16T10:59:00Z",
         "value": "0.2"
-    },  
+    },
+    {
+        "labels": {"alertname": "TestAlert", "id": "2", "severity": "critical"},
+        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
+        "state": "pending",
+        "activeAt": "2025-10-16T11:25:00Z",
+        "value": "0.5"
+    },
+        {
+        "labels": {"alertname": "TestAlert", "id": "2", "severity": "critical"},
+        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
+        "state": "pending",
+        "activeAt": "2025-10-16T13:00:00Z",
+        "value": "0.2"
+    },
+        {
+        "labels": {"alertname": "TestAlert", "id": "2", "severity": "critical"},
+        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
+        "state": "pending",
+        "activeAt": "2025-10-16T13:50:00Z",
+        "value": "0.2"
+    },
+        {
+        "labels": {"alertname": "TestAlert", "id": "2", "severity": "critical"},
+        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
+        "state": "pending",
+        "activeAt": "2025-10-16T11:00:00Z",
+        "value": "0.2"
+    },
+        {
+        "labels": {"alertname": "TestAlert", "id": "2", "severity": "critical"},
+        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
+        "state": "pending",
+        "activeAt": "2025-10-16T10:59:00Z",
+        "value": "0.2"
+    },
+        {
+        "labels": {"alertname": "TestAlert2", "id": "2", "severity": "critical"},
+        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
+        "state": "pending",
+        "activeAt": "2025-10-16T10:50:00Z",
+        "value": "0.2"
+    },
+        {
+        "labels": {"alertname": "TestAlert2", "id": "2", "severity": "critical"},
+        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
+        "state": "pending",
+        "activeAt": "2025-10-16T10:50:00Z",
+        "value": "0.2"
+    },
+        {
+        "labels": {"alertname": "TestAlert2", "id": "2", "severity": "warning"},
+        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
+        "state": "pending",
+        "activeAt": "2025-10-16T10:59:00Z",
+        "value": "0.2"
+    },
+        {
+        "labels": {"alertname": "TestAlert3", "id": "2", "severity": "critical"},
+        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
+        "state": "pending",
+        "activeAt": "2025-10-16T10:59:00Z",
+        "value": "0.2"
+    },{
+        "labels": {"alertname": "TestAlert3", "id": "2", "severity": "critical"},
+        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
+        "state": "pending",
+        "activeAt": "2025-10-16T10:59:00Z",
+        "value": "0.2"
+    }  
 
 ]
 
@@ -84,4 +153,4 @@ def get_alertas():
     return jsonify({"status": "success", "data": {"alerts": alertas}})
 
 if __name__ == '__main__':
-    app.run(port=9091, debug=True)
+    app.run(host="0.0.0.0", port=9091, debug=True)
