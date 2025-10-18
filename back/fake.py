@@ -1,155 +1,45 @@
 from flask import Flask, jsonify
-import time
+from datetime import datetime, timedelta
+import random
 
 app = Flask(__name__)
 
-# Dados iniciais (exemplo de alertas)
-alertas = [
-    {
-        "labels": {"alertname": "TestAlert", "id": "1", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T11:20:50Z",
-        "value": "1"
-    },
-    {
-        "labels": {"alertname": "TestAlert", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T11:25:00Z",
-        "value": "0.5"
-    },
-        {
-        "labels": {"alertname": "TestAlert", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T13:00:00Z",
-        "value": "0.2"
-    },
-        {
-        "labels": {"alertname": "TestAlert", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T13:50:00Z",
-        "value": "0.2"
-    },
-        {
-        "labels": {"alertname": "TestAlert", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T11:00:00Z",
-        "value": "0.2"
-    },
-        {
-        "labels": {"alertname": "TestAlert", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T10:59:00Z",
-        "value": "0.2"
-    },
-        {
-        "labels": {"alertname": "TestAlert2", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T10:59:00Z",
-        "value": "0.2"
-    },
-        {
-        "labels": {"alertname": "TestAlert2", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T10:59:00Z",
-        "value": "0.2"
-    },
-        {
-        "labels": {"alertname": "TestAlert2", "id": "2", "severity": "warning"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T10:59:00Z",
-        "value": "0.2"
-    },
-        {
-        "labels": {"alertname": "TestAlert3", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T10:59:00Z",
-        "value": "0.2"
-    },
-    {
-        "labels": {"alertname": "TestAlert", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T11:25:00Z",
-        "value": "0.5"
-    },
-        {
-        "labels": {"alertname": "TestAlert", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T13:00:00Z",
-        "value": "0.2"
-    },
-        {
-        "labels": {"alertname": "TestAlert", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T13:50:00Z",
-        "value": "0.2"
-    },
-        {
-        "labels": {"alertname": "TestAlert", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T11:00:00Z",
-        "value": "0.2"
-    },
-        {
-        "labels": {"alertname": "TestAlert", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T10:59:00Z",
-        "value": "0.2"
-    },
-        {
-        "labels": {"alertname": "TestAlert2", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T10:50:00Z",
-        "value": "0.2"
-    },
-        {
-        "labels": {"alertname": "TestAlert2", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T10:50:00Z",
-        "value": "0.2"
-    },
-        {
-        "labels": {"alertname": "TestAlert2", "id": "2", "severity": "warning"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T10:59:00Z",
-        "value": "0.2"
-    },
-        {
-        "labels": {"alertname": "TestAlert3", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T10:59:00Z",
-        "value": "0.2"
-    },{
-        "labels": {"alertname": "TestAlert3", "id": "2", "severity": "critical"},
-        "annotations": {"summary": "Alerta de teste 2", "description": "Somente teste"},
-        "state": "pending",
-        "activeAt": "2025-10-16T10:59:00Z",
-        "value": "0.2"
-    }  
+def gerar_alertas(qtd_alertnames=5, qtd_por_alertname=10, start_date="2025-10-16"):
+    """
+    Gera alertas de teste no formato do Prometheus Alertmanager.
+    - qtd_alertnames: quantidade de alertnames diferentes
+    - qtd_por_alertname: quantidade de alertas por alertname
+    - start_date: data inicial em formato YYYY-MM-DD
+    """
+    alertas = []
+    severities = ["critical", "warning", "info"]
+    base_date = datetime.fromisoformat(start_date + "T00:00:00")
 
-]
+    for i in range(qtd_alertnames):
+        alertname = f"TestAlert{i}"
+        for j in range(qtd_por_alertname):
+            # gera horário random dentro de dois dias
+            delta = timedelta(days=random.randint(0, 1), 
+                              hours=random.randint(0, 23), 
+                              minutes=random.randint(0, 59),
+                              seconds=random.randint(0, 59))
+            activeAt = (base_date + delta).isoformat() + "Z"
+
+            alert = {
+                "labels": {"alertname": alertname, "id": str(j+1), "severity": random.choice(severities)},
+                "annotations": {"summary": "Alerta de teste", "description": "Somente teste"},
+                "state": "pending",
+                "activeAt": activeAt,
+                "value": str(random.randint(1, 20))
+            }
+            alertas.append(alert)
+    return alertas
 
 @app.route('/api/v1/alerts', methods=['GET'])
 def get_alertas():
-    # Retorna sempre o mesmo JSON, mas você pode modificar antes de enviar
+    alertas = gerar_alertas(qtd_alertnames=10, qtd_por_alertname=50)
+    print(len(alertas))
+    
     return jsonify({"status": "success", "data": {"alerts": alertas}})
 
 if __name__ == '__main__':

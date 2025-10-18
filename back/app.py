@@ -22,72 +22,65 @@ def add_exceeded_flag(item, count, limit):
     item["exceeded"] = count >= limit
     return item
 
-# ---------- FUNÇÕES DE DETECÇÃO DE EXCESSO ----------
-
-def excesso_limit(alert_count, limit=10, **kwargs):
-    """Excesso por limite fixo"""
-    return alert_count >= limit
-
-def excesso_estatistico(alert_counts, k=2, **kwargs):
-    """Excesso por média + k*desvio padrão"""
-    media = np.mean(alert_counts)
-    desvio = np.std(alert_counts)
+def excesso_estatistico_grupo(items, k=2, limit=10):
+    counts = [item["count"] for item in items]
+    media = np.mean(counts)
+    desvio = np.std(counts)
     limite_auto = media + k * desvio
-    ultimo_alerta = alert_counts[-1]
-    return ultimo_alerta >= limite_auto, limite_auto
+    print(limite_auto)
+    for item in items:
+        item["exceeded"] = bool(item["count"] >= limite_auto or item["count"] >= limit)
+    return items
 
-def excesso_isolation_forest(alert_counts, contamination=0.05, window_size=50, **kwargs):
-    """Excesso usando Isolation Forest"""
-    df_hist = pd.DataFrame({'alertas': alert_counts[-window_size:]})
+def excesso_media(items, limit=10):
+    counts = [item["count"] for item in items]
+    media = np.mean(counts)
+    print(media)
+    for item in items:
+        item["exceeded"] = bool(item["count"] >= media or item["count"] >= limit)
+    return items
+
+def excesso_isolation_forest_grupo(items, contamination=0.05, window_size=50, limit=10):
+    if not items:
+        return []
+
+    # pega apenas os counts
+    counts = [item["count"] for item in items]
+    hist = counts[-window_size:]  # janela mais recente
+
+    # fallback simples se todos os valores forem iguais
+    if len(set(hist)) <= 1:
+        limite_auto = max(hist)
+        for item in items[-len(hist):]:
+            item["exceeded"] = bool(item["count"] >= limite_auto or item["count"] >= limit)
+        return items
+
+    df_hist = pd.DataFrame({"alertas": hist})
     model = IsolationForest(contamination=contamination, random_state=42)
-    df_hist['anomalia'] = model.fit_predict(df_hist[['alertas']])
-    df_hist['anomalia'] = df_hist['anomalia'].map({1: False, -1: True})
-    limite_auto = df_hist.loc[~df_hist['anomalia'], 'alertas'].max()
-    ultimo_alerta = df_hist['alertas'].iloc[-1]
-    excesso = bool(ultimo_alerta >= limite_auto)
-    return excesso, limite_auto
 
-# ---------- FUNÇÃO PARA ESCOLHER O MODO ----------
+    try:
+        df_hist["anomalia"] = model.fit_predict(df_hist[["alertas"]])
+        df_hist["anomalia"] = df_hist["anomalia"].map({1: False, -1: True})
 
-def check_excesso(alert_counts, mode="limit", **kwargs):
-    if mode == "limit":
-        return excesso_limit(alert_counts[-1], **kwargs)
-    elif mode == "stat":
-        return excesso_estatistico(alert_counts, **kwargs)[0]
-    elif mode == "ml":
-        return excesso_isolation_forest(alert_counts, **kwargs)[0]
-    else:
-        raise ValueError("Modo inválido. Use 'limit', 'estatistico' ou 'isolation'.")
+        # limite automático = maior valor considerado normal
+        non_anom = df_hist.loc[~df_hist["anomalia"], "alertas"]
+        limite_auto = non_anom.max() if not non_anom.empty else df_hist["alertas"].max()
 
-def group_alerts(
-    alerts, 
-    fields_to_group=None,
-    window_minutes=None,
-    start_ts=None,
-    end_ts=None,
-    return_count_only=False,
-    extra_fields=None,
-    limit=10,
-    mode="limit"
-):
-    grouped = []  # resultado final
+        print(limite_auto)
 
-    # Primeiro agrupa usando sua lógica existente
-    grouped_temp = _group_alerts_internal(alerts, fields_to_group, window_minutes, start_ts, end_ts, return_count_only, extra_fields, limit)
+        # aplica exceeded em cada item
+        for item in items[-len(hist):]:
+            item["exceeded"] = bool(item["count"] >= limite_auto or item["count"] >= limit)
 
-    # Agora aplica a lógica de excesso para cada grupo
-    for item in grouped_temp:
-        alert_counts = [item.get("count", 0)] if return_count_only else [len(item.get("timestamps", []))]
-        exceeded = check_excesso(alert_counts, mode=mode, limit=limit)
-        item = add_exceeded_flag(item, exceeded)
-        grouped.append(item)
+        return items
 
-    return grouped
-
-# Função interna do seu código original para reutilizar
-def _group_alerts_internal(*args, **kwargs):
-    from __main__ import group_alerts as original_group_alerts  # evita recursão
-    return original_group_alerts(*args, **kwargs)
+    except Exception:
+        # fallback simples caso IsolationForest falhe
+        limite_auto = max(hist)
+        print(limite_auto)
+        for item in items[-len(hist):]:
+            item["exceeded"] = bool(item["count"] >= limite_auto or item["count"] >= limit)
+        return items
 
 # Generic alert grouping function
 def group_alerts(
@@ -98,7 +91,8 @@ def group_alerts(
     end_ts=None,
     return_count_only=False,
     extra_fields=None,
-    limit=10
+    limit=10,
+    mode="limit"
 ):
     if not alerts:
         return []
@@ -152,12 +146,14 @@ def group_alerts(
                 else:
                     temp_group[key].append({"timestamps": [ts], "values": [alert.get("value")]})
 
-    result = []
-    for key, groups in temp_group.items():
+    result = []        
+    for key, groups in temp_group.items():        
         if window_minutes is None:
             if return_count_only:
                 base = {**dict(key), "count": groups}
-                base = add_exceeded_flag(base, groups, limit)
+
+                if mode == "limit":
+                    base = add_exceeded_flag(base, groups, limit)
             else:
                 base = {
                     **dict(key),
@@ -165,7 +161,9 @@ def group_alerts(
                     "values": [g["value"] for g in groups]
                 }
                 count = len(groups)
-                base = add_exceeded_flag(base, count, limit)
+
+                if mode == "limit":
+                    base = add_exceeded_flag(base, count, limit)
 
             first_alert = groups[0] if not return_count_only else alerts_sorted[0]
             for ef in extra_fields:
@@ -186,14 +184,15 @@ def group_alerts(
                     base_alert["values"] = group["values"]
                     count = len(group["timestamps"])
 
-                base_alert = add_exceeded_flag(base_alert, count, limit)
+                if mode == "limit":
+                    base_alert = add_exceeded_flag(base_alert, count, limit)
 
                 first_alert = alerts_sorted[0]
                 for ef in extra_fields:
                     if ef not in base_alert:
                         base_alert[ef] = first_alert.get(ef)
 
-                result.append(base_alert)
+                result.append(base_alert)                
 
     return result
 
@@ -216,14 +215,14 @@ def get_alerts():
         total = len(alerts)
         mode = request.args.get("mode", "limit")
         limit = int(request.args.get("limit", 10))
-        alert_counts = [total]  # Aqui só temos o total atual
-        exceeded = check_excesso(alert_counts, mode=mode, limit=limit)
-        print(exceeded)
+
+        exceeded = False
+        if total >= limit:
+            exceeded = True
+        
         return jsonify({
-            "status": "success",
             "total_alerts": total,
-            "mode": mode,
-            "exceeded": bool(exceeded),
+            "exceeded": exceeded,
             "data": alerts
         })
     except requests.exceptions.RequestException as e:
@@ -249,7 +248,18 @@ def get_alerts_group_range():
     end_ts = request.args.get("end", TS_FIM)
     count_only = request.args.get("count_only", "true").lower() == "true"
     limit = int(request.args.get("limit", 10))
-    grouped = group_alerts(alerts, fields_to_group=fields, start_ts=start_ts, end_ts=end_ts, return_count_only=count_only,limit=limit)
+    mode = request.args.get("mode", "limit")
+
+    grouped = group_alerts(alerts, fields_to_group=fields, start_ts=start_ts, end_ts=end_ts, return_count_only=count_only,limit=limit,mode=mode)
+
+    if mode == "media":
+        grouped = excesso_media(grouped, limit=limit)
+    elif mode == "stat":
+        print("ok")
+        grouped = excesso_estatistico_grupo(grouped, limit=limit)
+    elif mode == "ml":
+        grouped = excesso_isolation_forest_grupo(grouped, limit=limit)
+
     return jsonify(grouped)
 
 if __name__ == "__main__":
