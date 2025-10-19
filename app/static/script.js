@@ -1,26 +1,36 @@
-const fileInput = document.getElementById('fileInput');
-const uploadBtn = document.getElementById('uploadBtn');
-const validateBtn = document.getElementById('validateBtn');
-const resetBtn = document.getElementById('resetBtn');
-const progressBar = document.getElementById('progressBar');
-const preview = document.getElementById('preview');
-const messages = document.getElementById('messages');
+// Elementos
+const fileInput = document.getElementById('jsonFile');
+const btnValidate = document.getElementById('btnValidate');
+const btnSaveDb = document.getElementById('btnSaveDb');
+const btnInMemory = document.getElementById('btnInMemory');
+const btnAnalyze = document.getElementById('btnAnalyze');
+const limitInput = document.getElementById('limitValue');
+const output = document.getElementById('output');
+const messages = document.createElement('div'); // mensagens gerais
+document.querySelector('.container').prepend(messages);
 
 let parsedJson = null;
 
-// Função para mostrar mensagens
-function setMessage(msg, type='success') {
-    messages.textContent = msg;
-    messages.style.color = type === 'error' ? 'red' : 'green';
-}
+function showAlert(message, type='success', duration=3000) {
+    const container = document.getElementById('alertContainer');
+    
+    // Criar alert
+    const alertDiv = document.createElement('div');
+    alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+    alertDiv.role = 'alert';
+    alertDiv.innerHTML = `
+        ${message}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    `;
 
-// Função para resetar interface
-function reset() {
-    fileInput.value = '';
-    preview.textContent = '(Nenhum conteúdo carregado)';
-    messages.textContent = '';
-    progressBar.style.width = '0%';
-    parsedJson = null;
+    container.appendChild(alertDiv);
+
+    // Remover após tempo definido
+    setTimeout(() => {
+        alertDiv.classList.remove('show');
+        alertDiv.classList.add('hide');
+        setTimeout(() => container.removeChild(alertDiv), 500); // para efeito fade out
+    }, duration);
 }
 
 // Função para validar estrutura do JSON
@@ -32,10 +42,10 @@ function validateJSON(json) {
     return true;
 }
 
-// Botão de validar e mostrar
-validateBtn.addEventListener('click', () => {
+// Botão Validar
+btnValidate.addEventListener('click', () => {
     if(!fileInput.files[0]) { 
-        setMessage('Selecione um arquivo JSON.', 'error'); 
+        showAlert('Select a JSON file first.', 'error'); 
         return; 
     }
     const reader = new FileReader();
@@ -44,54 +54,77 @@ validateBtn.addEventListener('click', () => {
             const json = JSON.parse(reader.result);
             if(validateJSON(json)) {
                 parsedJson = json;
-                preview.textContent = JSON.stringify(json, null, 2);
-                setMessage('JSON válido e carregado.');
+                output.textContent = JSON.stringify(json, null, 2);
+                showAlert('JSON is valid and loaded.');
             } else {
-                setMessage('JSON inválido: faltam campos obrigatórios.', 'error');
+                showAlert('Invalid JSON: missing required fields.', 'error');
             }
         } catch(e) {
-            setMessage('Erro ao parsear JSON: ' + e.message, 'error');
+            showAlert('Error parsing JSON: ' + e.message, 'error');
         }
     };
     reader.readAsText(fileInput.files[0]);
 });
 
-// Botão de enviar para API com barra de progresso
-uploadBtn.addEventListener('click', () => {
+// Função genérica para enviar JSON para API
+function sendToAPI(save=true) {
     if(!parsedJson) { 
-        setMessage('Carregue e valide um JSON primeiro.', 'error'); 
+        showAlert('Load and validate a JSON file first.', 'error'); 
         return; 
     }
-    try {
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', '/api/alerts', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/api/alerts?save=' + save, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
 
-        xhr.upload.onprogress = (event) => {
-            if(event.lengthComputable){
-                const percent = (event.loaded / event.total) * 100;
-                progressBar.style.width = percent + '%';
-            }
-        };
+    xhr.upload.onprogress = (event) => {
+        if(event.lengthComputable){
+            const percent = (event.loaded / event.total) * 100;
+            // Barra de progresso opcional
+        }
+    };
 
-        xhr.onload = () => {
-            if(xhr.status === 200){
-                setMessage('Enviado com sucesso!');
-                preview.textContent = JSON.stringify(JSON.parse(xhr.responseText), null, 2);
-            } else {
-                setMessage('Erro no envio: ' + xhr.status, 'error');
-            }
-        };
+    xhr.onload = () => {
+        if(xhr.status === 200){
+            const resp = JSON.parse(xhr.responseText);
+            output.textContent = JSON.stringify(resp, null, 2);
+            showAlert('Sent successfully!');
+        } else {
+            showAlert('Error sending: ' + xhr.status, 'error');
+        }
+    };
 
-        xhr.onerror = () => {
-            setMessage('Erro de rede ao enviar.', 'error');
-        };
+    xhr.onerror = () => {
+        showAlert('Network error during sending.', 'error');
+    };
 
-        xhr.send(JSON.stringify(parsedJson));
-    } catch(e) {
-        setMessage('Erro: ' + e.message, 'error');
+    xhr.send(JSON.stringify(parsedJson));
+}
+
+// Botões de envio
+btnSaveDb.addEventListener('click', () => sendToAPI(true));
+btnInMemory.addEventListener('click', () => sendToAPI(false));
+
+// Botão de análise
+btnAnalyze.addEventListener('click', () => {
+    const limit = parseInt(limitInput.value);
+    if(isNaN(limit) || limit < 1){
+        showAlert('Limit must be a positive integer.', 'error');
+        return;
     }
-});
 
-// Botão de reset
-resetBtn.addEventListener('click', reset);
+    // Detect mode
+    const mode = document.querySelector('input[name="detectionMode"]:checked').value;
+    const source = document.querySelector('input[name="dataSource"]:checked').value == 'database';
+
+    fetch('/api/detect?start=2025-10-16T10:00:00Z&end=2025-10-18T13:55:00Z&fields=name&count_only=true&mode='+mode+'&database='+source, {
+        method: 'GET'
+    })
+    .then(res => res.json())
+    .then(data => {
+        output.textContent = JSON.stringify(data, null, 2);
+        showAlert('Detection completed!');
+    })
+    .catch(err => {
+        showAlert('Error during detection: ' + err.message, 'error');
+    });
+});

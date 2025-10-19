@@ -8,9 +8,10 @@ from sklearn.ensemble import IsolationForest
 import numpy as np
 from models import db, Alert  # <--- IMPORTAR ALERT
 import os
+from dotenv import load_dotenv
 
-app = Flask(__name__)
-
+# Carrega o .env automaticamente
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -31,6 +32,24 @@ def extract_field(alert, path):
     for part in parts:
         value = value.get(part, None) if isinstance(value, dict) else None
     return value
+
+def get_alerts_from_db():
+    """
+    Recupera todos os alerts do banco de dados e retorna como lista de dicionários
+    """
+    alerts = Alert.query.order_by(Alert.timestamp).all()  # ordena por timestamp
+    result = []
+    for alert in alerts:
+        result.append({
+            "host": alert.host,
+            "name": alert.name,
+            "service": alert.service,
+            "severity": alert.severity,
+            "timestamp": alert.timestamp.isoformat() + "Z",
+            "value": alert.value
+        })
+    return result
+
 
 # Helper to add "exceeded" field
 def add_exceeded_flag(item, count, limit):
@@ -128,7 +147,9 @@ def group_alerts(
     alerts_sorted = sorted(alerts, key=lambda x: x["timestamp"])
 
     for alert in alerts_sorted:
-        ts = datetime.fromisoformat(alert["timestamp"].replace("Z", "+00:00"))
+        ts = alert["timestamp"]
+        if isinstance(ts, str):
+            ts = datetime.fromisoformat(ts.replace("Z", "+00:00"))
 
         if dt_start and ts < dt_start:
             continue
@@ -254,9 +275,20 @@ def get_alerts_group_window():
     grouped = group_alerts(alerts, fields_to_group=fields, window_minutes=window_minutes, return_count_only=count_only,limit=limit)
     return jsonify(grouped)
 
-@app.route("/alerts_group_range", methods=["GET"])
+@app.route("/api/detect", methods=["GET"])
 def get_alerts_group_range():
-    alerts = fetch_formatted_alerts()
+    global alerts
+    database = request.args.get('database', 'true').lower() == 'true'
+    local_alerts = []
+
+    if database:
+        local_alerts = get_alerts_from_db()
+    else:
+        local_alerts = alerts
+
+    print(local_alerts)
+
+    #local_alerts = fetch_formatted_alerts()
     fields_str = request.args.get("fields")
     fields = [f.strip() for f in fields_str.split(",")] if fields_str else None
     start_ts = request.args.get("start", TS_INI)
@@ -265,12 +297,11 @@ def get_alerts_group_range():
     limit = int(request.args.get("limit", 10))
     mode = request.args.get("mode", "limit")
 
-    grouped = group_alerts(alerts, fields_to_group=fields, start_ts=start_ts, end_ts=end_ts, return_count_only=count_only,limit=limit,mode=mode)
+    grouped = group_alerts(local_alerts, fields_to_group=fields, start_ts=start_ts, end_ts=end_ts, return_count_only=count_only,limit=limit,mode=mode)
 
     if mode == "media":
         grouped = excesso_media(grouped, limit=limit)
     elif mode == "stat":
-        print("ok")
         grouped = excesso_estatistico_grupo(grouped, limit=limit)
     elif mode == "ml":
         grouped = excesso_isolation_forest_grupo(grouped, limit=limit)
@@ -281,36 +312,56 @@ def get_alerts_group_range():
 def index():
     return render_template('index.html')
 
+# Lista global para armazenar alerts temporariamente em memória
+alerts = []
+
 # Endpoint para receber o JSON
 @app.route('/api/alerts', methods=['POST'])
 def receive_alerts():
+    global alerts
+    alerts = []
+
     try:
         data = request.get_json()
         if not isinstance(data, list):
-            return jsonify({"erro": "O JSON deve ser uma lista de objetos"}), 400
+            return jsonify({"error": "JSON must be a list of objects"}), 400
 
-        saved = 0
+        save_to_db = request.args.get('save', 'true').lower() == 'true'
+        processed = 0
+
         for item in data:
             try:
-                alert = Alert(
-                    host=item.get("host"),
-                    name=item["name"],
-                    service=item.get("service"),
-                    severity=item["severity"],
-                    timestamp=datetime.fromisoformat(item["timestamp"].replace("Z","+00:00")),
-                    value=str(item["value"])
-                )
-                db.session.add(alert)
-                saved += 1
+                alert_data = {
+                    "host": item.get("host"),
+                    "name": item["name"],
+                    "service": item.get("service"),
+                    "severity": item["severity"],
+                    "timestamp": datetime.fromisoformat(item["timestamp"].replace("Z","+00:00")),
+                    "value": str(item["value"])
+                }
+
+                if save_to_db:
+                    alert = Alert(**alert_data)
+                    db.session.add(alert)
+                else:
+                    alerts.append(alert_data)
+
+                processed += 1
             except Exception as e:
-                print(f"Erro ao salvar item {item}: {e}")
+                print(f"Error processing item {item}: {e}")
                 continue
 
-        db.session.commit()
-        return jsonify({"mensagem": f"{saved} alert(s) salvos com sucesso"}), 200
+        if save_to_db:
+            db.session.commit()
+
+        print(alerts)
+
+        return jsonify({
+            "message": f"{processed} alert(s) processed successfully"
+        }), 200
 
     except Exception as e:
-        return jsonify({"erro": str(e)}), 500
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)

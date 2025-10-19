@@ -5,13 +5,13 @@ services:
     build: ./app
     container_name: flask_app
     ports:
-      - "5000:5000"
+      - "5001:5000" #alterar depois
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=${POSTGRES_DB}
-      - POSTGRES_HOST=db
-      - POSTGRES_PORT=5432
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - POSTGRES_PORT=${POSTGRES_PORT}
     depends_on:
       - db
     volumes:
