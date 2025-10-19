@@ -37,7 +37,7 @@ def gerar_alertas(qtd_alertnames=5, qtd_por_alertname=10, start_date="2025-10-16
 
 @app.route('/api/v1/alerts', methods=['GET'])
 def get_alertas():
-    alertas = gerar_alertas(qtd_alertnames=10, qtd_por_alertname=50)
+    alertas = gerar_alertas(qtd_alertnames=10, qtd_por_alertname=5)
     print(len(alertas))
     
     return jsonify({"status": "success", "data": {"alerts": alertas}})

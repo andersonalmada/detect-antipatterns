@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 import requests
 from config import FIELD_MAP, EXTERNAL_API_URL, TS_INI, TS_FIM
 from datetime import datetime, timedelta
@@ -6,8 +6,23 @@ from collections import defaultdict
 import pandas as pd
 from sklearn.ensemble import IsolationForest
 import numpy as np
+from models import db, Alert  # <--- IMPORTAR ALERT
+import os
 
 app = Flask(__name__)
+
+
+app = Flask(__name__)
+
+# Config PostgreSQL via environment variables
+app.config['SQLALCHEMY_DATABASE_URI'] = f"postgresql://{os.getenv('POSTGRES_USER')}:{os.getenv('POSTGRES_PASSWORD')}@{os.getenv('POSTGRES_HOST')}:{os.getenv('POSTGRES_PORT')}/{os.getenv('POSTGRES_DB')}"
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db.init_app(app)
+
+# Cria tabelas
+with app.app_context():
+    db.create_all()
 
 # Extract a value from a nested path, e.g., 'labels.alertname'
 def extract_field(alert, path):
@@ -262,5 +277,40 @@ def get_alerts_group_range():
 
     return jsonify(grouped)
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+# Endpoint para receber o JSON
+@app.route('/api/alerts', methods=['POST'])
+def receive_alerts():
+    try:
+        data = request.get_json()
+        if not isinstance(data, list):
+            return jsonify({"erro": "O JSON deve ser uma lista de objetos"}), 400
+
+        saved = 0
+        for item in data:
+            try:
+                alert = Alert(
+                    host=item.get("host"),
+                    name=item["name"],
+                    service=item.get("service"),
+                    severity=item["severity"],
+                    timestamp=datetime.fromisoformat(item["timestamp"].replace("Z","+00:00")),
+                    value=str(item["value"])
+                )
+                db.session.add(alert)
+                saved += 1
+            except Exception as e:
+                print(f"Erro ao salvar item {item}: {e}")
+                continue
+
+        db.session.commit()
+        return jsonify({"mensagem": f"{saved} alert(s) salvos com sucesso"}), 200
+
+    except Exception as e:
+        return jsonify({"erro": str(e)}), 500
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)

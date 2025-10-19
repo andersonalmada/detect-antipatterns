@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin-top: 50px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 400px;
+}
+
+h1 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+input, button {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+  background: #2F80ED;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #2563EB;
+}
+
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background: #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+#progressBar {
+  width: 0%;
+  height: 100%;
+  background-color: #2F80ED;
+  border-radius: 5px;
+  transition: width 0.3s;
+}
+
+#messages {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+pre {
+  background: #f0f0f0;
+  padding: 10px;
+  max-height: 200px;
+  overflow: auto;
+  border-radius: 4px;
+}
