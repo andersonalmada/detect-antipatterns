@@ -4,6 +4,7 @@ const btnValidate = document.getElementById('btnValidate');
 const btnSaveDb = document.getElementById('btnSaveDb');
 const btnInMemory = document.getElementById('btnInMemory');
 const btnAnalyze = document.getElementById('btnAnalyze');
+const btnClearAlerts = document.getElementById('btnClearAlerts');
 const limitInput = document.getElementById('limitValue');
 const output = document.getElementById('output');
 const messages = document.createElement('div'); // mensagens gerais
@@ -107,7 +108,7 @@ btnInMemory.addEventListener('click', () => sendToAPI(false));
 // Botão de análise
 btnAnalyze.addEventListener('click', () => {
     const limit = parseInt(limitInput.value);
-    if(isNaN(limit) || limit < 1){
+    if (isNaN(limit) || limit < 1) {
         showAlert('Limit must be a positive integer.', 'error');
         return;
     }
@@ -116,15 +117,49 @@ btnAnalyze.addEventListener('click', () => {
     const mode = document.querySelector('input[name="detectionMode"]:checked').value;
     const source = document.querySelector('input[name="dataSource"]:checked').value == 'database';
 
-    fetch('/api/detect?start=2025-10-16T10:00:00Z&end=2025-10-18T13:55:00Z&fields=name&count_only=true&mode='+mode+'&database='+source, {
-        method: 'GET'
+    // Get date values
+    const start = document.getElementById('startDate').value;
+    const end = document.getElementById('endDate').value;
+
+    if (!start || !end) {
+        showAlert('Please select both start and end dates.', 'error');
+        return;
+    }
+
+    // Format to ISO if needed
+    const startISO = new Date(start).toISOString();
+    const endISO = new Date(end).toISOString();
+
+    const url = `/api/detect?start=${startISO}&end=${endISO}&fields=name&count_only=true&mode=${mode}&database=${source}&limit=${limit}`;
+
+    fetch(url, { method: 'GET' })
+        .then(res => res.json())
+        .then(data => {
+            output.textContent = JSON.stringify(data, null, 2);
+            showAlert('Detection completed!');
+        })
+        .catch(err => {
+            showAlert('Error during detection: ' + err.message, 'error');
+        });
+});
+
+btnClearAlerts.addEventListener('click', () => {
+    if (!confirm('Are you sure you want to delete all alerts?')) {
+        return;
+    }
+
+    fetch('/api/alerts/clear', {
+        method: 'DELETE'
     })
-    .then(res => res.json())
-    .then(data => {
-        output.textContent = JSON.stringify(data, null, 2);
-        showAlert('Detection completed!');
+    .then(res => {
+        if (res.ok) {
+            showAlert('All alerts have been deleted.', 'success');
+            output.textContent = ''; // limpa a visualização também
+        } else {
+            showAlert('Failed to delete alerts.', 'error');
+        }
     })
     .catch(err => {
-        showAlert('Error during detection: ' + err.message, 'error');
+        showAlert('Error while deleting: ' + err.message, 'error');
     });
 });

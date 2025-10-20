@@ -61,17 +61,15 @@ def excesso_estatistico_grupo(items, k=2, limit=10):
     media = np.mean(counts)
     desvio = np.std(counts)
     limite_auto = media + k * desvio
-    print(limite_auto)
     for item in items:
-        item["exceeded"] = bool(item["count"] >= limite_auto or item["count"] >= limit)
+        item["exceeded"] = bool(item["count"] >= limite_auto and item["count"] >= limit)
     return items
 
 def excesso_media(items, limit=10):
     counts = [item["count"] for item in items]
     media = np.mean(counts)
-    print(media)
     for item in items:
-        item["exceeded"] = bool(item["count"] >= media or item["count"] >= limit)
+        item["exceeded"] = bool(item["count"] >= media and item["count"] >= limit)
     return items
 
 def excesso_isolation_forest_grupo(items, contamination=0.05, window_size=50, limit=10):
@@ -86,7 +84,7 @@ def excesso_isolation_forest_grupo(items, contamination=0.05, window_size=50, li
     if len(set(hist)) <= 1:
         limite_auto = max(hist)
         for item in items[-len(hist):]:
-            item["exceeded"] = bool(item["count"] >= limite_auto or item["count"] >= limit)
+            item["exceeded"] = bool(item["count"] >= limite_auto and item["count"] >= limit)
         return items
 
     df_hist = pd.DataFrame({"alertas": hist})
@@ -99,12 +97,10 @@ def excesso_isolation_forest_grupo(items, contamination=0.05, window_size=50, li
         # limite automático = maior valor considerado normal
         non_anom = df_hist.loc[~df_hist["anomalia"], "alertas"]
         limite_auto = non_anom.max() if not non_anom.empty else df_hist["alertas"].max()
-
-        print(limite_auto)
-
+        
         # aplica exceeded em cada item
         for item in items[-len(hist):]:
-            item["exceeded"] = bool(item["count"] >= limite_auto or item["count"] >= limit)
+            item["exceeded"] = bool(item["count"] >= limite_auto and item["count"] >= limit)
 
         return items
 
@@ -113,7 +109,7 @@ def excesso_isolation_forest_grupo(items, contamination=0.05, window_size=50, li
         limite_auto = max(hist)
         print(limite_auto)
         for item in items[-len(hist):]:
-            item["exceeded"] = bool(item["count"] >= limite_auto or item["count"] >= limit)
+            item["exceeded"] = bool(item["count"] >= limite_auto and item["count"] >= limit)
         return items
 
 # Generic alert grouping function
@@ -362,6 +358,16 @@ def receive_alerts():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@app.route('/api/alerts/clear', methods=['DELETE'])
+def clear_alerts_endpoint():
+    try:
+        db.session.query(Alert).delete()
+        db.session.commit()
+        return {"message": "Todos os registros foram removidos."}, 200
+    except Exception as e:
+        db.session.rollback()
+        return {"error": str(e)}, 500
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
