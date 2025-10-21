@@ -6,11 +6,20 @@ const btnInMemory = document.getElementById('btnInMemory');
 const btnAnalyze = document.getElementById('btnAnalyze');
 const btnClearAlerts = document.getElementById('btnClearAlerts');
 const limitInput = document.getElementById('limitValue');
+const reduction = document.getElementById('reduction');
 const output = document.getElementById('output');
 const messages = document.createElement('div'); // mensagens gerais
 document.querySelector('.container').prepend(messages);
 
 let parsedJson = null;
+
+const now = new Date();
+const start = new Date(now);
+start.setDate(start.getDate() - 1);
+
+const format = d => d.toISOString().slice(0, 16); // corta os segundos e o 'Z'
+document.getElementById("startDate").value = format(start);
+document.getElementById("endDate").value = format(now);
 
 function showAlert(message, type='success', duration=3000) {
     const container = document.getElementById('alertContainer');
@@ -126,17 +135,28 @@ btnAnalyze.addEventListener('click', () => {
         return;
     }
 
-    // Format to ISO if needed
+    // Convert to ISO and force Z at the end
     const startISO = new Date(start).toISOString();
     const endISO = new Date(end).toISOString();
 
-    const url = `/api/detect?start=${startISO}&end=${endISO}&fields=name&count_only=true&mode=${mode}&database=${source}&limit=${limit}`;
+    const url = `/api/detect?start=${startISO}&end=${endISO}&fields=name&count_only=true&mode=${mode}&database=${source}`;
 
     fetch(url, { method: 'GET' })
         .then(res => res.json())
         .then(data => {
-            output.textContent = JSON.stringify(data, null, 2);
+            output.textContent = JSON.stringify(data.data, null, 2);
             showAlert('Detection completed!');
+            
+            if (data.total_alerts && data.grouped_alerts) {
+                const total = data.total_alerts;
+                const grouped = data.grouped_alerts;
+                const reductionLocal = total - grouped;
+                const percent = ((reductionLocal / total) * 100).toFixed(2);
+
+                const summary = `Total alerts: ${total}\nGrouped alerts: ${grouped}\nReduction: ${reductionLocal} (${percent}%)`;
+
+                reduction.textContent = summary;
+            }
         })
         .catch(err => {
             showAlert('Error during detection: ' + err.message, 'error');

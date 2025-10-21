@@ -302,7 +302,15 @@ def get_alerts_group_range():
     elif mode == "ml":
         grouped = excesso_isolation_forest_grupo(grouped, limit=limit)
 
-    return jsonify(grouped)
+    print(len(grouped))
+
+    response = {
+        "total_alerts": len(local_alerts),
+        "grouped_alerts": len(grouped),
+        "data": grouped
+    }
+
+    return jsonify(response)
 
 @app.route('/')
 def index():
