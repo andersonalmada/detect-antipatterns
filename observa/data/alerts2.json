@@ -1,0 +1,18 @@
+[
+  {
+    "alert_name": "HighCPUUsage",
+    "count": 132
+  },
+  {
+    "alert_name": "MemoryLeakWarning",
+    "count": 442
+  },
+  {
+    "alert_name": "DatabaseConnectionError",
+    "count": 20
+  },
+  {
+    "alert_name": "DiskFullWarning",
+    "count": 12
+  }
+]
