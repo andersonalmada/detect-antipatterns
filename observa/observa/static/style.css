@@ -1,0 +1,43 @@
+/* Background e corpo */
+body {
+    background-color: #f8f9fa;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container principal */
+.container {
+    max-width: 800px;
+    margin-top: 50px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Result block */
+pre {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    max-height: 400px;
+}
+
+/* Botão Run */
+button.btn-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+/* Labels */
+label.form-label {
+    font-weight: 500;
+}
+
+/* Pequenos ajustes nos selects e inputs */
+select.form-select,
+input.form-control {
+    margin-bottom: 15px;
+}
