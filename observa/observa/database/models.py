@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Text
-from observa.database import Base
+from observa.database.database import Base
 
 class Source(Base):
     __tablename__ = "sources"

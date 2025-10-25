@@ -10,13 +10,10 @@ _manager = manager
 
 class SourceRegisterRequest(BaseModel):
     name: str
-    type: str
     path: str
 
 @router.post('/register')
 def register_source(req: SourceRegisterRequest):
-    if req.type != 'json':
-        raise HTTPException(status_code=400, detail='Only json source supported in skeleton')
     src = JsonSource(req.path)
     _manager.register_source(req.name, src)
     return {'message': f"Source '{req.name}' registered"}

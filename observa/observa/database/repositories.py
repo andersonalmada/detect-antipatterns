@@ -1,5 +1,5 @@
-from observa.database import SessionLocal
-from observa.models import Source, Detector
+from observa.database.database import SessionLocal
+from observa.database.models import Source, Detector
 import json
 
 class SourceRepository:

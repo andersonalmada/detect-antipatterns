@@ -3,8 +3,8 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from observa.api.router import router as api_router
-from observa.database import Base, engine
-from observa.models import Source, Detector
+from observa.database.database import Base, engine
+from observa.database.models import Source, Detector
 
 Base.metadata.create_all(bind=engine)
 
