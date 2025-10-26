@@ -58,12 +58,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const file = newSourceFile.files[0];
     const text = await file.text();
+
+    let parsed = JSON.parse(text);
+    if (Array.isArray(parsed)) {
+      parsed = { data: parsed }; // embrulha num objeto
+    }
+
     const payload = {
       name: newSourceName.value,
-      json_data: JSON.parse(text)
+      json_data: parsed
     };
 
-    const res = await fetch("/api/v1/sources/add", {
+    const res = await fetch("/api/v1/sources/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
@@ -93,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
       api_url: newDetectorApi.value
     };
 
-    const res = await fetch("/api/v1/detectors/add", {
+    const res = await fetch("/api/v1/detectors/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)

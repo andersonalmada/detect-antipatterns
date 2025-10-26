@@ -10,12 +10,11 @@ _manager = manager
 
 class SourceRegisterRequest(BaseModel):
     name: str
-    path: str
+    json_data: dict
 
 @router.post('/register')
 def register_source(req: SourceRegisterRequest):
-    src = JsonSource(req.path)
-    _manager.register_source(req.name, src)
+    _manager.register_source(req.name, req.json_data)
     return {'message': f"Source '{req.name}' registered"}
 
 @router.get('/list')

@@ -6,7 +6,7 @@ class SourceRepository:
     @staticmethod
     def add_source(name: str, json_content: dict):
         db = SessionLocal()
-        src = Source(name=name, json_data=json.dumps(json_content))
+        src = Source(name=name, json_data=json_content)
         db.add(src)
         db.commit()
         db.close()

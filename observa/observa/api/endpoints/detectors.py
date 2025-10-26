@@ -8,16 +8,11 @@ _manager = manager
 
 class DetectorRegisterRequest(BaseModel):
     name: str
-    module: str = None
+    api_url: str = None
 
 @router.post('/register')
 def register_detector(req: DetectorRegisterRequest):
-    # in this skeleton we only support the built-in ExcessiveAlertsDetector
-    if req.name == 'ExcessiveAlerts':
-        det = ExcessiveAlertsDetector()
-    else:
-        raise HTTPException(status_code=400, detail='Unknown detector in skeleton')
-    _manager.register_detector(req.name, det)
+    _manager.register_detector(req.name, api_url=req.api_url)
     return {'message': f"Detector '{req.name}' registered"}
 
 @router.get('/list')

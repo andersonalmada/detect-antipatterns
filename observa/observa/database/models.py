@@ -1,13 +1,14 @@
 from sqlalchemy import Column, Integer, String, Text
 from observa.database.database import Base
+from sqlalchemy.dialects.postgresql import JSONB 
+
 
 class Source(Base):
     __tablename__ = "sources"
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, unique=True, nullable=False)
-    json_data = Column(Text, nullable=False)  # conteúdo do arquivo JSON
-
+    json_data = Column(JSONB, nullable=False)  # conteúdo do arquivo JSON
 
 class Detector(Base):
     __tablename__ = "detectors"
