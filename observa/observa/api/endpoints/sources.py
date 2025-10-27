@@ -1,8 +1,6 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 from pydantic import BaseModel
-from typing import Dict
 from observa.framework.manager import global_manager as manager
-from observa.sources.json_source import JsonSource
 
 router = APIRouter()
 _manager = manager

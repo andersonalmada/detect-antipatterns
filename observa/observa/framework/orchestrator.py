@@ -1,6 +1,7 @@
 import time
 from typing import Dict, Any
 from observa.framework.manager import Manager
+import importlib
 
 class Orchestrator:
     def __init__(self, manager: Manager):
@@ -12,9 +13,14 @@ class Orchestrator:
             raise ValueError(f"Detector '{detector_name}' not found")
         source = self.manager.get_source(source_name)
         if source is None:
-            raise ValueError(f"Source '{source_name}' not found")
-
-        data = source.load()
+            raise ValueError(f"Source '{source_name}' not found")    
+                
+        module_name, class_name = detector.class_path.rsplit('.', 1)
+        module = importlib.import_module(module_name)
+        cls = getattr(module, class_name)
+        detector = cls()
+        
+        data = source.json_data
         start = time.time()
         result = detector.detect(data)
         end = time.time()
