@@ -119,16 +119,29 @@ document.addEventListener("DOMContentLoaded", () => {
   // Run detector
   // ---------------------------
   runBtn.addEventListener("click", async () => {
-    const sourceName = sourceSelect.value;
-    const detectorName = detectorSelect.value;
+    const selectedSources = Array.from(sourceSelect.selectedOptions).map(opt => opt.value);
+    const selectedDetectors = Array.from(detectorSelect.selectedOptions).map(opt => opt.value);
 
     const res = await fetch("/api/v1/runs/execute", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ source: sourceName, detector: detectorName })
+      body: JSON.stringify({ sources: selectedSources, detectors: selectedDetectors })
     });
 
     const data = await res.json();
     resultOutput.textContent = JSON.stringify(data, null, 2);
+  });
+
+  const clearDbBtn = document.getElementById("clear-db-btn");
+
+  clearDbBtn.addEventListener("click", async () => {
+    if (!confirm("⚠️ This will delete all sources and detectors. Continue?")) return;
+
+    const res = await fetch("/api/v1/admin/clear", { method: "POST" });
+    const data = await res.json();
+
+    alert(data.message);
+    await loadSources();
+    await loadDetectors();
   });
 });

@@ -1,7 +1,6 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter
 from pydantic import BaseModel
 from observa.framework.manager import global_manager as manager
-from observa.detectors.excessive_alerts import ExcessiveAlertsDetector
 
 router = APIRouter()
 _manager = manager
