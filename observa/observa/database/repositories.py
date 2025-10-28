@@ -23,7 +23,13 @@ class SourceRepository:
         source = db.query(SourceModel).filter(SourceModel.name == name).first()
         db.close()
         return source
-
+    
+    @staticmethod
+    def delete_batch(names: list[str]):
+        db = SessionLocal()
+        db.query(SourceModel).filter(SourceModel.name.in_(names)).delete(synchronize_session=False)
+        db.commit()  
+        db.close()
 
 class DetectorRepository:
     @staticmethod
@@ -47,3 +53,10 @@ class DetectorRepository:
         det = db.query(DetectorModel).filter(DetectorModel.name == name).first()
         db.close()
         return det
+
+    @staticmethod
+    def delete_batch(names: list[str]):
+        db = SessionLocal()
+        db.query(DetectorModel).filter(DetectorModel.name.in_(names)).delete(synchronize_session=False)
+        db.commit()  
+        db.close()

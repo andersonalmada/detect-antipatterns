@@ -24,6 +24,7 @@ class Orchestrator:
         start = time.time()
         result = detector.detect(data)
         end = time.time()
+        result.setdefault('source', source.name)
         result.setdefault('detector', detector.name())
         result.setdefault('execution_time_ms', round((end - start) * 1000, 3))
         return result

@@ -13,10 +13,12 @@ class RunRequest(BaseModel):
 
 @router.post('/execute')
 def execute_run(req: RunRequest):
+    result = []
+    
     try:
         for src in req.sources:
             for det in req.detectors:
-                result = _orchestrator.run(det, src)
+                result.append(_orchestrator.run(det, src))
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     return result

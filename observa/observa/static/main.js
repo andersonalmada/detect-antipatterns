@@ -137,11 +137,50 @@ document.addEventListener("DOMContentLoaded", () => {
   clearDbBtn.addEventListener("click", async () => {
     if (!confirm("⚠️ This will delete all sources and detectors. Continue?")) return;
 
-    const res = await fetch("/api/v1/admin/clear", { method: "POST" });
+    const res = await fetch("/api/v1/admin/clear", { method: "DELETE" });
     const data = await res.json();
 
     alert(data.message);
     await loadSources();
     await loadDetectors();
+  });
+
+  sourceSelect.addEventListener("keydown", async (e) => {
+    if (e.key === "Delete") {
+      const selected = Array.from(sourceSelect.selectedOptions).map(opt => opt.value);
+      if (!selected.length) return;
+
+      if (!confirm(`⚠️ Delete selected sources: ${selected.join(", ")}?`)) return;
+
+      const res = await fetch("/api/v1/admin/sources", {
+        method: "DELETE", // ou DELETE se preferir
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ names: selected })
+      });
+
+      const data = await res.json();
+      alert(data.message);
+      await loadSources();
+    }
+  });
+
+  // Função para deletar detectores
+  detectorSelect.addEventListener("keydown", async (e) => {
+    if (e.key === "Delete") {
+      const selected = Array.from(detectorSelect.selectedOptions).map(opt => opt.value);
+      if (!selected.length) return;
+
+      if (!confirm(`⚠️ Delete selected detectors: ${selected.join(", ")}?`)) return;
+
+      const res = await fetch("/api/v1/admin/detectors", {
+        method: "DELETE", // ou DELETE
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ names: selected })
+      });
+
+      const data = await res.json();
+      alert(data.message);
+      await loadDetectors();
+    }
   });
 });
