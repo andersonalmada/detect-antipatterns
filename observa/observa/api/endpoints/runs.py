@@ -13,8 +13,7 @@ class RunRequest(BaseModel):
 
 @router.post('/execute')
 def execute_run(req: RunRequest):
-    result = []
-    
+    result = []    
     try:
         for src in req.sources:
             for det in req.detectors:
