@@ -17,3 +17,7 @@ def register_source(req: SourceRegisterRequest):
 @router.get('/list')
 def list_sources():
     return {'sources': _manager.list_sources()}
+
+@router.get('/get')
+def get_source(name: str):
+    return {'source': _manager.get_source(name)}

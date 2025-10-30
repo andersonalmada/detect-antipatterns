@@ -140,6 +140,7 @@ def group_alerts(
     if return_count_only and window_minutes:
         temp_group = defaultdict(list)
 
+    print(alerts)
     alerts_sorted = sorted(alerts, key=lambda x: x["timestamp"])
 
     for alert in alerts_sorted:
@@ -306,6 +307,36 @@ def get_alerts_group_range():
 
     response = {
         "total_alerts": len(local_alerts),
+        "grouped_alerts": len(grouped),
+        "data": grouped
+    }
+
+    return jsonify(response)
+
+@app.route("/api/detect", methods=["POST"])
+def get_detect_framework1():
+    alerts = request.get_json().get("data", [])
+    fields_str = request.args.get("fields")
+    fields = [f.strip() for f in fields_str.split(",")] if fields_str else None
+    start_ts = request.args.get("start", TS_INI)
+    end_ts = request.args.get("end", TS_FIM)
+    count_only = request.args.get("count_only", "true").lower() == "true"
+    limit = int(request.args.get("limit", 10))
+    mode = request.args.get("mode", "limit")
+
+    grouped = group_alerts(alerts, fields_to_group=fields, start_ts=start_ts, end_ts=end_ts, return_count_only=count_only,limit=limit,mode=mode)
+
+    if mode == "media":
+        grouped = excesso_media(grouped, limit=limit)
+    elif mode == "stat":
+        grouped = excesso_estatistico_grupo(grouped, limit=limit)
+    elif mode == "ml":
+        grouped = excesso_isolation_forest_grupo(grouped, limit=limit)
+
+    print(len(grouped))
+
+    response = {
+        "total_alerts": len(alerts),
         "grouped_alerts": len(grouped),
         "data": grouped
     }

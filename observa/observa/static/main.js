@@ -183,4 +183,38 @@ document.addEventListener("DOMContentLoaded", () => {
       await loadDetectors();
     }
   });
+
+  sourceSelect.addEventListener("dblclick", async () => {
+    const selectedOptions = Array.from(sourceSelect.selectedOptions);
+    if (selectedOptions.length !== 1) {
+      alert("Please select a single source to see details.");
+      return;
+    }
+    const name = selectedOptions[0].value;
+
+    const res = await fetch(`/api/v1/sources/get?name=${encodeURIComponent(name)}`);
+    if (!res.ok) {
+      alert("Error fetching source details.");
+      return;
+    }
+    const data = await res.json();
+    alert("Source details:\n" + JSON.stringify(data, null, 2));
+  });
+
+  detectorSelect.addEventListener("dblclick", async () => {
+    const selectedOptions = Array.from(detectorSelect.selectedOptions);
+    if (selectedOptions.length !== 1) {
+      alert("Please select a single detector to see details.");
+      return;
+    }
+    const name = selectedOptions[0].value;
+
+    const res = await fetch(`/api/v1/detectors/get?name=${encodeURIComponent(name)}`);
+    if (!res.ok) {
+      alert("Error fetching detector details.");
+      return;
+    }
+    const data = await res.json();
+    alert("Detector details:\n" + JSON.stringify(data, null, 2));
+  });
 });

@@ -17,3 +17,7 @@ def register_detector(req: DetectorRegisterRequest):
 @router.get('/list')
 def list_detectors():
     return {'detectors': _manager.list_detectors()}
+
+@router.get('/get')
+def get_detector(name: str):
+    return {'detector': _manager.get_detector(name)}
