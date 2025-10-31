@@ -3,14 +3,17 @@ from typing import Any, Dict
 
 class Source(ABC):
     @abstractmethod
+    def get_name(self) -> str:
+        pass
+    
+    @abstractmethod
     def load(self) -> Any:
         """Load and return data in a standardized format (e.g., list/dict)."""
         raise NotImplementedError
 
-
 class Detector(ABC):
     @abstractmethod
-    def name(self) -> str:
+    def get_name(self) -> str:
         pass
 
     @abstractmethod

@@ -60,9 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const text = await file.text();
 
     let parsed = JSON.parse(text);
-    if (Array.isArray(parsed)) {
-      parsed = { data: parsed }; // embrulha num objeto
-    }
 
     const payload = {
       name: newSourceName.value,

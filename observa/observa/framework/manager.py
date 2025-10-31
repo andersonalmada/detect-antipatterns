@@ -1,14 +1,17 @@
-from typing import Dict, Any, List, Optional
+from typing import List, Optional
 from observa.database.models import SourceModel, DetectorModel
 from observa.database.repositories import SourceRepository, DetectorRepository
+from observa.framework.base import Source
 
 class Manager:
     def __init__(self):
         pass  # não precisa mais de dicionários internos
 
     # Sources
-    def register_source(self, name: str, source_data: dict) -> SourceModel:
-        source = SourceRepository.add_source(name, source_data)
+    def register_source(self, source: Source) -> SourceModel:
+        print(source.get_name())
+        print(source.load())
+        source = SourceRepository.add_source(source.get_name(), source.load())
         return source
 
     def get_source(self, name: str) -> Optional[SourceModel]:

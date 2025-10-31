@@ -315,7 +315,7 @@ def get_alerts_group_range():
 
 @app.route("/api/detect", methods=["POST"])
 def get_detect_framework1():
-    alerts = request.get_json().get("data", [])
+    alerts = request.get_json()
     fields_str = request.args.get("fields")
     fields = [f.strip() for f in fields_str.split(",")] if fields_str else None
     start_ts = request.args.get("start", TS_INI)

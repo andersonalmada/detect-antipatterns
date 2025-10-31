@@ -2,7 +2,7 @@ from observa.framework.base import Detector
 from typing import Any, Dict
 
 class ExcessiveAlertsDetector(Detector):
-    def name(self) -> str:
+    def get_name(self) -> str:
         return "ExcessiveAlerts"
 
     def detect(self, data: Any) -> Dict:
