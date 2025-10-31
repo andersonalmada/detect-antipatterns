@@ -4,8 +4,6 @@ from observa.sources.json_source import JsonSource
 from observa.framework.manager import global_manager as manager
 from observa.framework.base import Source, Detector
 
-import importlib
-import requests
 from dotenv import load_dotenv
 import time
 from typing import Dict, Any
@@ -33,8 +31,8 @@ class Orchestrator:
 
         for i, value in enumerate(_names_source):
             if not manager.get_source(value):
-                _json = JsonSource(_paths_source[i])        
-                manager.register_source(value,_json.load())
+                _json = JsonSource(name=value,path=_paths_source[i])        
+                manager.register_source(_json)
                 print(value + " - New !!")
             else:
                 print(value)
@@ -58,43 +56,14 @@ class Orchestrator:
             print(item)
                 
         print("\nReady !!!\n")
-
-    def runByDatabase(self, detector_name: str, source_name: str) -> Dict[str, Any]:
-        detector = manager.get_detector(detector_name)
-        if detector is None:
-            raise ValueError(f"Detector '{detector_name}' not found")
-        source = manager.get_source(source_name)
-        if source is None:
-            raise ValueError(f"Source '{source_name}' not found")    
         
-        data = source.json_data
-        start = time.time()
-        
-        if detector.api_url: # Remoto
-            response = requests.post(detector.api_url, json=data)
-            response.raise_for_status()
-            result = response.json()
-            result.setdefault('detector', detector.name)
-        else: # Local
-            module_name, class_name = detector.class_path.rsplit('.', 1)
-            module = importlib.import_module(module_name)
-            cls = getattr(module, class_name)
-            detector = cls()
-            result = detector.detect(data)
-            result.setdefault('detector', detector.get_name())
-        
-        end = time.time()
-        result.setdefault('source', source.name)        
-        result.setdefault('execution_time_ms', round((end - start) * 1000, 3))
-        return result
-    
     def run(self, detector: Detector, source: Source) -> Dict[str, Any]: 
         data = source.load()
         start = time.time()        
         result = detector.detect(data)        
         end = time.time()
-        result.setdefault('source', source.get_name())        
-        result.setdefault('detector', detector.get_name())
+        result.setdefault('source', source.name)        
+        result.setdefault('detector', detector.name)
         result.setdefault('execution_time_ms', round((end - start) * 1000, 3))
         return result
     

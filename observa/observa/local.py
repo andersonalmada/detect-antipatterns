@@ -4,8 +4,8 @@ from observa.detectors.frutas_detector import FrutasExcessivas
 
 orchestrator = Orchestrator()
 
-source = FrutasLocal()
-detector = FrutasExcessivas()
+source = FrutasLocal("FrutasLocal")
+detector = FrutasExcessivas("FrutasExcessivas")
 
 print(orchestrator.run(source=source, detector=detector))
 

@@ -2,9 +2,6 @@ from observa.framework.base import Detector
 from typing import Any, Dict
 
 class FrutasExcessivas(Detector):
-    def get_name(self) -> str:
-        return "Frutas Excessivas"
-
     def detect(self, data: Any) -> Dict:
         excessive = []        
         for item in data:
@@ -15,7 +12,7 @@ class FrutasExcessivas(Detector):
                 continue
         
         return {
-            'antipattern': self.get_name(),
+            'antipattern': self.name,
             'instances': len(excessive),
             'details': excessive
         }

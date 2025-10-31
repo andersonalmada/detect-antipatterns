@@ -15,7 +15,7 @@ class SourceRegisterRequest(BaseModel):
 def register_source(req: SourceRegisterRequest):
     source = DataSource(name=req.name, json_data=req.json_data)    
     _manager.register_source(source)
-    return {'message': f"Source '{source.get_name()}' registered"}
+    return {'message': f"Source '{source.name}' registered"}
 
 @router.get('/list')
 def list_sources():

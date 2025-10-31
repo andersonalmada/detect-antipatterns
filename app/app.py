@@ -140,7 +140,6 @@ def group_alerts(
     if return_count_only and window_minutes:
         temp_group = defaultdict(list)
 
-    print(alerts)
     alerts_sorted = sorted(alerts, key=lambda x: x["timestamp"])
 
     for alert in alerts_sorted:
@@ -283,8 +282,6 @@ def get_alerts_group_range():
     else:
         local_alerts = alerts
 
-    print(local_alerts)
-
     #local_alerts = fetch_formatted_alerts()
     fields_str = request.args.get("fields")
     fields = [f.strip() for f in fields_str.split(",")] if fields_str else None
@@ -332,8 +329,6 @@ def get_detect_framework1():
         grouped = excesso_estatistico_grupo(grouped, limit=limit)
     elif mode == "ml":
         grouped = excesso_isolation_forest_grupo(grouped, limit=limit)
-
-    print(len(grouped))
 
     response = {
         "total_alerts": len(alerts),
@@ -388,8 +383,6 @@ def receive_alerts():
 
         if save_to_db:
             db.session.commit()
-
-        print(alerts)
 
         return jsonify({
             "message": f"{processed} alert(s) processed successfully"

@@ -2,9 +2,6 @@ from typing import Any
 from observa.framework.base import Source
 
 class FrutasLocal(Source):
-    def get_name(self) -> str:
-        return "FrutasLocal"
-        
     def load(self) -> Any:
         frutas = [
             {"fruta": "Maçã", "quantidade": 10},
