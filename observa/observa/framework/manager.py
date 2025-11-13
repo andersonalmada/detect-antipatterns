@@ -9,7 +9,10 @@ class Manager:
 
     # Sources
     def register_source(self, source: Source) -> SourceModel:
-        source = SourceRepository.add_source(source.name, source.load())
+        if source.api_url:
+            source = SourceRepository.add_source(name=source.name, api_url=source.api_url)
+        else:
+            source = SourceRepository.add_source(name=source.name, json_content=source.load())
         return source
 
     def get_source(self, name: str) -> Optional[SourceModel]:

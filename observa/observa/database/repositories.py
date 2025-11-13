@@ -3,9 +3,9 @@ from observa.database.models import SourceModel, DetectorModel
 
 class SourceRepository:
     @staticmethod
-    def add_source(name: str, json_content: dict):
+    def add_source(name: str, api_url: str = None, json_content: dict = None):
         db = SessionLocal()
-        src = SourceModel(name=name, json_data=json_content)
+        src = SourceModel(name=name, api_url=api_url, json_data=json_content)
         db.add(src)
         db.commit()
         db.close()

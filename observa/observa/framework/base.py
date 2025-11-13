@@ -2,9 +2,10 @@ from abc import ABC, abstractmethod
 from typing import Any, Dict
 
 class Source(ABC):    
-    def __init__(self, name: str = "Source", json_data: Any = None):
+    def __init__(self, name: str = "Source", json_data: Any = None, api_url: str = None):
         self.name = name
         self.json_data = json_data
+        self.api_url = api_url
             
     @abstractmethod
     def load(self) -> Any:

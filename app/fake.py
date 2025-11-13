@@ -1,46 +1,45 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from datetime import datetime, timedelta
 import random
 
 app = Flask(__name__)
 
-def gerar_alertas(qtd_alertnames=5, qtd_por_alertname=10, start_date="2025-10-16"):
-    """
-    Gera alertas de teste no formato do Prometheus Alertmanager.
-    - qtd_alertnames: quantidade de alertnames diferentes
-    - qtd_por_alertname: quantidade de alertas por alertname
-    - start_date: data inicial em formato YYYY-MM-DD
-    """
-    alertas = []
-    severities = ["critical", "warning", "info"]
-    base_date = datetime.fromisoformat(start_date + "T00:00:00")
+SEVERITIES = ["info", "warning", "critical"]
 
-    for i in range(qtd_alertnames):
-        alertname = f"TestAlert{i}"
-        for j in range(qtd_por_alertname):
-            # gera horário random dentro de dois dias
-            delta = timedelta(days=random.randint(0, 1), 
-                              hours=random.randint(0, 23), 
-                              minutes=random.randint(0, 59),
-                              seconds=random.randint(0, 59))
-            activeAt = (base_date + delta).isoformat() + "Z"
-
-            alert = {
-                "labels": {"alertname": alertname, "id": str(j+1), "severity": random.choice(severities)},
-                "annotations": {"summary": "Alerta de teste", "description": "Somente teste"},
-                "state": "pending",
-                "activeAt": activeAt,
-                "value": str(random.randint(1, 20))
-            }
-            alertas.append(alert)
-    return alertas
-
-@app.route('/api/v1/alerts', methods=['GET'])
-def get_alertas():
-    alertas = gerar_alertas(qtd_alertnames=10, qtd_por_alertname=5)
-    print(len(alertas))
+def generate_alerts(count: int):
+    alerts = []
+    base_time = datetime(2025, 10, 16, 0, 0, 0)
     
-    return jsonify({"status": "success", "data": {"alerts": alertas}})
+    for i in range(count):
+        alert = {
+            "host": None,
+            "name": f"TestAlert{random.randint(0, 9)}",  # variação de nome
+            "service": None,
+            "severity": random.choice(SEVERITIES),
+            "timestamp": (base_time + timedelta(
+                days=random.randint(0, 1),
+                hours=random.randint(0, 23),
+                minutes=random.randint(0, 59),
+                seconds=random.randint(0, 59)
+            )).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "value": str(random.randint(1, 20))
+        }
+        alerts.append(alert)
+    
+    return alerts
 
-if __name__ == '__main__':
+
+@app.route("/alerts", methods=["GET"])
+def get_alerts():
+    try:
+        count = int(request.args.get("count", 100))  # número de objetos (default=10)
+        if count <= 0:
+            count = 1
+        alerts = generate_alerts(count)
+        return jsonify(alerts)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
+
+
+if __name__ == "__main__":
     app.run(host="0.0.0.0", port=9091, debug=True)

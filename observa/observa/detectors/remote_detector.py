@@ -5,5 +5,7 @@ import requests
 class RemoteDetector(Detector):
     def detect(self, data: Any) -> Dict:
         response = requests.post(self.api_url, json=data)
-        response.raise_for_status()
-        return response.json()
+        if response.status_code == 200:
+            return response.json()
+        else:            
+            print(f"Erro {response.status_code}: {response.text}")

@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const addSourceBtn = document.getElementById("add-source-btn");
   const newSourceName = document.getElementById("new-source-name");
   const newSourceFile = document.getElementById("new-source-file");
+  const newSourceApi = document.getElementById("new-source-api");
 
   // Campos do form de adicionar Detector
   const addDetectorBtn = document.getElementById("add-detector-btn");
@@ -15,6 +16,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Botão de run
   const runBtn = document.getElementById("run-btn");
+
+  const autoRunBtn = document.getElementById("auto-run-btn");
+  const intervalInput = document.getElementById("interval-seconds");
+  let autoRunInterval = null;
+
+  autoRunBtn.addEventListener("click", async () => {
+    if (autoRunInterval) {
+      clearInterval(autoRunInterval);
+      autoRunInterval = null;
+      autoRunBtn.textContent = "⏱️ Start Auto Run";
+      autoRunBtn.classList.remove("btn-danger");
+      autoRunBtn.classList.add("btn-outline-primary");
+      return;
+    }
+
+    const intervalSeconds = parseInt(intervalInput.value);
+    if (isNaN(intervalSeconds) || intervalSeconds < 1) {
+      alert("Please enter a valid interval (in seconds).");
+      return;
+    }
+
+    async function runDetection() {
+      const selectedSources = Array.from(sourceSelect.selectedOptions).map(opt => opt.value);
+      const selectedDetectors = Array.from(detectorSelect.selectedOptions).map(opt => opt.value);
+
+      const res = await fetch("/api/v1/runs/execute", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sources: selectedSources, detectors: selectedDetectors })
+      });
+
+      const data = await res.json();
+      resultOutput.textContent = JSON.stringify(data, null, 2);
+    }
+
+    // Executa imediatamente uma vez
+    runDetection();
+
+    // Inicia o intervalo
+    autoRunInterval = setInterval(runDetection, intervalSeconds * 1000);
+    autoRunBtn.textContent = "⏹️ Stop Auto Run";
+    autoRunBtn.classList.remove("btn-outline-primary");
+    autoRunBtn.classList.add("btn-danger");
+  });
 
   // ---------------------------
   // Funções de load
@@ -51,20 +96,37 @@ document.addEventListener("DOMContentLoaded", () => {
   // Adicionar nova fonte
   // ---------------------------
   addSourceBtn.addEventListener("click", async () => {
-    if (!newSourceName.value || !newSourceFile.files[0]) {
-      alert("Please provide both a source name and a JSON file.");
+    name = newSourceName.value
+    api = newSourceApi.value
+    file = newSourceFile.files[0]
+
+    payload = {}
+
+    if (!name) {
+      alert("Please provide a source name.");
       return;
     }
 
-    const file = newSourceFile.files[0];
-    const text = await file.text();
+    payload.name = name
 
-    let parsed = JSON.parse(text);
-
-    const payload = {
-      name: newSourceName.value,
-      json_data: parsed
-    };
+    if (api) {
+      payload.api_url = api;
+      payload.json_data = null;
+    } else if (file) {
+      const text = await file.text();
+      let parsed;
+      try {
+        parsed = JSON.parse(text);
+      } catch (err) {
+        alert("Invalid JSON file.");
+        return;
+      }
+      payload.json_data = parsed;
+      payload.api_url = null;
+    } else {
+      alert("Please provide either a JSON file or an API URL.");
+      return;
+    }
 
     const res = await fetch("/api/v1/sources/register", {
       method: "POST",
@@ -76,6 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Source added successfully!");
       newSourceName.value = "";
       newSourceFile.value = "";
+      newSourceApi.value = "";
       loadSources();
     } else {
       alert("Error adding source.");

@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from observa.framework.orchestrator import global_orchestrator as orchestrator
 from observa.framework.manager import global_manager as manager
 from observa.sources.data_source import DataSource
+from observa.sources.remote_source import RemoteSource
 from observa.detectors.remote_detector import RemoteDetector
 from typing import List
 import importlib
@@ -19,8 +20,11 @@ def execute_run(req: RunRequest):
     try:
         for src in req.sources:
             for det in req.detectors:
-                source = manager.get_source(src)
-                source = DataSource(name=source.name, json_data=source.json_data)
+                source = manager.get_source(src)                
+                if source.api_url:
+                    source = RemoteSource(name=source.name, api_url=source.api_url)    
+                else:
+                    source = DataSource(name=source.name, json_data=source.json_data)
                 
                 detector = manager.get_detector(det)                
                 if detector.api_url:

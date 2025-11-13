@@ -7,7 +7,8 @@ class SourceModel(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, unique=True, nullable=False)
-    json_data = Column(JSONB, nullable=False)  # conteúdo do arquivo JSON
+    json_data = Column(JSONB, nullable=True)  # conteúdo do arquivo JSON
+    api_url = Column(String, nullable=True)     # se for remoto
 
 class DetectorModel(Base):
     __tablename__ = "detectors"
