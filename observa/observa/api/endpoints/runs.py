@@ -22,20 +22,23 @@ def execute_run(req: RunRequest):
             for det in req.detectors:
                 source = manager.get_source(src)                
                 if source.api_url:
-                    source = RemoteSource(name=source.name, api_url=source.api_url)    
+                    sourceObj = RemoteSource(name=source.name, api_url=source.api_url)    
                 else:
-                    source = DataSource(name=source.name, json_data=source.json_data)
+                    sourceObj = DataSource(name=source.name, json_data=source.json_data)
                 
                 detector = manager.get_detector(det)                
                 if detector.api_url:
-                    detector = RemoteDetector(name=detector.name, api_url=detector.api_url)
+                    detectorObj = RemoteDetector(name=detector.name, api_url=detector.api_url)
                 else:
                     module_name, class_name = detector.class_path.rsplit('.', 1)
                     module = importlib.import_module(module_name)
                     cls = getattr(module, class_name)
-                    detector = cls(name=detector.name)
+                    detectorObj = cls(name=detector.name)
+
+                resultTemp = orchestrator.run(source=sourceObj, detector=detectorObj)                    
+                manager.register_history(source_id=source.id, detector_id=detector.id,result=resultTemp)
                     
-                result.append(orchestrator.run(source=source, detector=detector))
+                result.append(resultTemp)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     return result

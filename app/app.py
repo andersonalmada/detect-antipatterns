@@ -329,10 +329,13 @@ def get_detect_framework1():
         grouped = excesso_estatistico_grupo(grouped, limit=limit)
     elif mode == "ml":
         grouped = excesso_isolation_forest_grupo(grouped, limit=limit)
+        
+    count = sum(1 for x in grouped if x["exceeded"])        
 
     response = {
-        "total_alerts": len(alerts),
-        "grouped_alerts": len(grouped),
+        "total": len(alerts),
+        "analyzed": len(grouped),
+        "detected": count,
         "data": grouped
     }
 

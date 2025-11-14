@@ -1,4 +1,4 @@
-from observa.database.models import SourceModel, DetectorModel
+from observa.database.models import SourceModel, DetectorModel, HistoryModel
 from observa.database.database import Base, engine
 from observa.sources.json_source import JsonSource
 from observa.framework.manager import global_manager as manager

@@ -1,5 +1,5 @@
 from observa.database.database import SessionLocal
-from observa.database.models import SourceModel, DetectorModel
+from observa.database.models import SourceModel, DetectorModel, HistoryModel
 
 class SourceRepository:
     @staticmethod
@@ -60,3 +60,19 @@ class DetectorRepository:
         db.query(DetectorModel).filter(DetectorModel.name.in_(names)).delete(synchronize_session=False)
         db.commit()  
         db.close()
+        
+class HistoryRepository:
+    @staticmethod
+    def add_history(source_id: int, detector_id: int, detected: int, total: int):
+        db = SessionLocal()
+        entry = HistoryModel(source_id=source_id,detector_id=detector_id,detected=detected,total=total)
+        db.add(entry)
+        db.commit()
+        db.close()
+
+    @staticmethod
+    def get_by_source_and_detector(source_id: int, detector_id: int):
+        db = SessionLocal()
+        history = db.query(HistoryModel).filter(HistoryModel.source_id == source_id,HistoryModel.detector_id == detector_id).order_by(HistoryModel.timestamp.asc()).all()
+        db.close()
+        return history

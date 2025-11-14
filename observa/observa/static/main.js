@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const sourceSelect = document.getElementById("source-select");
   const detectorSelect = document.getElementById("detector-select");
   const resultOutput = document.getElementById("result-output");
+  const sourceHistorySelect = document.getElementById("history-filter-source");
+  const detectorHistorySelect = document.getElementById("history-filter-detector");
 
   // Campos do form de adicionar Source
   const addSourceBtn = document.getElementById("add-source-btn");
@@ -16,6 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Botão de run
   const runBtn = document.getElementById("run-btn");
+
+  // Botão de history
+  const historyRefreshBtn = document.getElementById("history-refresh-btn");
+
+  historyRefreshBtn.addEventListener("click", async () => {
+    loadHistoryFromAPI();
+  });
 
   const autoRunBtn = document.getElementById("auto-run-btn");
   const intervalInput = document.getElementById("interval-seconds");
@@ -68,11 +77,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const res = await fetch("/api/v1/sources/list");
     const data = await res.json();
     sourceSelect.innerHTML = "";
+    sourceHistorySelect.innerHTML = "";
     data.sources.forEach(src => {
       const opt = document.createElement("option");
       opt.value = src;
       opt.textContent = src;
       sourceSelect.appendChild(opt);
+
+      const opt2 = document.createElement("option");
+      opt2.value = src;
+      opt2.textContent = src;
+      sourceHistorySelect.appendChild(opt2);
     });
   }
 
@@ -80,11 +95,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const res = await fetch("/api/v1/detectors/list");
     const data = await res.json();
     detectorSelect.innerHTML = "";
+    detectorHistorySelect.innerHTML = "";
     data.detectors.forEach(det => {
       const opt = document.createElement("option");
       opt.value = det;
       opt.textContent = det;
       detectorSelect.appendChild(opt);
+
+      const opt2 = document.createElement("option");
+      opt2.value = det;
+      opt2.textContent = det;
+      detectorHistorySelect.appendChild(opt2);
     });
   }
 
@@ -277,4 +298,63 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = await res.json();
     alert("Detector details:\n" + JSON.stringify(data, null, 2));
   });
+
+  let stackedHistoryChart = null;
+
+  function createOrUpdateHistoryChart(execs) {
+    const labels = execs.map(e =>
+      new Date(e.timestamp).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
+    );
+
+    const detectedData = execs.map(e => e.detected);
+    const remainingData = execs.map(e => e.total - e.detected);
+
+    if (!stackedHistoryChart) {
+      stackedHistoryChart = new Chart(document.getElementById("stackedBarHistory"), {
+        type: "bar",
+        data: {
+          labels,
+          datasets: [
+            {
+              label: "Detected",
+              data: detectedData,
+              backgroundColor: "#F28B82",
+              stack: "stack1"
+            },
+            {
+              label: "Passed",
+              data: remainingData,
+              backgroundColor: "#A7E0A5",
+              stack: "stack1"
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: { legend: { position: "top" } },
+          scales: {
+            x: { stacked: true },
+            y: { stacked: true, beginAtZero: true }
+          }
+        }
+      });
+    } else {
+      stackedHistoryChart.data.labels = labels;
+      stackedHistoryChart.data.datasets[0].data = detectedData;
+      stackedHistoryChart.data.datasets[1].data = remainingData;
+      stackedHistoryChart.update();
+    }
+  }
+
+  async function loadHistoryFromAPI() {
+    const source = sourceHistorySelect.value;
+    const detector = detectorHistorySelect.value;
+
+    if (!source || !detector) return;
+
+    const res = await fetch(`/api/v1/history?source=${source}&detector=${detector}`);
+    const execs = await res.json();
+
+    createOrUpdateHistoryChart(execs);
+  }
 });

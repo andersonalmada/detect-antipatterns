@@ -12,7 +12,7 @@ class DeleteRequest(BaseModel):
 @router.delete("/clear")
 def clear_database():
     with engine.begin() as conn:
-        conn.execute(text("TRUNCATE TABLE sources, detectors RESTART IDENTITY CASCADE;"))
+        conn.execute(text("TRUNCATE TABLE sources, detectors, history RESTART IDENTITY CASCADE;"))
     return {"message": "✅ Database cleared successfully"}
 
 @router.delete("/sources")

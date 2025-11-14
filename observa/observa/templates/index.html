@@ -4,108 +4,171 @@
 <head>
   <meta charset="UTF-8">
   <title>Observa - Detect Antipatterns</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body class="bg-light">
+
   <div class="container py-5">
+
     <div class="d-flex justify-content-between align-items-center mb-4">
       <h1 class="mb-0">Observa - Antipattern Detection</h1>
-      <button id="clear-db-btn" class="btn btn-outline-danger btn-sm">
-        🧹 Clear Database
-      </button>
-    </div>
-    <!-- STEP 1 -->
-    <div class="card mb-4 shadow-sm">
-      <div class="card-body">
-        <h4 class="card-title mb-3">1️⃣ Choose or Add a Data Source</h4>
-
-        <!-- Existing sources -->
-        <div class="mb-3">
-          <label class="form-label">Select Existing Source</label>
-          <select id="source-select" class="form-select" multiple size="4"></select>
-        </div>
-
-        <hr class="my-4">
-
-        <!-- Add new source -->
-        <h5>Add New Source</h5>
-        <div class="mb-3">
-          <label class="form-label">Source Name</label>
-          <input type="text" id="new-source-name" class="form-control" placeholder="Enter new source name">
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Upload JSON File</label>
-          <input type="file" id="new-source-file" class="form-control" accept=".json">
-        </div>
-
-        <div class="text-center my-2">— or —</div>
-
-        <div class="mb-3">
-          <label class="form-label">Source API (for remote sources)</label>
-          <input type="text" id="new-source-api" class="form-control"
-            placeholder="e.g. http://localhost:8080/source/data">
-        </div>
-
-        <button id="add-source-btn" class="btn btn-success">➕ Add Source</button>
-      </div>
+      <button id="clear-db-btn" class="btn btn-outline-danger btn-sm">🧹 Clear Database</button>
     </div>
 
-    <!-- STEP 2 -->
-    <div class="card mb-4 shadow-sm">
-      <div class="card-body">
-        <h4 class="card-title mb-3">2️⃣ Select or Add a Detector</h4>
+    <!-- NAV TABS -->
+    <ul class="nav nav-tabs mb-4" id="mainTabs">
+      <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-setup">⚙️ Setup</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-detection">🔍 Detection</button>
+      </li>
+      <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-history">📊 History</button>
+      </li>
+    </ul>
 
-        <!-- Existing detectors -->
-        <div class="mb-3">
-          <label class="form-label">Select Existing Detector</label>
-          <select id="detector-select" class="form-select" multiple size="4"></select>
-        </div>
+    <div class="tab-content">
 
-        <hr class="my-4">
+      <!-- TAB 1 — SETUP -->
+      <div class="tab-pane fade show active" id="tab-setup">
 
-        <!-- Add new detector -->
-        <h5>Add New Detector</h5>
-        <div class="mb-3">
-          <label class="form-label">Detector Name</label>
-          <input type="text" id="new-detector-name" class="form-control" placeholder="Enter new detector name">
-        </div>
+        <!-- STEP 1 -->
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title mb-3">1️⃣ Choose or Add a Data Source</h4>
 
-        <div class="mb-3">
-          <label class="form-label">Detector API (for remote detectors)</label>
-          <input type="text" id="new-detector-api" class="form-control" placeholder="e.g. http://localhost:8080/detect">
-        </div>
+            <div class="mb-3">
+              <label class="form-label">Select Existing Source</label>
+              <select id="source-select" class="form-select" multiple size="4"></select>
+            </div>
 
-        <button id="add-detector-btn" class="btn btn-success">➕ Add Detector</button>
-      </div>
-    </div>
+            <hr class="my-4">
 
-    <!-- STEP 3 -->
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <h4 class="card-title mb-3">3️⃣ Run Detection</h4>
-        <button id="run-btn" class="btn btn-primary w-100">🚀 Run Detector</button>
-        <div class="text-center my-2">— or —</div>
-        <div class="mt-3 d-flex align-items-center gap-2" style="max-width: 400px;">
-          <div class="flex-grow-1">
-            <label for="interval-seconds" class="form-label mb-1">Run interval (seconds)</label>
-            <input type="number" id="interval-seconds" class="form-control" value="10" min="1">
-          </div>
-          <div class="pt-3">
-            <button id="auto-run-btn" class="btn btn-outline-primary">⏱️ Start Auto Run</button>
+            <h5>Add New Source</h5>
+
+            <div class="mb-3">
+              <label class="form-label">Source Name</label>
+              <input type="text" id="new-source-name" class="form-control">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Upload JSON File</label>
+              <input type="file" id="new-source-file" class="form-control" accept=".json">
+            </div>
+
+            <div class="text-center my-2">— or —</div>
+
+            <div class="mb-3">
+              <label class="form-label">Source API (for remote sources)</label>
+              <input type="text" id="new-source-api" class="form-control">
+            </div>
+
+            <button id="add-source-btn" class="btn btn-success">➕ Add Source</button>
           </div>
         </div>
-        <div class="mt-4">
-          <h5>Result:</h5>
-          <pre id="result-output" class="bg-light border p-3 rounded" style="min-height: 120px;"></pre>
+
+        <!-- STEP 2 -->
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title mb-3">2️⃣ Select or Add a Detector</h4>
+
+            <div class="mb-3">
+              <label class="form-label">Select Existing Detector</label>
+              <select id="detector-select" class="form-select" multiple size="4"></select>
+            </div>
+
+            <hr class="my-4">
+
+            <h5>Add New Detector</h5>
+
+            <div class="mb-3">
+              <label class="form-label">Detector Name</label>
+              <input type="text" id="new-detector-name" class="form-control">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Detector API (for remote detectors)</label>
+              <input type="text" id="new-detector-api" class="form-control">
+            </div>
+
+            <button id="add-detector-btn" class="btn btn-success">➕ Add Detector</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TAB 2 — DETECÇÃO -->
+      <div class="tab-pane fade" id="tab-detection">
+        <div class="card shadow-sm">
+          <div class="card-body">
+
+            <h4 class="card-title mb-3">3️⃣ Run Detection</h4>
+
+            <button id="run-btn" class="btn btn-primary w-100">🚀 Run Detector</button>
+
+            <div class="text-center my-2">— or —</div>
+
+            <div class="mt-3 d-flex align-items-center gap-2" style="max-width: 400px;">
+              <div class="flex-grow-1">
+                <label class="form-label mb-1">Run interval (seconds)</label>
+                <input type="number" id="interval-seconds" class="form-control" value="10" min="1">
+              </div>
+              <div class="pt-3">
+                <button id="auto-run-btn" class="btn btn-outline-primary">⏱️ Start Auto Run</button>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <h5>Result:</h5>
+              <pre id="result-output" class="bg-light border p-3 rounded" style="min-height: 120px;"></pre>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- TAB 3 — HISTÓRICO -->
+      <div class="tab-pane fade" id="tab-history">
+
+        <div class="card shadow-sm mb-4">
+          <div class="card-body">
+
+            <h4 class="card-title mb-3">📊 Detection History</h4>
+
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label class="form-label">Choose a  DataSource</label>
+                <select id="history-filter-source" class="form-select"></select>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Choose a Detector</label>
+                <select id="history-filter-detector" class="form-select"></select>
+              </div>
+            </div>
+
+            <button id="history-refresh-btn" class="btn btn-secondary w-100 mb-4">
+              🔍 Search
+            </button>
+
+            <canvas id="stackedBar" height="150"></canvas>
+
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </div>
 
   <script src="/static/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
