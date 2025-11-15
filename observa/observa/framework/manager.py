@@ -38,7 +38,7 @@ class Manager:
         history = HistoryRepository.add_history(source_id=source_id,detector_id=detector_id,detected=result["detected"],total=result["total"])
         return history
 
-    def get_history(self, source_id: int, detector_id: int,) -> Optional[SourceModel]:
+    def get_history(self, source_id: int, detector_id: int) -> Optional[List[HistoryModel]]:
         return HistoryRepository.get_by_source_and_detector(source_id=source_id,detector_id=detector_id)
 
 # Singleton global

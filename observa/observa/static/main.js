@@ -303,8 +303,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createOrUpdateHistoryChart(execs) {
     const labels = execs.map(e =>
-      new Date(e.timestamp).toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
+      new Date(e.timestamp).toLocaleString("pt-BR", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      })
     );
+
+    console.log(execs)
 
     const detectedData = execs.map(e => e.detected);
     const remainingData = execs.map(e => e.total - e.detected);
@@ -352,7 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!source || !detector) return;
 
-    const res = await fetch(`/api/v1/history?source=${source}&detector=${detector}`);
+    const res = await fetch(`/api/v1/runs/history?source=${source}&detector=${detector}`);
     const execs = await res.json();
 
     createOrUpdateHistoryChart(execs);

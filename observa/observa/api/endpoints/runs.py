@@ -42,3 +42,11 @@ def execute_run(req: RunRequest):
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     return result
+
+@router.get('/history')
+def execute_history(source: str, detector: str):
+    source = manager.get_source(source)
+    detector = manager.get_detector(detector)
+    return manager.get_history(source_id=source.id,detector_id=detector.id)
+    
+    

@@ -32,7 +32,7 @@ def generate_alerts(count: int):
 @app.route("/alerts", methods=["GET"])
 def get_alerts():
     try:
-        count = int(request.args.get("count", 100))  # número de objetos (default=10)
+        count = int(request.args.get("count", 150))  # número de objetos (default=10)
         if count <= 0:
             count = 1
         alerts = generate_alerts(count)
