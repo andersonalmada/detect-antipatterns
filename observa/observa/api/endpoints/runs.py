@@ -6,6 +6,7 @@ from observa.sources.data_source import DataSource
 from observa.sources.remote_source import RemoteSource
 from observa.detectors.remote_detector import RemoteDetector
 from typing import List
+from datetime import datetime, timedelta
 import importlib
 
 router = APIRouter()
@@ -44,9 +45,13 @@ def execute_run(req: RunRequest):
     return result
 
 @router.get('/history')
-def execute_history(source: str, detector: str):
+def execute_history(source: str, detector: str, start: str, end: str):
     source = manager.get_source(source)
     detector = manager.get_detector(detector)
-    return manager.get_history(source_id=source.id,detector_id=detector.id)
+    
+    start_dt = datetime.fromisoformat(start) + timedelta(hours=3)
+    end_dt = datetime.fromisoformat(end) + timedelta(hours=3)
+        
+    return manager.get_history(source_id=source.id,detector_id=detector.id, start=start_dt, end=end_dt)
     
     

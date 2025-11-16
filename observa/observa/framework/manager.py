@@ -1,8 +1,8 @@
-from typing import List, Optional
 from observa.database.models import SourceModel, DetectorModel, HistoryModel
 from observa.database.repositories import SourceRepository, DetectorRepository, HistoryRepository
 from observa.framework.base import Source
-from typing import Dict, Any
+from typing import List, Optional, Dict, Any
+from datetime import datetime
 
 class Manager:
     def __init__(self):
@@ -38,8 +38,8 @@ class Manager:
         history = HistoryRepository.add_history(source_id=source_id,detector_id=detector_id,detected=result["detected"],total=result["total"])
         return history
 
-    def get_history(self, source_id: int, detector_id: int) -> Optional[List[HistoryModel]]:
-        return HistoryRepository.get_by_source_and_detector(source_id=source_id,detector_id=detector_id)
+    def get_history(self, source_id: int, detector_id: int, start: datetime, end: datetime) -> Optional[List[HistoryModel]]:
+        return HistoryRepository.get_by_source_and_detector(source_id=source_id,detector_id=detector_id, start=start, end=end)
 
 # Singleton global
 global_manager = Manager()

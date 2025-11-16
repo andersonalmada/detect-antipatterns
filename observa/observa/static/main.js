@@ -16,6 +16,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const newDetectorName = document.getElementById("new-detector-name");
   const newDetectorApi = document.getElementById("new-detector-api");
 
+  const startDateInput = document.getElementById("history-start-date");
+  const endDateInput = document.getElementById("history-end-date");
+
+  const d = new Date();
+  d.setHours(d.getHours() - 3);
+  iso = d.toISOString().slice(0, 16);
+
+  startDateInput.value = iso;
+  endDateInput.value = iso;
+
   // Botão de run
   const runBtn = document.getElementById("run-btn");
 
@@ -359,9 +369,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const source = sourceHistorySelect.value;
     const detector = detectorHistorySelect.value;
 
+    const start = startDateInput.value;
+    const end = endDateInput.value;
+
     if (!source || !detector) return;
 
-    const res = await fetch(`/api/v1/runs/history?source=${source}&detector=${detector}`);
+    let url = `/api/v1/runs/history?source=${encodeURIComponent(source)}&detector=${encodeURIComponent(detector)}`;
+    if (start) url += `&start=${encodeURIComponent(start)}`;
+    if (end) url += `&end=${encodeURIComponent(end)}`;
+
+    const res = await fetch(url);
     const execs = await res.json();
 
     createOrUpdateHistoryChart(execs);

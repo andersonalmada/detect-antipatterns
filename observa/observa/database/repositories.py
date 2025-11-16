@@ -1,5 +1,6 @@
 from observa.database.database import SessionLocal
 from observa.database.models import SourceModel, DetectorModel, HistoryModel
+from datetime import datetime
 
 class SourceRepository:
     @staticmethod
@@ -71,8 +72,12 @@ class HistoryRepository:
         db.close()
 
     @staticmethod
-    def get_by_source_and_detector(source_id: int, detector_id: int):
+    def get_by_source_and_detector(source_id: int, detector_id: int, start: datetime, end: datetime):
         db = SessionLocal()
-        history = db.query(HistoryModel).filter(HistoryModel.source_id == source_id,HistoryModel.detector_id == detector_id).order_by(HistoryModel.timestamp.asc()).all()
+        history = db.query(HistoryModel).filter(
+            HistoryModel.source_id == source_id,
+            HistoryModel.detector_id == detector_id,
+            HistoryModel.timestamp >= start,
+            HistoryModel.timestamp <= end).order_by(HistoryModel.timestamp.asc()).all()
         db.close()
         return history
