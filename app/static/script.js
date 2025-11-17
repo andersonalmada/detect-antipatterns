@@ -139,12 +139,14 @@ btnAnalyze.addEventListener('click', () => {
     const startISO = new Date(start).toISOString();
     const endISO = new Date(end).toISOString();
 
-    const url = `/api/detect?start=${startISO}&end=${endISO}&fields=name&count_only=true&mode=${mode}&database=${source}`;
+    const url = `/api/detect/window?mode=${mode}&limit=${limit}`;
+
+    //const url = `/api/detect?start=${startISO}&end=${endISO}&fields=name&count_only=true&mode=${mode}&database=${source}`;
 
     fetch(url, { method: 'GET' })
         .then(res => res.json())
         .then(data => {
-            output.textContent = JSON.stringify(data.data, null, 2);
+            output.textContent = JSON.stringify(data, null, 2);
             showAlert('Detection completed!');
             
             if (data.total_alerts && data.grouped_alerts) {

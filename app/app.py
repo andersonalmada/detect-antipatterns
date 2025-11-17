@@ -56,6 +56,12 @@ def add_exceeded_flag(item, count, limit):
     item["exceeded"] = count >= limit
     return item
 
+def excesso_limite(items, limit=10):
+    for item in items:
+        item["exceeded"] = item["count"] >= limit
+    return items
+
+#Z-score
 def excesso_estatistico_grupo(items, k=2, limit=10):
     counts = [item["count"] for item in items]
     media = np.mean(counts)
@@ -63,6 +69,47 @@ def excesso_estatistico_grupo(items, k=2, limit=10):
     limite_auto = media + k * desvio
     for item in items:
         item["exceeded"] = bool(item["count"] >= limite_auto and item["count"] >= limit)
+    return items
+
+#EWMA
+def excesso_ewma(items, alpha=0.3, k=3, min_history=5):
+    if not items:
+        return items
+
+    counts = [item["count"] for item in items]
+
+    # Inicialização com o primeiro valor
+    ewma = counts[0]
+    ewma_var = 0  # variância EWMA
+
+    for i, item in enumerate(items):
+
+        count = item["count"]
+
+        if i == 0:
+            # Primeiro ponto: não detecta anomalia
+            item["exceeded"] = False
+            continue
+
+        # === Atualiza EWMA ===
+        ewma_prev = ewma
+        ewma = alpha * count + (1 - alpha) * ewma_prev
+
+        # === EWMA da variância ===
+        ewma_var = (1 - alpha) * (ewma_var + alpha * (count - ewma_prev) ** 2)
+
+        # === Limite dinâmico ===
+        threshold = ewma + k * (ewma_var ** 0.5)
+        
+        print(count)
+        print(threshold)
+
+        if i < min_history:
+            # ainda não tem histórico suficiente
+            item["exceeded"] = False
+        else:
+            item["exceeded"] = count > threshold
+
     return items
 
 def excesso_media(items, limit=10):
@@ -111,6 +158,29 @@ def excesso_isolation_forest_grupo(items, contamination=0.05, window_size=50, li
         for item in items[-len(hist):]:
             item["exceeded"] = bool(item["count"] >= limite_auto and item["count"] >= limit)
         return items
+
+def group_alerts_by_hour(alerts):
+    groups = defaultdict(list)
+
+    for alert in alerts:
+        # converte string ISO → datetime
+        ts = datetime.fromisoformat(alert["timestamp"].replace("Z", "+00:00"))
+
+        # cria a chave da hora (ex: "2025-11-17 15:00")
+        hour_key = ts.replace(minute=0, second=0, microsecond=0)
+
+        # adiciona o alerta no grupo correto
+        groups[hour_key].append(alert)
+
+    # retorna como lista organizada
+    result = []
+    for hour, items in sorted(groups.items()):
+        result.append({
+            "count": len(items),
+            "alerts": items
+        })
+
+    return result
 
 # Generic alert grouping function
 def group_alerts(
@@ -238,6 +308,11 @@ def fetch_formatted_alerts():
         formatted.append({new_name: extract_field(alert, orig) for orig, new_name in FIELD_MAP.items()})
     return formatted
 
+def fetch_formatted_alerts_window():
+    response = requests.get(EXTERNAL_API_URL)
+    response.raise_for_status()
+    return response.json()
+
 # Endpoints
 
 @app.route("/alerts", methods=["GET"])
@@ -270,6 +345,35 @@ def get_alerts_group_window():
     limit = int(request.args.get("limit", 10))
     grouped = group_alerts(alerts, fields_to_group=fields, window_minutes=window_minutes, return_count_only=count_only,limit=limit)
     return jsonify(grouped)
+
+@app.route("/api/detect/window", methods=["GET"])
+def post_alerts_group_window():
+    alerts = fetch_formatted_alerts_window()
+    grouped = group_alerts_by_hour(alerts)  
+    mode = request.args.get("mode", "limit") 
+    limit = int(request.args.get("limit", 10))
+    
+    if mode == "limit":
+        grouped = excesso_limite(grouped, limit=limit)
+    elif mode == "ewma":
+        grouped = excesso_ewma(grouped, alpha=0.2, k=1)       
+    elif mode == "media":
+        grouped = excesso_media(grouped, limit=limit)
+    elif mode == "zscore":
+        grouped = excesso_estatistico_grupo(grouped, limit=limit)
+    elif mode == "ml":
+        grouped = excesso_isolation_forest_grupo(grouped, limit=limit)
+        
+    count = sum(1 for x in grouped if x["exceeded"])    
+    
+    response = {
+        "total": len(alerts),
+        "analyzed": len(grouped),
+        "detected": count,
+        "data": grouped
+    }
+
+    return jsonify(response)
 
 @app.route("/api/detect", methods=["GET"])
 def get_alerts_group_range():

@@ -2,7 +2,7 @@ import os
 
 # URL da API externa
 #EXTERNAL_API_URL = 'http://host.docker.internal:9091/api/v1/alerts'
-EXTERNAL_API_URL = 'http://localhost:9091/api/v1/alerts'
+EXTERNAL_API_URL = 'http://localhost:9091/alerts'
 
 # Mapeamento dos campos originais para novos nomes
 FIELD_MAP = {
