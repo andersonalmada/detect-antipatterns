@@ -72,7 +72,7 @@ def excesso_estatistico_grupo(items, k=2, limit=10):
     return items
 
 #EWMA
-def excesso_ewma(items, alpha=0.3, k=3, min_history=5):
+def excesso_ewma(items, alpha=0.3, k=3, min_history=5, limit=10):
     if not items:
         return items
 
@@ -101,14 +101,11 @@ def excesso_ewma(items, alpha=0.3, k=3, min_history=5):
         # === Limite dinâmico ===
         threshold = ewma + k * (ewma_var ** 0.5)
         
-        print(count)
-        print(threshold)
-
         if i < min_history:
             # ainda não tem histórico suficiente
             item["exceeded"] = False
         else:
-            item["exceeded"] = count > threshold
+            item["exceeded"] = count > threshold and item["count"] >= limit
 
     return items
 
@@ -148,7 +145,7 @@ def excesso_isolation_forest_grupo(items, contamination=0.05, window_size=50, li
         # aplica exceeded em cada item
         for item in items[-len(hist):]:
             item["exceeded"] = bool(item["count"] >= limite_auto and item["count"] >= limit)
-
+        
         return items
 
     except Exception:
@@ -346,9 +343,9 @@ def get_alerts_group_window():
     grouped = group_alerts(alerts, fields_to_group=fields, window_minutes=window_minutes, return_count_only=count_only,limit=limit)
     return jsonify(grouped)
 
-@app.route("/api/detect/window", methods=["GET"])
+@app.route("/api/detect/window", methods=["POST"])
 def post_alerts_group_window():
-    alerts = fetch_formatted_alerts_window()
+    alerts = request.get_json()
     grouped = group_alerts_by_hour(alerts)  
     mode = request.args.get("mode", "limit") 
     limit = int(request.args.get("limit", 10))
@@ -356,13 +353,13 @@ def post_alerts_group_window():
     if mode == "limit":
         grouped = excesso_limite(grouped, limit=limit)
     elif mode == "ewma":
-        grouped = excesso_ewma(grouped, alpha=0.2, k=1)       
+        grouped = excesso_ewma(grouped, alpha=0.2, k=1, limit=limit)       
     elif mode == "media":
         grouped = excesso_media(grouped, limit=limit)
     elif mode == "zscore":
         grouped = excesso_estatistico_grupo(grouped, limit=limit)
     elif mode == "ml":
-        grouped = excesso_isolation_forest_grupo(grouped, limit=limit)
+        grouped = excesso_isolation_forest_grupo(grouped, window_size=len(grouped), limit=limit)
         
     count = sum(1 for x in grouped if x["exceeded"])    
     
@@ -370,7 +367,7 @@ def post_alerts_group_window():
         "total": len(alerts),
         "analyzed": len(grouped),
         "detected": count,
-        "data": grouped
+        #"data": grouped
     }
 
     return jsonify(response)

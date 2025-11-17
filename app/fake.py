@@ -26,7 +26,7 @@ def generate_alerts2(count: int):
     alerts = []
 
     # base: 3 horas atrás
-    base_time = datetime.utcnow() - timedelta(hours=18)
+    base_time = datetime.utcnow() - timedelta(hours=1)
 
     for _ in range(count):
 
@@ -37,7 +37,6 @@ def generate_alerts2(count: int):
             "value": value,
             "severity": calculate_severity(value),
             "timestamp": (base_time + timedelta(
-                hours=random.randint(0, 17),          # só dentro de 3h
                 minutes=random.randint(0, 59),
                 seconds=random.randint(0, 59)
             )).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -49,11 +48,11 @@ def generate_alerts2(count: int):
 
     return alerts
 
-def generate_alerts(count: int):
+def generate_alerts(count: int, days=7, hours=24):
     alerts = []
 
     # base em uma semana
-    base_time = datetime.utcnow() - timedelta(days=7)
+    base_time = datetime.utcnow() - timedelta(days=days)
 
     for _ in range(count):
 
@@ -65,8 +64,8 @@ def generate_alerts(count: int):
             "value": value,
             "severity": calculate_severity(value),
             "timestamp": (base_time + timedelta(
-                days=random.randint(0, 6),
-                hours=random.randint(0, 23),
+                days=random.randint(0, days-1),
+                hours=random.randint(0, hours-1),
                 minutes=random.randint(0, 59),
                 seconds=random.randint(0, 59)
             )).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -82,7 +81,7 @@ def generate_alerts(count: int):
 @app.route("/alerts", methods=["GET"])
 def get_alerts():
     try:
-        count = int(request.args.get("count", 120))
+        count = int(request.args.get("count", 20))
         if count <= 0:
             count = 1
 

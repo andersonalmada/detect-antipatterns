@@ -9,15 +9,17 @@ router = APIRouter()
 
 class SourceRegisterRequest(BaseModel):
     name: str
-    api_url: str
+    api_url: Any
     json_data: Any
 
 @router.post('/register')
 def register_source(req: SourceRegisterRequest):
-    print(req)
+    print("almad")
     if req.api_url:
         source = RemoteSource(name=req.name, api_url=req.api_url)    
     else:
+        print("almada")
+        print(req.json_data)
         source = DataSource(name=req.name, json_data=req.json_data)    
     if source:
         manager.register_source(source)
