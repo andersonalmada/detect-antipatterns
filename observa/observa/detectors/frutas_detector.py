@@ -12,7 +12,7 @@ class FrutasExcessivas(Detector):
                 continue
         
         return {
-            'antipattern': self.name,
-            'instances': len(excessive),
-            'details': excessive
+            'total': len(data),
+            'detected': len(excessive),
+            'analyzed': len(data)
         }

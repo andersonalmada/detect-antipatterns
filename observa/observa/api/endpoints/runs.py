@@ -25,7 +25,7 @@ def execute_run(req: RunRequest):
                 if source.api_url:
                     sourceObj = RemoteSource(name=source.name, api_url=source.api_url)    
                 else:
-                    sourceObj = DataSource(name=source.name, json_data=source.json_data)
+                    sourceObj = DataSource(name=source.name, json_data=source.json_data)                    
                 
                 detector = manager.get_detector(det)                
                 if detector.api_url:
