@@ -4,7 +4,7 @@ from typing import Any, Dict
 class ExcessiveAlerts(Detector):
     def detect(self, data: Any) -> Dict:
         # Expecting data to be a list of alerts with 'alert_name' and 'count'
-        threshold = 100
+        threshold = 10
         excessive = []
         if isinstance(data, list):
             for item in data:
@@ -13,8 +13,9 @@ class ExcessiveAlerts(Detector):
                         excessive.append(item)
                 except Exception:
                     continue
+    
         return {
-            'antipattern': 'Excessive Alerts',
-            'instances': len(excessive),
-            'details': excessive
+            'total': len(data),
+            'detected': len(excessive),
+            'analyzed': len(data)
         }

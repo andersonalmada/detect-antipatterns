@@ -14,7 +14,7 @@ class ExcessiveAlertsDetector(Detector):
                 except Exception:
                     continue
         return {
-            'antipattern': 'Excessive Alerts',
-            'instances': len(excessive),
-            'details': excessive
+            'total': len(data),
+            'detected': len(excessive),
+            'analyzed': len(data)
         }

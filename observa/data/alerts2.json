@@ -1,11 +1,11 @@
 [
   {
     "alert_name": "HighCPUUsage",
-    "count": 132
+    "count": 13
   },
   {
     "alert_name": "MemoryLeakWarning",
-    "count": 442
+    "count": 44
   },
   {
     "alert_name": "DatabaseConnectionError",
