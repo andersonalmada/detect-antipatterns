@@ -1,4 +1,52 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // ----------------------
+  // LOGIN HANDLING
+  // ----------------------
+  const loginScreen = document.getElementById("login-screen");
+  const appContent = document.getElementById("app-content");
+  const loginBtn = document.getElementById("login-btn");
+  const loginUser = document.getElementById("login-username");
+  const loginPass = document.getElementById("login-password");
+
+  function showApp() {
+    loginScreen.style.display = "none";
+    appContent.style.display = "block";
+  }
+
+  if (localStorage.getItem("auth_token")) {
+    showApp();
+  }
+
+  loginBtn.addEventListener("click", async () => {
+    const res = await fetch("/api/v1/admin/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        username: loginUser.value,
+        password: loginPass.value
+      })
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      localStorage.setItem("auth_token", data.token);
+      showApp();
+    } else {
+      alert("Invalid username or password.");
+    }
+  });
+
+  const logoutBtn = document.getElementById("logout-btn");
+
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("auth_token");
+    appContent.style.display = "none";
+    loginScreen.style.display = "flex"; // volta a tela
+    loginUser.value = "";
+    loginPass.value = "";
+  });
+
   const sourceSelect = document.getElementById("source-select");
   const detectorSelect = document.getElementById("detector-select");
   const resultOutput = document.getElementById("result-output");
@@ -383,4 +431,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     createOrUpdateHistoryChart(execs);
   }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && loginScreen.style.display !== "none") {
+      loginBtn.click();
+    }
+  });
 });
+

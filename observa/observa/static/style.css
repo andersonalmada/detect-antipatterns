@@ -6,7 +6,7 @@ body {
 
 /* Container principal */
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin-top: 50px;
     background: #fff;
     padding: 30px;
@@ -40,4 +40,73 @@ label.form-label {
 select.form-select,
 input.form-control {
     margin-bottom: 15px;
+}
+
+/* Logo responsiva no login */
+.login-logo-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.login-logo {
+    max-width: 180px;      /* limite máximo */
+    width: 60%;            /* ocupa 60% da largura da card */
+    height: auto;          /* mantém proporção */
+    object-fit: contain;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Efeito visual elegante ao passar o mouse */
+.login-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Menor logo em telas pequenas */
+@media (max-width: 480px) {
+    .login-logo {
+        width: 70%;
+        max-width: 140px;
+    }
+}
+
+/* FULLSCREEN LOGIN OVERLAY */
+.login-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Login card size */
+.login-box {
+    width: 100%;
+    max-width: 360px;
+}
+
+/* Logo adjustments */
+.login-logo {
+    width: 55%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Fade animation when entering app */
+#app-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#logout-btn:hover {
+    background-color: #dc3545;
+    color: white !important;
+    transition: 0.2s;
 }

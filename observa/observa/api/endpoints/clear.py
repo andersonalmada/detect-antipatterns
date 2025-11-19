@@ -24,3 +24,9 @@ def delete_sources(req: DeleteRequest):
 def delete_sources(req: DeleteRequest):
     DetectorRepository.delete_batch(req.names)
     return {"message": f"Deleted detectors: {', '.join(req.names)}"}
+
+@router.post("/login")
+def login(data: dict):
+    if data.get("username") == "admin" and data.get("password") == "admin":
+        return {"success": True, "token": "SECRET123TOKEN"}
+    return {"success": False}
