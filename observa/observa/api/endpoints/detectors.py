@@ -6,12 +6,13 @@ router = APIRouter()
 _manager = manager
 
 class DetectorRegisterRequest(BaseModel):
+    antipattern: str
     name: str
     api_url: str = None
 
 @router.post('/register')
 def register_detector(req: DetectorRegisterRequest):
-    _manager.register_detector(req.name, api_url=req.api_url)
+    _manager.register_detector(name_ap=req.antipattern, name=req.name, api_url=req.api_url)
     return {'message': f"Detector '{req.name}' registered"}
 
 @router.get('/list')

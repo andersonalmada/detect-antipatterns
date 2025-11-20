@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Campos do form de adicionar Detector
   const addDetectorBtn = document.getElementById("add-detector-btn");
+  const newAPName = document.getElementById("antipattern-name");
   const newDetectorName = document.getElementById("new-detector-name");
   const newDetectorApi = document.getElementById("new-detector-api");
 
@@ -228,15 +229,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // Adicionar novo detector
   // ---------------------------
   addDetectorBtn.addEventListener("click", async () => {
-    if (!newDetectorName.value || !newDetectorApi.value) {
+    if (!newAPName.value || !newDetectorName.value || !newDetectorApi.value) {
       alert("Please provide both a detector name and an API URL.");
       return;
     }
 
     const payload = {
+      antipattern: newAPName.value,
       name: newDetectorName.value,
       api_url: newDetectorApi.value
     };
+
+    console.log(payload)
 
     const res = await fetch("/api/v1/detectors/register", {
       method: "POST",
@@ -246,6 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (res.ok) {
       alert("Detector added successfully!");
+      newAPName.value = "";
       newDetectorName.value = "";
       newDetectorApi.value = "";
       loadDetectors();

@@ -34,9 +34,9 @@ class SourceRepository:
 
 class DetectorRepository:
     @staticmethod
-    def add_detector(name: str, class_path: str = None, api_url: str = None):
+    def add_detector(name_ap: str, name: str, class_path: str = None, api_url: str = None):
         db = SessionLocal()
-        det = DetectorModel(name=name, class_path=class_path, api_url=api_url)
+        det = DetectorModel(name_ap=name_ap, name=name, class_path=class_path, api_url=api_url)
         db.add(det)
         db.commit()
         db.close()

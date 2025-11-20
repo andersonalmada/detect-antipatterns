@@ -13,7 +13,8 @@ class Source(ABC):
         raise NotImplementedError
 
 class Detector(ABC):
-    def __init__(self, name: str = "Detector", api_url: str = None, class_path: str = None):
+    def __init__(self, nameAP: str = "AP", name: str = "Detector", api_url: str = None, class_path: str = None):
+        self.nameAP = nameAP
         self.name = name
         self.api_url = api_url
         self.class_path = class_path

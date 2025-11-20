@@ -14,7 +14,7 @@ class ExcessiveAlertsDetector(Detector):
                 except Exception:
                     continue
         return {
-            'total': len(data),
+            'data': data,
             'detected': len(excessive),
             'analyzed': len(data)
         }

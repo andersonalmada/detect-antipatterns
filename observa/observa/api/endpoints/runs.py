@@ -34,7 +34,7 @@ def execute_run(req: RunRequest):
                     module_name, class_name = detector.class_path.rsplit('.', 1)
                     module = importlib.import_module(module_name)
                     cls = getattr(module, class_name)
-                    detectorObj = cls(name=detector.name)
+                    detectorObj = cls(nameAP=detector.name_ap,name=detector.name)
 
                 resultTemp = orchestrator.run(source=sourceObj, detector=detectorObj)                    
                 manager.register_history(source_id=source.id, detector_id=detector.id,result=resultTemp)

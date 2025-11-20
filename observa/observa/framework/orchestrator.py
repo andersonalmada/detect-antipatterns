@@ -20,9 +20,11 @@ class Orchestrator:
         SOURCES_LOCAL_PATH = os.getenv("SOURCES_LOCAL_PATH", "")
         SOURCES_LOCAL_OBJECT_NAME = os.getenv("SOURCES_LOCAL_OBJECT_NAME", "")
         SOURCES_LOCAL_OBJECT_PACKAGE = os.getenv("SOURCES_LOCAL_OBJECT_PACKAGE", "")
+        DETECTOR_LOCAL_AP = os.getenv("DETECTOR_LOCAL_AP", "")
         DETECTOR_LOCAL_NAME = os.getenv("DETECTOR_LOCAL_NAME", "")
         DETECTOR_LOCAL_PATH = os.getenv("DETECTOR_LOCAL_PATH", "")
 
+        #Base.metadata.drop_all(bind=engine)
         Base.metadata.create_all(bind=engine)
         print("Database loaded ...")
             
@@ -51,12 +53,13 @@ class Orchestrator:
 
         _names_detectors = [item.strip() for item in DETECTOR_LOCAL_NAME.split(',')]
         _path_detectors = [item.strip() for item in DETECTOR_LOCAL_PATH.split(',')]
+        _aps = [item.strip() for item in DETECTOR_LOCAL_AP.split(',')]       
 
         print("\n####### Available detectors #######\n")
 
         for i, value in enumerate(_names_detectors):
             if not manager.get_detector(value):
-                manager.register_detector(value, _path_detectors[i])
+                manager.register_detector(name_ap=_aps[i], name=value, class_path=_path_detectors[i])
 
         for item in set(manager.list_detectors()):
             print(item)
@@ -69,6 +72,7 @@ class Orchestrator:
         result = detector.detect(data)        
         end = time.time()       
         result.setdefault('source', source.name)        
+        result.setdefault('ap', detector.nameAP)
         result.setdefault('detector', detector.name)
         result.setdefault('execution_time_ms', round((end - start) * 1000, 3))
         return result

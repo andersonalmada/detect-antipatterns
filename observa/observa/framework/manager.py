@@ -23,8 +23,8 @@ class Manager:
         return [s.name for s in SourceRepository.get_all()]
 
     # Detectors
-    def register_detector(self, name: str, class_path: str = None, api_url: str = None) -> DetectorModel:
-        detector = DetectorRepository.add_detector(name, class_path, api_url)
+    def register_detector(self, name_ap: str, name: str, class_path: str = None, api_url: str = None) -> DetectorModel:
+        detector = DetectorRepository.add_detector(name_ap=name_ap, name=name, class_path=class_path, api_url=api_url)
         return detector
 
     def get_detector(self, name: str) -> Optional[DetectorModel]:
@@ -35,7 +35,7 @@ class Manager:
     
     # History
     def register_history(self, source_id: int, detector_id: int, result: Dict[str, Any]) -> HistoryModel:
-        history = HistoryRepository.add_history(source_id=source_id,detector_id=detector_id,detected=result["detected"],total=result["total"])
+        history = HistoryRepository.add_history(source_id=source_id,detector_id=detector_id,detected=result["detected"],total=result["analyzed"])
         return history
 
     def get_history(self, source_id: int, detector_id: int, start: datetime, end: datetime) -> Optional[List[HistoryModel]]:

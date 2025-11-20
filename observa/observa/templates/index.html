@@ -38,7 +38,6 @@
         <button id="logout-btn" class="btn btn-outline-secondary btn-sm">Logout</button>
       </div>
 
-
       <!-- NAV TABS -->
       <ul class="nav nav-tabs mb-4" id="mainTabs">
         <li class="nav-item">
@@ -61,6 +60,52 @@
         <div class="tab-pane fade show active" id="tab-setup">
 
           <!-- STEP 1 -->
+          <button class="btn btn-link text-decoration-none" data-bs-toggle="collapse" data-bs-target="#source-help">
+            How to configure a data source❓
+          </button>
+
+          <div id="source-help" class="collapse text-muted small mt-2">
+            <p>
+              The user may select one of the existing data sources or register a new one.
+              Each data source is composed of the following fields:
+            </p>
+            <ul>
+              <li><strong>Name:</strong> Used to identify the data source that will be selected when running
+                anti-pattern detection.</li>
+              <li><strong>Data Input:</strong> Can be either a JSON file or an API endpoint. The user must choose one of
+                these options.</li>
+            </ul>
+            <p class="mt-3"><strong>Expected data format:</strong></p>
+            <p>
+              The framework accepts JSON data structures. The exact schema may vary depending on the detector being
+              used.
+              If the source is retrieved from a remote API, the framework will issue a <strong>GET</strong> request and
+              expects
+              the response body to contain valid JSON.
+              The following example demonstrates a commonly used structure where the input is a <strong>JSON
+                array</strong>
+              containing multiple records:
+            </p>
+
+            <pre class="bg-light border p-2 rounded" style="font-size: 0.85rem; max-height: 300px; overflow-y: auto;"><code>[
+  {
+    "alert_name": "HighCPUUsage",
+    "count": 10
+  },
+  {
+    "alert_name": "MemoryLeakWarning",
+    "count": 5
+  },
+  {
+    "alert_name": "DatabaseConnectionError",
+    "count": 12
+  },
+  ...
+]</code></pre>
+            <p>💡 You can register multiple sources and select them using <strong>Ctrl</strong> (or <strong>Cmd</strong>
+              on macOS).</p>
+          </div>
+
           <div class="card mb-4 shadow-sm">
             <div class="card-body">
               <h4 class="card-title mb-3">1️⃣ Choose or Add a Data Source</h4>
@@ -75,18 +120,15 @@
               <h5>Add New Source</h5>
 
               <div class="mb-3">
-                <label class="form-label">Source Name</label>
+                <label class="form-label">Name:</label>
                 <input type="text" id="new-source-name" class="form-control">
               </div>
 
               <div class="mb-3">
+                <label class="form-label">Data Input:</label><br>
                 <label class="form-label">Upload JSON File</label>
                 <input type="file" id="new-source-file" class="form-control" accept=".json">
-              </div>
-
-              <div class="text-center my-2">— or —</div>
-
-              <div class="mb-3">
+                <div class="text-center my-2">— or —</div>
                 <label class="form-label">Source API (for remote sources)</label>
                 <input type="text" id="new-source-api" class="form-control">
               </div>
@@ -96,6 +138,72 @@
           </div>
 
           <!-- STEP 2 -->
+          <!-- STEP 1 -->
+          <button class="btn btn-link text-decoration-none" data-bs-toggle="collapse" data-bs-target="#detector-help">
+            How to configure a detector❓
+          </button>
+
+          <div id="detector-help" class="collapse text-muted small mt-2">
+            <p>
+              The user may select one of the existing detectors or register a new one.
+              Each detector is composed of the following fields:
+            </p>
+            <ul>
+              <li><strong>Anti-pattern:</strong> The name of the anti-pattern that this detector is designed to
+                identify.</li>
+              <li><strong>Name:</strong> A label used to identify this detector when running anti-pattern detection.
+              </li>
+              <li><strong>Detector API:</strong> The endpoint of the service that performs the detection.</li>
+            </ul>
+            <p class="mt-3"><strong>Expected behavior of the Detector API:</strong></p>
+            <p>
+              The detector must expose an HTTP endpoint that accepts a <strong>POST request</strong> containing the data
+              source payload in JSON format.
+              After processing the content, the detector must return a JSON response with the following structure:
+            </p>
+
+            <ul>
+              <li><strong>analyzed:</strong> Number of data items processed by the detector.</li>
+              <li><strong>detected:</strong> Number of data entries classified as an anti-pattern.</li>
+              <li><strong>data:</strong> The processed content or result set returned by the detector.</li>
+            </ul>
+
+            <p>Below is an example of a valid detector implementation in Python:</p>
+
+            <pre class="bg-light border p-2 rounded" style="font-size: 0.85rem; overflow-x: auto;"><code>from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.post("/detector")
+def detect():
+    input_data = request.get_json()
+
+    # Example processing (custom logic depends on the anti-pattern)
+    for item in input_data:
+      if int(item.get('count', 0)) > 10:
+        item["exceeded"] = True
+      else:
+        item["exceeded"] = False
+        
+    count = sum(1 for x in input_data if x["exceeded"])       
+
+    response = {
+        "analyzed": len(input_data),
+        "detected": count,
+        "data": input_data
+    }
+    
+    return jsonify(response)
+      
+if __name__ == "__main__":
+    # Start detector API server
+    app.run(host="0.0.0.0", port=5001)
+</code></pre>
+            <p>💡 You can register multiple detectors and select them using <strong>Ctrl</strong> (or
+              <strong>Cmd</strong>
+              on macOS).
+            </p>
+          </div>
           <div class="card mb-4 shadow-sm">
             <div class="card-body">
               <h4 class="card-title mb-3">2️⃣ Select or Add a Detector</h4>
@@ -108,6 +216,11 @@
               <hr class="my-4">
 
               <h5>Add New Detector</h5>
+
+              <div class="mb-3">
+                <label class="form-label">Anti-pattern Name</label>
+                <input type="text" id="antipattern-name" class="form-control">
+              </div>
 
               <div class="mb-3">
                 <label class="form-label">Detector Name</label>
