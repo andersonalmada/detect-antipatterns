@@ -8,6 +8,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginUser = document.getElementById("login-username");
   const loginPass = document.getElementById("login-password");
 
+  let detectors = []; // isso deve ser preenchido da mesma forma que o select atual
+
+  function filterDetectorsByAntipattern() {
+    const ap = document.getElementById("antipattern-select").value;
+    const detectorSelect = document.getElementById("detector-select");
+
+    detectorSelect.innerHTML = "";
+
+    const filtered = detectors.filter(d => d.name_ap === ap);
+
+    filtered.forEach(det => {
+      const opt = document.createElement("option");
+      opt.value = det.name;
+
+      if (det.api_url && det.api_url.trim() !== "") {
+        opt.textContent = `${det.name} (API: ${det.api_url})`;
+      } else {
+        opt.textContent = det.name;
+      }
+
+      detectorSelect.appendChild(opt);
+    });
+
+    if (filtered.length === 0) {
+      detectorSelect.innerHTML = `<option disabled>No detector available for selected anti-pattern</option>`;
+    }
+  }
+
+  document.getElementById("antipattern-select")
+    .addEventListener("change", filterDetectorsByAntipattern);
+
   function showApp() {
     loginScreen.style.display = "none";
     appContent.style.display = "block";
@@ -117,6 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const data = await res.json();
       resultOutput.textContent = JSON.stringify(data, null, 2);
+      renderDetectionResult(data);
     }
 
     // Executa imediatamente uma vez
@@ -153,18 +185,25 @@ document.addEventListener("DOMContentLoaded", () => {
   async function loadDetectors() {
     const res = await fetch("/api/v1/detectors/list");
     const data = await res.json();
-    detectorSelect.innerHTML = "";
     detectorHistorySelect.innerHTML = "";
     data.detectors.forEach(det => {
-      const opt = document.createElement("option");
-      opt.value = det;
-      opt.textContent = det;
-      detectorSelect.appendChild(opt);
-
       const opt2 = document.createElement("option");
-      opt2.value = det;
-      opt2.textContent = det;
+      opt2.value = det.name;
+      opt2.textContent = det.name_ap + " - " + det.name;
       detectorHistorySelect.appendChild(opt2);
+    });
+
+    detectors = data.detectors
+
+    const select = document.getElementById("antipattern-select");
+    const uniqueAPs = [...new Set(detectors.map(d => d.name_ap))];
+
+    select.innerHTML = `<option value="">-- Select anti-pattern --</option>`;
+    uniqueAPs.forEach(ap => {
+      const opt = document.createElement("option");
+      opt.value = ap;
+      opt.textContent = ap;
+      select.appendChild(opt);
     });
   }
 
@@ -273,7 +312,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const data = await res.json();
-    resultOutput.textContent = JSON.stringify(data, null, 2);
+    //resultOutput.textContent = JSON.stringify(data, null, 2);
+    renderDetectionResult(data);
   });
 
   const clearDbBtn = document.getElementById("clear-db-btn");
@@ -376,8 +416,6 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     );
 
-    console.log(execs)
-
     const detectedData = execs.map(e => e.detected);
     const remainingData = execs.map(e => e.total - e.detected);
 
@@ -442,5 +480,102 @@ document.addEventListener("DOMContentLoaded", () => {
       loginBtn.click();
     }
   });
+
+  function renderDetectionResult(data) {
+
+    const container = document.getElementById('visual-output');
+    container.innerHTML = ""; // limpa conteúdo anterior
+
+    data.forEach((item, index) => {
+
+      const card = document.createElement("div");
+      card.className = "card mb-3 shadow-sm";
+
+      card.innerHTML = `
+            <div class="card-body">
+                <h5 class="card-title">${item.ap}</h5>
+                <p><strong>Source:</strong> ${item.source}</p>
+                <p><strong>Detector:</strong> ${item.detector}</p>
+                <p><strong>Analyzed:</strong> ${item.analyzed} | <strong>Detected:</strong> ${item.detected}</p>
+                <p><strong>Execution Time:</strong> ${item.execution_time_ms} ms</p>
+
+<button class="btn btn-outline-primary btn-sm" 
+        data-bs-toggle="collapse"
+        data-bs-target="#details-${index}">
+    Show details
+</button>
+
+                <div id="details-${index}" class="collapse mt-3">
+    <table class="table table-bordered table-sm">
+        <thead>
+            <tr>
+                ${Object.keys(item.data[0]).map(key => `
+                    <th>${key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}</th>
+                `).join('')}
+            </tr>
+        </thead>
+        <tbody>
+            ${item.data.map(entry => `
+                <tr>
+                    ${Object.keys(entry).map(key => `
+                        <td>
+${(() => {
+          const value = entry[key];
+
+          // boolean
+          if (typeof value === "boolean") {
+            return value ? "✅ Yes" : "❌ No";
+          }
+
+          // array
+          if (Array.isArray(value)) {
+
+            // array of objects → create nested table
+            if (value.length > 0 && typeof value[0] === "object") {
+              return `
+                <table class="table table-bordered table-sm mt-2">
+                    <thead>
+                        <tr>
+                            ${Object.keys(value[0]).map(subKey => `
+                                <th>${subKey.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}</th>
+                            `).join('')}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${value.map(inner => `
+                            <tr>
+                                ${Object.keys(inner).map(subKey => `<td>${inner[subKey]}</td>`).join('')}
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+            }
+
+            // array simples → join
+            return value.join(", ");
+          }
+
+          // objeto simples → mostrar formatado
+          if (typeof value === "object" && value !== null) {
+            return `<pre class='small code-block'>${JSON.stringify(value, null, 2)}</pre>`;
+          }
+
+          // default
+          return value ?? "";
+        })()}
+</td>
+                    `).join('')}
+                </tr>
+            `).join('')}
+        </tbody>
+    </table>
+</div>
+            </div>
+        `;
+
+      container.appendChild(card);
+    });
+  }
 });
 

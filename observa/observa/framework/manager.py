@@ -30,8 +30,8 @@ class Manager:
     def get_detector(self, name: str) -> Optional[DetectorModel]:
         return DetectorRepository.get_by_name(name)
 
-    def list_detectors(self) -> List[str]:
-        return [d.name for d in DetectorRepository.get_all()]
+    def list_detectors(self) -> List[DetectorModel]:
+        return DetectorRepository.get_all()
     
     # History
     def register_history(self, source_id: int, detector_id: int, result: Dict[str, Any]) -> HistoryModel:

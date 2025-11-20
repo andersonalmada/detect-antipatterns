@@ -364,10 +364,9 @@ def post_alerts_group_window():
     count = sum(1 for x in grouped if x["exceeded"])    
     
     response = {
-        "total": len(alerts),
         "analyzed": len(grouped),
         "detected": count,
-        #"data": grouped
+        "data": grouped
     }
 
     return jsonify(response)
