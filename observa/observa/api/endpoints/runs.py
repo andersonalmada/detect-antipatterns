@@ -29,7 +29,7 @@ def execute_run(req: RunRequest):
                 
                 detector = manager.get_detector(det)                
                 if detector.api_url:
-                    detectorObj = RemoteDetector(name=detector.name, api_url=detector.api_url)
+                    detectorObj = RemoteDetector(nameAP=detector.name_ap, name=detector.name, api_url=detector.api_url)
                 else:
                     module_name, class_name = detector.class_path.rsplit('.', 1)
                     module = importlib.import_module(module_name)
@@ -37,7 +37,7 @@ def execute_run(req: RunRequest):
                     detectorObj = cls(nameAP=detector.name_ap,name=detector.name)
 
                 resultTemp = orchestrator.run(source=sourceObj, detector=detectorObj)                    
-                manager.register_history(source_id=source.id, detector_id=detector.id,result=resultTemp)
+                manager.register_history(source_id=source.id, detector_id=detector.id, result=resultTemp)
                     
                 result.append(resultTemp)
     except ValueError as e:
@@ -51,7 +51,15 @@ def execute_history(source: str, detector: str, start: str, end: str):
     
     start_dt = datetime.fromisoformat(start) + timedelta(hours=3)
     end_dt = datetime.fromisoformat(end) + timedelta(hours=3)
+    
+    history = manager.get_history(source_id=source.id,detector_id=detector.id, start=start_dt, end=end_dt)
+    
+    response = {
+        "source": source,
+        "detector": detector,
+        "history": history
+    }
         
-    return manager.get_history(source_id=source.id,detector_id=detector.id, start=start_dt, end=end_dt)
+    return response
     
     

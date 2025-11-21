@@ -62,7 +62,7 @@ class Orchestrator:
                 manager.register_detector(name_ap=_aps[i], name=value, class_path=_path_detectors[i])
 
         for item in set(manager.list_detectors()):
-            print(item)
+            print(item.name_ap + " - " + item.name)
                 
         print("\nReady !!!\n")
         
@@ -71,8 +71,8 @@ class Orchestrator:
         start = time.time()        
         result = detector.detect(data)        
         end = time.time()       
-        result.setdefault('source', source.name)        
         result.setdefault('ap', detector.nameAP)
+        result.setdefault('source', source.name)        
         result.setdefault('detector', detector.name)
         result.setdefault('execution_time_ms', round((end - start) * 1000, 3))
         return result

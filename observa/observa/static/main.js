@@ -279,8 +279,6 @@ document.addEventListener("DOMContentLoaded", () => {
       api_url: newDetectorApi.value
     };
 
-    console.log(payload)
-
     const res = await fetch("/api/v1/detectors/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -405,7 +403,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let stackedHistoryChart = null;
 
   function createOrUpdateHistoryChart(execs) {
-    const labels = execs.map(e =>
+    source = execs.source;
+    detector = execs.detector;
+    let history = execs.history;
+
+    const labels = history.map(e =>
       new Date(e.timestamp).toLocaleString("pt-BR", {
         day: "2-digit",
         month: "2-digit",
@@ -416,8 +418,8 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     );
 
-    const detectedData = execs.map(e => e.detected);
-    const remainingData = execs.map(e => e.total - e.detected);
+    const detectedData = history.map(e => e.detected);
+    const remainingData = history.map(e => e.total - e.detected);
 
     if (!stackedHistoryChart) {
       stackedHistoryChart = new Chart(document.getElementById("stackedBarHistory"), {
@@ -441,7 +443,11 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         options: {
           responsive: true,
-          plugins: { legend: { position: "top" } },
+          onClick: (event, elements) => {
+            if (!elements.length) return;
+            const index = elements[0].index;
+            showHistoryDetails(source, detector, history[index]);
+          },
           scales: {
             x: { stacked: true },
             y: { stacked: true, beginAtZero: true }
@@ -454,6 +460,99 @@ document.addEventListener("DOMContentLoaded", () => {
       stackedHistoryChart.data.datasets[1].data = remainingData;
       stackedHistoryChart.update();
     }
+  }
+
+  function showHistoryDetails(source, detector, run) {
+    const container2 = document.getElementById('visual-output2');
+    container2.innerHTML = ""; // limpa conteúdo anterior
+
+    const card = document.createElement("div");
+    card.className = "card mb-3 shadow-sm";
+
+    card.innerHTML = `
+            <div class="card-body">
+                <h5 class="card-title">${detector.name_ap}</h5>
+                <p><strong>Source:</strong> ${source.name}</p>
+                <p><strong>Detector:</strong> ${detector.name}</p>
+                <p><strong>Analyzed:</strong> ${run.total} | <strong>Detected:</strong> ${run.detected}</p>
+                <p><strong>Execution Time:</strong> ${run.timestamp} ms</p>
+
+<button class="btn btn-outline-primary btn-sm" 
+        data-bs-toggle="collapse"
+        data-bs-target="#details-${run.id}">
+    Show details
+</button>
+
+                <div id="details-${run.id}" class="collapse mt-3">
+    <table class="table table-bordered table-sm">
+        <thead>
+            <tr>
+                ${Object.keys(run.result[0]).map(key => `
+                    <th>${key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}</th>
+                `).join('')}
+            </tr>
+        </thead>
+        <tbody>
+            ${run.result.map(entry => `
+                <tr>
+                    ${Object.keys(entry).map(key => `
+                        <td>
+${(() => {
+        const value = entry[key];
+
+        // boolean
+        if (typeof value === "boolean") {
+          return value ? "✅ Yes" : "❌ No";
+        }
+
+        // array
+        if (Array.isArray(value)) {
+
+          // array of objects → create nested table
+          if (value.length > 0 && typeof value[0] === "object") {
+            return `
+                <table class="table table-bordered table-sm mt-2">
+                    <thead>
+                        <tr>
+                            ${Object.keys(value[0]).map(subKey => `
+                                <th>${subKey.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())}</th>
+                            `).join('')}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${value.map(inner => `
+                            <tr>
+                                ${Object.keys(inner).map(subKey => `<td>${inner[subKey]}</td>`).join('')}
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+          }
+
+          // array simples → join
+          return value.join(", ");
+        }
+
+        // objeto simples → mostrar formatado
+        if (typeof value === "object" && value !== null) {
+          return `<pre class='small code-block'>${JSON.stringify(value, null, 2)}</pre>`;
+        }
+
+        // default
+        return value ?? "";
+      })()}
+</td>
+                    `).join('')}
+                </tr>
+            `).join('')}
+        </tbody>
+    </table>
+</div>
+            </div>
+        `;
+
+    container2.appendChild(card);
   }
 
   async function loadHistoryFromAPI() {

@@ -64,9 +64,9 @@ class DetectorRepository:
         
 class HistoryRepository:
     @staticmethod
-    def add_history(source_id: int, detector_id: int, detected: int, total: int):
+    def add_history(source_id: int, detector_id: int, detected: int, total: int, result: dict):
         db = SessionLocal()
-        entry = HistoryModel(source_id=source_id,detector_id=detector_id,detected=detected,total=total)
+        entry = HistoryModel(source_id=source_id,detector_id=detector_id,detected=detected,total=total, result=result)
         db.add(entry)
         db.commit()
         db.close()

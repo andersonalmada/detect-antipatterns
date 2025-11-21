@@ -29,4 +29,5 @@ class HistoryModel(Base):
     detected = Column(Integer, nullable=False)  
     total = Column(Integer, nullable=False)  
     timestamp = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    result = Column(JSONB, nullable=True) 
 
