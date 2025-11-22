@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       const data = await res.json();
-      resultOutput.textContent = JSON.stringify(data, null, 2);
+      //resultOutput.textContent = JSON.stringify(data, null, 2);
       renderDetectionResult(data);
     }
 
@@ -415,9 +415,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let stackedHistoryChart = null;
 
   function createOrUpdateHistoryChart(execs) {
-    source = execs.source;
-    detector = execs.detector;
-    let history = execs.history;
+    const source = execs.source;
+    const detector = execs.detector;
+    const history = execs.history;
 
     const labels = history.map(e =>
       new Date(e.timestamp).toLocaleString("pt-BR", {
@@ -433,45 +433,43 @@ document.addEventListener("DOMContentLoaded", () => {
     const detectedData = history.map(e => e.detected);
     const remainingData = history.map(e => e.total - e.detected);
 
-    if (!stackedHistoryChart) {
-      stackedHistoryChart = new Chart(document.getElementById("stackedBarHistory"), {
-        type: "bar",
-        data: {
-          labels,
-          datasets: [
-            {
-              label: "Detected",
-              data: detectedData,
-              backgroundColor: "#F28B82",
-              stack: "stack1"
-            },
-            {
-              label: "Passed",
-              data: remainingData,
-              backgroundColor: "#A7E0A5",
-              stack: "stack1"
-            }
-          ]
-        },
-        options: {
-          responsive: true,
-          onClick: (event, elements) => {
-            if (!elements.length) return;
-            const index = elements[0].index;
-            showHistoryDetails(source, detector, history[index]);
-          },
-          scales: {
-            x: { stacked: true },
-            y: { stacked: true, beginAtZero: true }
-          }
-        }
-      });
-    } else {
-      stackedHistoryChart.data.labels = labels;
-      stackedHistoryChart.data.datasets[0].data = detectedData;
-      stackedHistoryChart.data.datasets[1].data = remainingData;
-      stackedHistoryChart.update();
+    // 🔥 Se já existir, destruir antes
+    if (stackedHistoryChart) {
+      stackedHistoryChart.destroy();
     }
+
+    stackedHistoryChart = new Chart(document.getElementById("stackedBarHistory"), {
+      type: "bar",
+      data: {
+        labels,
+        datasets: [
+          {
+            label: "Detected",
+            data: detectedData,
+            backgroundColor: "#F28B82",
+            stack: "stack1"
+          },
+          {
+            label: "Passed",
+            data: remainingData,
+            backgroundColor: "#A7E0A5",
+            stack: "stack1"
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        onClick: (event, elements) => {
+          if (!elements.length) return;
+          const index = elements[0].index;
+          showHistoryDetails(source, detector, history[index]);
+        },
+        scales: {
+          x: { stacked: true },
+          y: { stacked: true, beginAtZero: true }
+        }
+      }
+    });
   }
 
   function showHistoryDetails(source, detector, run) {

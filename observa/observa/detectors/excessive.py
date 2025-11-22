@@ -3,19 +3,18 @@ from typing import Any, Dict
 
 class ExcessiveAlerts(Detector):
     def detect(self, data: Any) -> Dict:
-        # Expecting data to be a list of alerts with 'alert_name' and 'count'
-        threshold = 10
-        excessive = []
-        if isinstance(data, list):
-            for item in data:
-                try:
-                    if int(item.get('count', 0)) > threshold:
-                        excessive.append(item)
-                except Exception:
-                    continue
-    
-        return {
-            'total': len(data),
-            'detected': len(excessive),
-            'analyzed': len(data)
+        for item in data:
+            if int(item.get('count', 0)) > 100:
+                item["exceeded"] = True
+            else:
+                item["exceeded"] = False
+        
+        count = sum(1 for x in data if x["exceeded"])       
+
+        response = {
+            "analyzed": len(data),
+            "detected": count,
+            "data": data
         }
+    
+        return response

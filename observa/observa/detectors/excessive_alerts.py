@@ -4,7 +4,7 @@ from typing import Any, Dict
 class ExcessiveAlertsDetector(Detector):
     def detect(self, data: Any) -> Dict:
         for item in data:
-            if int(item.get('count', 0)) > 100:
+            if int(item.get('count', 0)) > 10:
                 item["exceeded"] = True
             else:
                 item["exceeded"] = False
