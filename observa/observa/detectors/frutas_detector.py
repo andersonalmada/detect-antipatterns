@@ -3,16 +3,19 @@ from typing import Any, Dict
 
 class FrutasExcessivas(Detector):
     def detect(self, data: Any) -> Dict:
-        excessive = []        
         for item in data:
             try:
                 if int(item.get('quantidade', 0)) > 5:
-                    excessive.append(item)
+                    item["exceeded"] = True
+                else:
+                    item["exceeded"] = False
             except Exception:
                 continue
+            
+        count = sum(1 for x in data if x["exceeded"])      
         
         return {
-            'total': len(data),
-            'detected': len(excessive),
-            'analyzed': len(data)
+            'analyzed': len(data),
+            'detected': count,
+            'data': data
         }

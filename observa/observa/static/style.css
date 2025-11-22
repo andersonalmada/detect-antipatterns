@@ -4,6 +4,11 @@ body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#login-screen,
+#app-content {
+    display: none;
+}
+
 /* Container principal */
 .container {
     max-width: 900px;
@@ -40,6 +45,17 @@ label.form-label {
 select.form-select,
 input.form-control {
     margin-bottom: 15px;
+}
+
+.header-logo {
+    width: 160px;   /* aumenta aqui */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.header-logo:hover {
+    transform: scale(1.05);
 }
 
 /* Logo responsiva no login */
@@ -97,7 +113,6 @@ input.form-control {
 /* Fade animation when entering app */
 #app-content {
     display: none;
-    animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 @keyframes fadeIn {
@@ -108,5 +123,4 @@ input.form-control {
 #logout-btn:hover {
     background-color: #dc3545;
     color: white !important;
-    transition: 0.2s;
 }

@@ -39,13 +39,25 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("antipattern-select")
     .addEventListener("change", filterDetectorsByAntipattern);
 
+  // Oculta tudo imediatamente
+  loginScreen.style.display = "none";
+  appContent.style.display = "none";
+
   function showApp() {
     loginScreen.style.display = "none";
     appContent.style.display = "block";
   }
 
+  function showLogin() {
+    appContent.style.display = "none";
+    loginScreen.style.display = "flex";
+  }
+
+  // Se já tiver token →  pula o login sem piscar
   if (localStorage.getItem("auth_token")) {
     showApp();
+  } else {
+    showLogin();
   }
 
   loginBtn.addEventListener("click", async () => {
