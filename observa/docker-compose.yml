@@ -1,0 +1,40 @@
+version: "3.9"
+
+services:
+  api:
+    image: andersonalmada/observa
+    container_name: observa
+    ports:
+      - "8000:8000"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: antipatterns
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      SOURCES_LOCAL_NAME: alerts, alerts2
+      SOURCES_LOCAL_PATH: data/alerts.json, data/alerts2.json
+      SOURCES_LOCAL_OBJECT_NAME: Frutas
+      SOURCES_LOCAL_OBJECT_PACKAGE: observa.sources.frutas_source.FrutasLocal
+      DETECTOR_LOCAL_NAME: ExcessiveAlerts, ExcessiveAlerts2, FrutasDetector
+      DETECTOR_LOCAL_PATH: observa.detectors.excessive_alerts.ExcessiveAlertsDetector, observa.detectors.excessive.ExcessiveAlerts, observa.detectors.frutas_detector.FrutasExcessivas
+      DETECTOR_LOCAL_AP: AlertsExcessive, AlertsExcessive, FrutasExcessive
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: postgres:15
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: antipatterns
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_data:

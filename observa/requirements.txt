@@ -5,3 +5,4 @@ jinja2
 dotenv
 psycopg2-binary
 sqlalchemy
+requests

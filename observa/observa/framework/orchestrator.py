@@ -4,7 +4,7 @@ from observa.sources.json_source import JsonSource
 from observa.framework.manager import global_manager as manager
 from observa.framework.base import Source, Detector
 from dotenv import load_dotenv
-from typing import Dict, Any
+from typing import Dict, Any, List
 import time
 import os
 import importlib
@@ -28,10 +28,10 @@ class Orchestrator:
         Base.metadata.create_all(bind=engine)
         print("Database loaded ...")
             
-        _names_source = [item.strip() for item in SOURCES_LOCAL_NAME.split(',')]
-        _paths_source = [item.strip() for item in SOURCES_LOCAL_PATH.split(',')]
-        _namesObject_source = [item.strip() for item in SOURCES_LOCAL_OBJECT_NAME.split(',')]
-        _packagesObject_source = [item.strip() for item in SOURCES_LOCAL_OBJECT_PACKAGE.split(',')]
+        _names_source = [item.strip() for item in SOURCES_LOCAL_NAME.split(',') if item.strip()]
+        _paths_source = [item.strip() for item in SOURCES_LOCAL_PATH.split(',') if item.strip()]
+        _namesObject_source = [item.strip() for item in SOURCES_LOCAL_OBJECT_NAME.split(',') if item.strip()]
+        _packagesObject_source = [item.strip() for item in SOURCES_LOCAL_OBJECT_PACKAGE.split(',') if item.strip()]
 
         print("\n####### Available sources #######\n")
 
@@ -51,9 +51,9 @@ class Orchestrator:
         for item in set(manager.list_sources()):
             print(item)
 
-        _names_detectors = [item.strip() for item in DETECTOR_LOCAL_NAME.split(',')]
-        _path_detectors = [item.strip() for item in DETECTOR_LOCAL_PATH.split(',')]
-        _aps = [item.strip() for item in DETECTOR_LOCAL_AP.split(',')]       
+        _names_detectors = [item.strip() for item in DETECTOR_LOCAL_NAME.split(',') if item.strip()]
+        _path_detectors = [item.strip() for item in DETECTOR_LOCAL_PATH.split(',') if item.strip()]
+        _aps = [item.strip() for item in DETECTOR_LOCAL_AP.split(',') if item.strip()]       
 
         print("\n####### Available detectors #######\n")
 
@@ -77,4 +77,15 @@ class Orchestrator:
         result.setdefault('execution_time_ms', round((end - start) * 1000, 3))
         return result
     
+    def autorun(self, detector: Detector, data: List[Dict[str, Any]], source_name: str) -> Dict[str, Any]: 
+        data = data
+        start = time.time()        
+        result = detector.detect(data)        
+        end = time.time()       
+        result.setdefault('ap', detector.nameAP)
+        result.setdefault('source', source_name)        
+        result.setdefault('detector', detector.name)
+        result.setdefault('execution_time_ms', round((end - start) * 1000, 3))
+        return result
+        
 global_orchestrator = Orchestrator()    

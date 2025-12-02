@@ -131,47 +131,69 @@ document.addEventListener("DOMContentLoaded", () => {
   const autoRunBtn = document.getElementById("auto-run-btn");
   const intervalInput = document.getElementById("interval-seconds");
   let autoRunInterval = null;
+  let autoRunBuffer = [];
 
   autoRunBtn.addEventListener("click", async () => {
+    // Se já está em execução → parar
     if (autoRunInterval) {
       clearInterval(autoRunInterval);
       autoRunInterval = null;
+
       autoRunBtn.textContent = "⏱️ Start Auto Run";
       autoRunBtn.classList.remove("btn-danger");
       autoRunBtn.classList.add("btn-outline-primary");
+
+      if (autoRunBuffer.length > 0) {
+        const selectedSources = Array.from(sourceSelect.selectedOptions).map(opt => opt.value);
+        const selectedDetectors = Array.from(detectorSelect.selectedOptions).map(opt => opt.value);
+
+        // ---- Enviar tudo acumulado ao parar ----
+        const res = await fetch("/api/v1/runs/autorun", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ source_name: selectedSources, data: autoRunBuffer, detectors: selectedDetectors })
+        });
+
+        const result = await res.json();
+        renderDetectionResult(result);
+        autoRunBuffer = []; // limpa após envio;
+      }
+
       return;
     }
 
+    // Se não está rodando → iniciar
     const intervalSeconds = parseInt(intervalInput.value);
     if (isNaN(intervalSeconds) || intervalSeconds < 1) {
       alert("Please enter a valid interval (in seconds).");
       return;
     }
 
-    async function runDetection() {
+    async function collectData() {
       const selectedSources = Array.from(sourceSelect.selectedOptions).map(opt => opt.value);
       const selectedDetectors = Array.from(detectorSelect.selectedOptions).map(opt => opt.value);
 
-      const res = await fetch("/api/v1/runs/execute", {
+      const res = await fetch("/api/v1/runs/collect", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ sources: selectedSources, detectors: selectedDetectors })
       });
 
-      const data = await res.json();
-      //resultOutput.textContent = JSON.stringify(data, null, 2);
-      renderDetectionResult(data);
+      const result = await res.json();
+      
+      result.forEach(exec => {
+        autoRunBuffer.push(...exec); // espalha os elementos no vetor final
+      });
     }
 
-    // Executa imediatamente uma vez
-    runDetection();
+    await collectData(); // coleta primeiro imediatamente
+    autoRunInterval = setInterval(collectData, intervalSeconds * 1000);
 
-    // Inicia o intervalo
-    autoRunInterval = setInterval(runDetection, intervalSeconds * 1000);
-    autoRunBtn.textContent = "⏹️ Stop Auto Run";
+    autoRunBtn.textContent = "⏹️ Stop Polling";
     autoRunBtn.classList.remove("btn-outline-primary");
     autoRunBtn.classList.add("btn-danger");
   });
+
 
   // ---------------------------
   // Funções de load
