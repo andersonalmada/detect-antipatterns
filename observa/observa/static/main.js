@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
       clearInterval(autoRunInterval);
       autoRunInterval = null;
 
-      autoRunBtn.textContent = "⏱️ Start Auto Run";
+      autoRunBtn.textContent = "⏱️ Start Polling";
       autoRunBtn.classList.remove("btn-danger");
       autoRunBtn.classList.add("btn-outline-primary");
 
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const res = await fetch("/api/v1/runs/autorun", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ source_name: selectedSources, data: autoRunBuffer, detectors: selectedDetectors })
+          body: JSON.stringify({ source_name: selectedSources[0], data: autoRunBuffer, detector: selectedDetectors[0] })
         });
 
         const result = await res.json();

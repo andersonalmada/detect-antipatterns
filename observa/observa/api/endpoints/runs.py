@@ -48,11 +48,11 @@ def execute_run(req: RunRequest):
 def autorun(payload: Dict[str, Any] = Body(...)):
     source_name = payload.get("source_name")
     data = payload.get("data")
-    detectors = payload.get("detectors")
+    detector = payload.get("detector")
     
     result = [] 
     try:
-        detector = manager.get_detector(detectors[0])                
+        detector = manager.get_detector(detector)                
         if detector.api_url:
             detectorObj = RemoteDetector(nameAP=detector.name_ap, name=detector.name, api_url=detector.api_url)
         else:
@@ -61,7 +61,9 @@ def autorun(payload: Dict[str, Any] = Body(...)):
             cls = getattr(module, class_name)
             detectorObj = cls(nameAP=detector.name_ap,name=detector.name)
     
-        resultTemp = orchestrator.autorun(source_name=source_name, detector=detectorObj, data=data)         
+        resultTemp = orchestrator.autorun(source_name=source_name, detector=detectorObj, data=data)  
+        source = manager.get_source(source_name)                
+        manager.register_history(source_id=source.id, detector_id=detector.id, result=resultTemp)               
         result.append(resultTemp)
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
