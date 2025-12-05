@@ -1,18 +1,22 @@
-[
-  {
-    "alert_name": "HighCPUUsage",
-    "count": 132
-  },
-  {
-    "alert_name": "MemoryLeakWarning",
-    "count": 442
-  },
-  {
-    "alert_name": "DatabaseConnectionError",
-    "count": 205
-  },
-  {
-    "alert_name": "DiskFullWarning",
-    "count": 12
-  }
+[  
+ {
+      "alert_name":"HighCPUUsage",
+      "service":"Atlas",
+      "count":12
+   },
+   {
+      "alert_name":"MemoryLeakWarning",
+      "service":"Boreas",
+      "count":5
+   },
+   {
+      "alert_name":"HighCPUUsage",
+      "service":"Boreas",
+      "count":7
+   },
+   {
+      "alert_name":"DatabaseConnectionError",
+      "service":"Chronos",
+      "count":11
+   } 
 ]

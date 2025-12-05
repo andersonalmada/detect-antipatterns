@@ -12,13 +12,11 @@ services:
       POSTGRES_DB: antipatterns
       POSTGRES_HOST: postgres
       POSTGRES_PORT: 5432
-      SOURCES_LOCAL_NAME: alerts, alerts2
-      SOURCES_LOCAL_PATH: data/alerts.json, data/alerts2.json
-      SOURCES_LOCAL_OBJECT_NAME: Frutas
-      SOURCES_LOCAL_OBJECT_PACKAGE: observa.sources.frutas_source.FrutasLocal
-      DETECTOR_LOCAL_NAME: ExcessiveAlerts, ExcessiveAlerts2, FrutasDetector
-      DETECTOR_LOCAL_PATH: observa.detectors.excessive_alerts.ExcessiveAlertsDetector, observa.detectors.excessive.ExcessiveAlerts, observa.detectors.frutas_detector.FrutasExcessivas
-      DETECTOR_LOCAL_AP: AlertsExcessive, AlertsExcessive, FrutasExcessive
+      SOURCES_LOCAL_NAME: alerts
+      SOURCES_LOCAL_PATH: data/alerts.json
+      DETECTOR_LOCAL_NAME: alertsdetector
+      DETECTOR_LOCAL_PATH: observa.detectors.excessive_alerts.ExcessiveAlertsDetector 
+      DETECTOR_LOCAL_AP: Alerts Excessive
     depends_on:
       - db
     restart: always

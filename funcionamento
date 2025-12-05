@@ -1,5 +1,0 @@
-1 - Agrupar os mesmos alertas baseado em uma configuração de tempo -> Ex: Tempo de 10 min, agrupar todos os alertas de cpu maior que 80% (indicando a quantidade de alertas agrupados de cada um como a quantidade total -> reduzida)
-2 - Agrupar alertas baseado em multi-parâmetros em um unico alerta com configuração de tempo (Esse realiza uma composição com o 1) -> Ex. Tempo de 10 min, agrupar cpu + memoria em um unico alerta (indicando as quantidades ...)
-3 - Agrupar semanticamente os alertas (tem o codigo do kmeans - dependen do tipo de alertas que tem)
-4 - Configuração da quantidade de alertas máximos para não ser considerado alerta excessivo (análise estatística: calcular a distribuição de alertas por janela histórica e ver se a janela atual está muito acima do normal) -> Comparar antes e depois
-5 - Enviar os alertas agregados por email

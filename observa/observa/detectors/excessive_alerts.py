@@ -5,11 +5,11 @@ class ExcessiveAlertsDetector(Detector):
     def detect(self, data: Any) -> Dict:
         for item in data:
             if int(item.get('count', 0)) > 10:
-                item["exceeded"] = True
+                item["detected"] = True
             else:
-                item["exceeded"] = False
+                item["detected"] = False
         
-        count = sum(1 for x in data if x["exceeded"])       
+        count = sum(1 for x in data if x["detected"])       
 
         response = {
             "analyzed": len(data),

@@ -1,0 +1,72 @@
+[
+  {
+    "timestamp": "2025-03-01T10:20:00.001Z",
+    "level": "DEBUG",
+    "service": "payment-service",
+    "trace_id": "aaa111",
+    "message": "Checking payment processing loop iteration"
+  },
+  {
+    "timestamp": "2025-03-01T10:20:00.002Z",
+    "level": "DEBUG",
+    "service": "payment-service",
+    "trace_id": "aaa111",
+    "message": "Checking payment processing loop iteration"
+  },
+  {
+    "timestamp": "2025-03-01T10:20:00.003Z",
+    "level": "DEBUG",
+    "service": "payment-service",
+    "trace_id": "aaa111",
+    "message": "Checking payment processing loop iteration"
+  },
+  {
+    "timestamp": "2025-03-01T10:20:00.004Z",
+    "level": "INFO",
+    "service": "payment-service",
+    "trace_id": "aaa111",
+    "message": "Payment validation complete"
+  },
+  {
+    "timestamp": "2025-03-01T10:20:00.005Z",
+    "level": "DEBUG",
+    "service": "payment-service",
+    "trace_id": "aaa111",
+    "message": "Checking payment processing loop iteration"
+  },
+  {
+    "timestamp": "2025-03-01T10:20:00.006Z",
+    "level": "WARN",
+    "service": "payment-service",
+    "trace_id": "aaa111",
+    "message": "Slow response from bank API"
+  },
+  {
+    "timestamp": "2025-03-01T10:20:00.007Z",
+    "level": "DEBUG",
+    "service": "payment-service",
+    "trace_id": "aaa111",
+    "message": "Checking payment processing loop iteration"
+  },
+  {
+    "timestamp": "2025-03-01T10:20:00.008Z",
+    "level": "DEBUG",
+    "service": "payment-service",
+    "trace_id": "aaa111",
+    "message": "Checking payment processing loop iteration"
+  },
+  {
+    "timestamp": "2025-03-01T10:20:00.009Z",
+    "level": "DEBUG",
+    "service": "payment-service",
+    "trace_id": "aaa111",
+    "message": "Checking payment processing loop iteration"
+  },
+  {
+    "timestamp": "2025-03-01T10:20:00.010Z",
+    "level": "ERROR",
+    "service": "payment-service",
+    "trace_id": "aaa111",
+    "message": "Failed to update payment status"
+  }
+]
