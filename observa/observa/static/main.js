@@ -507,7 +507,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p><strong>Source:</strong> ${source.name}</p>
                 <p><strong>Detector:</strong> ${detector.name}</p>
                 <p><strong>Analyzed:</strong> ${run.total} | <strong>Detected:</strong> ${run.detected}</p>
-                <p><strong>Execution Time:</strong> ${run.timestamp} ms</p>
+                <p><strong>Execution Time:</strong> ${run.execution_time} ms</p>
 
 <button class="btn btn-outline-primary btn-sm" 
         data-bs-toggle="collapse"
@@ -516,6 +516,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </button>
 
                 <div id="details-${run.id}" class="collapse mt-3">
+                <div class="table-responsive">
     <table class="table table-bordered table-sm">
         <thead>
             <tr>
@@ -580,6 +581,7 @@ ${(() => {
             `).join('')}
         </tbody>
     </table>
+    </div>
 </div>
             </div>
         `;
@@ -637,6 +639,7 @@ ${(() => {
 </button>
 
                 <div id="details-${index}" class="collapse mt-3">
+                <div class="table-responsive">
     <table class="table table-bordered table-sm">
         <thead>
             <tr>
@@ -680,6 +683,7 @@ ${(() => {
                         `).join('')}
                     </tbody>
                 </table>
+                </div>
             `;
             }
 

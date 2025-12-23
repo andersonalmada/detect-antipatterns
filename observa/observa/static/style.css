@@ -11,7 +11,7 @@ body {
 
 /* Container principal */
 .container {
-    max-width: 900px;
+    max-width: 1200px;
     margin-top: 50px;
     background: #fff;
     padding: 30px;
@@ -123,4 +123,9 @@ input.form-control {
 #logout-btn:hover {
     background-color: #dc3545;
     color: white !important;
+}
+
+.table-responsive {
+    max-width: 100%;
+    overflow-x: auto;
 }

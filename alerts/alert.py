@@ -7,9 +7,13 @@ import requests
 app = Flask(__name__)
 
 #Limit-based
-def limit_excess(items, limit=10, team=1):
-    for item in items:
-        item["detected"] = item["count"] >= limit * team
+def limit_excess(items, limit=10, team=1):    
+    if len(items) >= limit * team:
+        for item in items:
+            if item["detected"] == False:
+                item["detected"] = True
+                item["reason"] = "detect_limit_excess"
+            
     return items
 
 #Mean-based
@@ -17,7 +21,9 @@ def mean_excess(items, team=1):
     counts = [item["count"] for item in items]
     avg = np.mean(counts)
     for item in items:
-        item["detected"] = bool(item["count"] >= avg * team)
+        if item["count"] >= avg * team:
+            item["detected"] = True
+            item["reason"] = "detect_mean_excess"
     return items
 
 #Z-Score
@@ -27,7 +33,9 @@ def statistical_excess_group(items, k=2):
     std_dev = np.std(counts)
     auto_threshold = mean + k * std_dev    
     for item in items:
-        item["detected"] = bool(item["count"] >= auto_threshold)
+        if item["count"] >= auto_threshold:
+            item["detected"] = True
+            item["reason"] = "detect_zscore_excess"
     return items
 
 #EWMA
@@ -64,7 +72,9 @@ def ewma_excess(items, alpha=0.3, k=3, min_history=5):
             # Not enough historical data yet
             item["detected"] = False
         else:
-            item["detected"] = count >= threshold
+            if count >= threshold:
+                item["detected"] = True
+                item["reason"] = "detect_ewma_excess"
 
     return items
 
@@ -122,14 +132,46 @@ def group_by_hour_name_service(alerts):
                     hour_block["groups"].append({
                         "host": host,
                         "name": name,
+                        "detected": False,
+                        "reason": "",
                         "service": service,
                         "count": len(items),
-                        #"alerts": slim_alerts
+                        "alerts": slim_alerts
                     })
 
         result.append(hour_block)
 
     return result
+
+def detect_time_window(groups, window_seconds=60, mode="limit", limit=10, team=1):
+    for group in groups:
+        alerts = group.get("alerts", [])
+        
+        # Ordenar os alerts
+        alerts_sorted = sorted(
+            alerts,
+            key=lambda x: datetime.fromisoformat(x["timestamp"].replace("Z", "+00:00"))
+        )
+
+        for i in range(1, len(alerts_sorted)):
+            t1 = datetime.fromisoformat(alerts_sorted[i-1]["timestamp"].replace("Z", "+00:00"))
+            t2 = datetime.fromisoformat(alerts_sorted[i]["timestamp"].replace("Z", "+00:00"))
+            
+            if (t2 - t1).total_seconds() <= window_seconds:
+                group["detected"] = True
+                group["reason"] = "detect_redundancy"
+                break
+            
+        if mode == "limit":
+            groups = limit_excess(groups, limit=limit, team=team)
+        elif mode == "mean":
+            groups = mean_excess(groups)
+        elif mode == "zscore":
+            groups = statistical_excess_group(groups)
+        elif mode == "ewma":
+            groups = ewma_excess(groups, alpha=0.2, k=1)             
+
+    return groups
 
 @app.post("/detector")
 def detect():
@@ -166,9 +208,22 @@ def detect():
 
 @app.post("/solution")
 def solution():
-    alerts = request.get_json()
-    grouped = group_by_hour_name_service(alerts)
+    #alerts = request.get_json()
+    count = request.args.get("count", "100")
+    mode = request.args.get("mode", "limit")
+    limit = int(request.args.get("limit", 10))
+    team = int(request.args.get("team", 1))
+        
+    alerts = requests.get(f"http://localhost:9091/alerts?count={count}&mode=24h").json()
     
+    for item in alerts:
+        item["detected"] = False
+        item["reason"] = ""
+                
+    grouped = group_by_hour_name_service(alerts)
+    for hour_block in grouped:
+        hour_block["groups"] = detect_time_window(hour_block["groups"], window_seconds=60, mode=mode, limit=limit, team=team)
+        
     total_groups = sum(len(hour_block["groups"]) for hour_block in grouped)
     
     response = {

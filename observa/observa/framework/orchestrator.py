@@ -70,7 +70,7 @@ class Orchestrator:
         data = source.load()
         start = time.time()        
         result = detector.detect(data)        
-        end = time.time()       
+        end = time.time()    
         result.setdefault('ap', detector.nameAP)
         result.setdefault('source', source.name)        
         result.setdefault('detector', detector.name)

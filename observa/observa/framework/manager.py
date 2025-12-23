@@ -35,7 +35,7 @@ class Manager:
     
     # History
     def register_history(self, source_id: int, detector_id: int, result: Dict[str, Any]) -> HistoryModel:
-        history = HistoryRepository.add_history(source_id=source_id,detector_id=detector_id,detected=result["detected"],total=result["analyzed"],result=result["data"])
+        history = HistoryRepository.add_history(source_id=source_id,detector_id=detector_id,detected=result["detected"],total=result["analyzed"],result=result["data"], execution_time=result["execution_time_ms"])
         return history
 
     def get_history(self, source_id: int, detector_id: int, start: datetime, end: datetime) -> Optional[List[HistoryModel]]:

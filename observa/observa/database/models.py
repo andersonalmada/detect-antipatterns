@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
+from sqlalchemy import Column, Integer, Double, String, DateTime, ForeignKey
 from observa.database.database import Base
 from sqlalchemy.dialects.postgresql import JSONB 
 from sqlalchemy.sql import func
@@ -42,7 +42,8 @@ class HistoryModel(Base):
     detected = Column(Integer, nullable=False)  
     total = Column(Integer, nullable=False)  
     timestamp = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
-    result = Column(JSONB, nullable=True) 
+    execution_time = Column(Double, nullable=False)  
+    result = Column(JSONB, nullable=True)     
     
     source = relationship("SourceModel", back_populates="history_items")
     detector = relationship("DetectorModel", back_populates="history_items")
