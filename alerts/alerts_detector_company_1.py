@@ -103,7 +103,7 @@ def detector():
     
     grouped = group_alerts_by_hour(alerts)
     grouped = detect_limit_excess(grouped, limit=limit, team=team)
-    grouped = detect_time_window(grouped, window_seconds=600)
+    grouped = detect_time_window(grouped)
     
     #total_detected = sum(1 for group in grouped if group["detected"])
     

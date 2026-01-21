@@ -132,8 +132,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const intervalInput = document.getElementById("interval-seconds");
   let autoRunInterval = null;
   let autoRunBuffer = [];
+  let flag = false;
 
   autoRunBtn.addEventListener("click", async () => {
+    flag = true;
     // Se já está em execução → parar
     if (autoRunInterval) {
       clearInterval(autoRunInterval);
@@ -164,7 +166,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Se não está rodando → iniciar
     const intervalSeconds = parseInt(intervalInput.value);
-    if (isNaN(intervalSeconds) || intervalSeconds < 1) {
+    //if (isNaN(intervalSeconds) || intervalSeconds < 1) {
+    if (isNaN(intervalSeconds)) {
       alert("Please enter a valid interval (in seconds).");
       return;
     }
@@ -180,10 +183,22 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       const result = await res.json();
-      
+
       result.forEach(exec => {
         autoRunBuffer.push(...exec); // espalha os elementos no vetor final
       });
+
+      // Apagar apos o teste sintetico
+      if(flag) {
+        const res1 = await fetch("/api/v1/runs/autorun", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ source_name: selectedSources[0], data: autoRunBuffer, detector: selectedDetectors[0] })
+        });
+
+        const result1 = await res1.json();
+        renderDetectionResult(result1);
+      }
     }
 
     await collectData(); // coleta primeiro imediatamente

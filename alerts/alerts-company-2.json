@@ -1,0 +1,1757 @@
+[
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "❌ O servidor Maq-001 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-001",
+        "duracao": "8m 52s (2025-12-17 15:22:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quarta, 17 de dezembro de 2025 15:31"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quarta, 17 de dezembro de 2025 17:52",
+        "servidor": "Maq-002"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "❌ O servidor Maq-001 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-001",
+        "duracao": "10m 1s (2025-12-17 18:01:50)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quarta, 17 de dezembro de 2025 18:11"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O Maq-003 está com SNMP DOWN",
+        "servidor": "Maq-003",
+        "duracao": "30 days, 1h 30m 1s (2025-11-17 16:46:47)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quarta, 17 de dezembro de 2025 18:16"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "17 days, 15h 30m 11s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quarta, 17 de dezembro de 2025 18:27"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "13 days, 2h 25m 52s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quarta, 17 de dezembro de 2025 19:57"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quarta, 17 de dezembro de 2025 20:07"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-001 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-001",
+        "duracao": "1 day, 6h 20m 1s (2025-12-16 14:01:50)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quarta, 17 de dezembro de 2025 20:21"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "13 days, 8h 35m 30s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quarta, 17 de dezembro de 2025 20:57"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-008 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-008",
+        "duracao": "104 days, 4h 14m 54s (2025-09-04 17:46:30)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quarta, 17 de dezembro de 2025 22:01"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quarta, 17 de dezembro de 2025 22:31"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quarta, 17 de dezembro de 2025 23:57",
+        "servidor": "Maq-002"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "9 days, 20h 15m 25s (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 00:11"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "17 days, 21h 30m 31s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 00:27"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "13 days, 8h 31m 6s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 02:02"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 02:07"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "❌ O servidor Maq-010 ultrapassou 80% de uso de Memoria RAM.",
+        "servidor": "Maq-010",
+        "duracao": "5m 56s (2025-12-18 02:25:03)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 02:31"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "13 days, 14h 41m 55s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 03:04"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.",
+        "servidor": "Maq-004",
+        "duracao": "36 days, 19h 51m 35s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 04:07"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 04:31"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 06:03"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "10 days, 2h 19m 59s (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 06:16"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "18 days, 3h 36m 41s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 06:33"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "⚠️  O servidor Maq-011 está com SNMP DOWN",
+        "servidor": "Maq-011",
+        "duracao": "5m 3s (2025-12-18 06:37:06)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 06:42"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "⚠️  O servidor Maq-011 está com SNMP DOWN",
+        "servidor": "Maq-011",
+        "duracao": "5m 8s (2025-12-18 07:07:10)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 07:12"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "13 days, 14h 35m 51s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 08:07"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 08:11"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "13 days, 20h 42m 7s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 09:04"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.",
+        "duracao": "37 days, 1h 56m 25s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 10:12",
+        "servidor": "Maq-004"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 10:36"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "O servidor Maq-009 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-009",
+        "duracao": "6m 11s (2025-12-18 10:56:32)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 11:02"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "O servidor Maq-009 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-009",
+        "duracao": "4m 35s (2025-12-18 11:11:35)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 11:16"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 12:03"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "10 days, 8h 20m 8s (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 12:16"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O Maq-012 está com SNMP DOWN",
+        "servidor": "Maq-012",
+        "duracao": "29 days, 1h 30m (2025-11-19 11:01:14)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 12:31"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "18 days, 9h 36m 56s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 12:34"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "13 days, 20h 35m 54s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 14:07"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 14:12"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-001 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-001",
+        "duracao": "2 days, 30m 23s (2025-12-16 14:01:50)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 14:32"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "14 days, 2h 50m 38s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 15:13"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-004",
+        "duracao": "37 days, 7h 56m 41s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 16:12"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 16:41"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": " O servidor Maq-013 Atingiu 80% de uso de CPU.",
+        "servidor": "Maq-013",
+        "duracao": "6m 58s (2025-12-18 17:26:49)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 17:33"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 18:03"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O Maq-003 está com SNMP DOWN",
+        "servidor": "Maq-003",
+        "duracao": "31 days, 1h 30m 14s (2025-11-17 16:46:47)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 18:17"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "18 days, 15h 40m 11s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 18:37"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "14 days, 2h 40m 57s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 20:12"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 20:17"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-001 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-001",
+        "duracao": "2 days, 6h 30m 47s (2025-12-16 14:01:50)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 20:32"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "14 days, 9h 1m 9s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 21:23"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.\t",
+        "duracao": "37 days, 14h 1m 8s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 22:17",
+        "servidor": "Maq-004"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 22:46"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": " O servidor Maq-014 Atingiu 80% de uso de CPU.",
+        "servidor": "Maq-014",
+        "duracao": "8m 26s (2025-12-18 23:04:41)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Quinta, 18 de dezembro de 2025 23:13"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 00:04"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "10 days, 20h 20m 18s (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 00:16"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "18 days, 21h 45m 36s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 00:42"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "14 days, 8h 45m 56s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 02:17"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-001 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-001",
+        "duracao": "2 days, 12h 40m 14s (2025-12-16 14:01:50)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 02:42"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "14 days, 15h 5m 32s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 03:27"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.\t",
+        "duracao": "37 days, 20h 1m 27s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 04:17",
+        "servidor": "Maq-004"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 04:46"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 06:07"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "11 days, 2h 25m 16s (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 06:21"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "19 days, 3h 45m 39s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 06:42"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "14 days, 14h 46m 3s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 08:17"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 08:22"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-001 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-001",
+        "duracao": "2 days, 18h 41m 21s (2025-12-16 14:01:50)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 08:43"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "14 days, 21h 5m 52s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 09:28"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.\t",
+        "duracao": "38 days, 2h 1m 29s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 10:17",
+        "servidor": "Maq-004"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-008 ultrapassou 85% de uso de Memoria.",
+        "duracao": "105 days, 16h 35m 7s (2025-09-04 17:46:30)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 10:21",
+        "servidor": "Maq-008"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 10:51"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "O servidor Maq-009 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-009",
+        "duracao": "5m (2025-12-19 10:56:30)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 11:01"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 12:07"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "11 days, 8h 30m 23s (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 12:26"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "19 days, 9h 45m 46s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 12:42"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "14 days, 20h 46m 6s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 14:17"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 14:27"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-001 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-001",
+        "duracao": "3 days, 44m 58s (2025-12-16 14:01:50)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 14:46"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "15 days, 3h 5m 55s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 15:28"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.\t",
+        "duracao": "38 days, 8h 6m 47s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 16:22",
+        "servidor": "Maq-004"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-008 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-008",
+        "duracao": "105 days, 22h 40m 2s (2025-09-04 17:46:30)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 16:26"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 16:51"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 18:12"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O Maq-003 está com SNMP DOWN",
+        "servidor": "Maq-003",
+        "duracao": "32 days, 1h 34m 58s (2025-11-17 16:46:47)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 18:21"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "11 days, 14h 35m 13s (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 18:31"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "19 days, 15h 50m 10s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 18:47"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "15 days, 2h 50m 43s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 20:22"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 20:32"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-001 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-001",
+        "duracao": "3 days, 6h 50m 2s (2025-12-16 14:01:50)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 20:51"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "15 days, 9h 10m 27s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 21:32"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.\t",
+        "duracao": "38 days, 14h 11m 10s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 22:27",
+        "servidor": "Maq-004"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-008 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-008",
+        "duracao": "106 days, 4h 44m 50s (2025-09-04 17:46:30)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 22:31"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": " O servidor Maq-014 Atingiu 80% de uso de CPU.",
+        "servidor": "Maq-014",
+        "duracao": "9m 14s (2025-12-19 22:33:34)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 22:42"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sexta, 19 de dezembro de 2025 22:56"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 00:12"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "11 days, 20h 40m 1s (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 00:36"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "19 days, 21h 50m 18s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 00:47"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "15 days, 8h 50m 55s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 02:22"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 02:37"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-001 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-001",
+        "duracao": "3 days, 12h 54m 56s (2025-12-16 14:01:50)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 02:56"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "15 days, 15h 11m 12s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 03:33"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "❌ O servidor Maq-010 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-010",
+        "duracao": "40m 33s (2025-12-20 03:15:46)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 03:56"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "❌ O servidor Maq-010 ultrapassou 85% de uso de Memoria.",
+        "duracao": "46m 11s (2025-12-20 03:15:46)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 04:01",
+        "servidor": "Maq-010"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.\t",
+        "duracao": "38 days, 20h 11m 26s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 04:27",
+        "servidor": "Maq-004"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-008 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-008",
+        "duracao": "106 days, 10h 45m 3s (2025-09-04 17:46:30)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 04:31"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 04:56"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 06:15"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "12 days, 2h 45m 8s (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 06:41"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "20 days, 3h 50m 22s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 06:47"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "❌ O servidor Maq-010 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-010",
+        "duracao": "9m 51s (2025-12-20 07:55:36)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 08:05"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "15 days, 14h 50m 58s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 08:22"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 08:37"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-001 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-001",
+        "duracao": "3 days, 18h 54m 56s (2025-12-16 14:01:50)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 08:56"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "15 days, 21h 15m 17s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 09:37"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "❌ O servidor Maq-010 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-010",
+        "duracao": "9m 52s (2025-12-20 09:40:34)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 09:50"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-010 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-010",
+        "duracao": "6h 45m 10s (2025-12-20 03:15:46)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 10:00"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-004",
+        "duracao": "39 days, 2h 17m 50s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 10:33"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-008 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-008",
+        "duracao": "106 days, 16h 49m 49s (2025-09-04 17:46:30)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 10:36"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "O servidor Maq-009 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-009",
+        "duracao": "5m 23s (2025-12-20 10:56:27)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 11:01"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "❌ O servidor Maq-010 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-010",
+        "duracao": "10m 25s (2025-12-20 11:30:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 11:40"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 12:17"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "❌ O servidor Maq-010 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-010",
+        "duracao": "10m 4s (2025-12-20 12:15:22)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 12:25"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "12 days, 8h 49m 54s (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 12:46"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "20 days, 9h 55m 8s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 12:52"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "15 days, 20h 55m 51s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 14:27"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "❌ O servidor Maq-010 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-010",
+        "duracao": "14m 48s (2025-12-20 14:15:29)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 14:30"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 14:41"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "❌ O servidor Maq-010 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-010",
+        "duracao": "10m 47s (2025-12-20 14:35:11)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 14:45"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-001 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-001",
+        "duracao": "4 days, 1h 1m 11s (2025-12-16 14:01:50)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 15:03"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "❌ O servidor Maq-010 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-010",
+        "duracao": "10m 29s (2025-12-20 15:15:08)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 15:25"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "16 days, 3h 15m 22s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 15:37"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-004",
+        "duracao": "39 days, 8h 21m 19s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 16:37"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 17:02"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 18:17"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O Maq-003 está com SNMP DOWN",
+        "servidor": "Maq-003",
+        "duracao": "33 days, 1h 39m 53s (2025-11-17 16:46:47)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 18:26"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "12 days, 14h 49m 56s (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 18:46"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "20 days, 15h 55m 8s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 18:52"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "16 days, 3h 52s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 20:32"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 20:42"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "16 days, 9h 20m 19s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 21:42"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-004",
+        "duracao": "39 days, 14h 26m 22s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 22:42"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Sábado, 20 de dezembro de 2025 23:11"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 00:17"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "12 days, 20h 50m (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 00:46"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "20 days, 21h 55m 30s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 00:52"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "16 days, 9h 56s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 02:32"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 02:46"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "❌ O servidor Maq-010 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-010",
+        "duracao": "5m 55s (2025-12-21 02:50:03)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 02:56"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "❌ O servidor Maq-010 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-010",
+        "duracao": "25m 35s (2025-12-21 02:55:26)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 03:21"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "16 days, 15h 21m 14s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 03:43"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-008 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-008",
+        "duracao": "107 days, 10h 55m 15s (2025-09-04 17:46:30)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 04:41"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-004",
+        "duracao": "39 days, 20h 31m 25s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 04:47"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 05:16"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 06:22"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "13 days, 2h 50m 14s (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 06:46"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "21 days, 4h 22s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 06:57"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "16 days, 15h 5m 51s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 08:37"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 08:47"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "16 days, 21h 25m 19s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 09:47"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-008 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-008",
+        "duracao": "107 days, 16h 59m 52s (2025-09-04 17:46:30)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 10:46"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-004",
+        "duracao": "40 days, 2h 36m 16s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 10:52"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "O servidor Maq-009 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-009",
+        "duracao": "6m 4s (2025-12-21 10:56:22)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 11:02"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 11:21"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 12:27"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O Maq-012 está com SNMP DOWN",
+        "servidor": "Maq-012",
+        "duracao": "32 days, 1h 44m 48s (2025-11-19 11:01:14)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 12:46"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "13 days, 8h 55m (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 12:51"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "21 days, 10h 8m 51s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 13:05"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "16 days, 21h 10m 53s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 14:42"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 14:51"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "17 days, 3h 25m 19s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 15:47"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-008 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-008",
+        "duracao": "107 days, 22h 59m 52s (2025-09-04 17:46:30)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 16:46"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-004",
+        "duracao": "40 days, 8h 36m 16s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 16:52"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 17:21"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 18:27"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "13 days, 14h 55m 3s (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 18:51"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "21 days, 16h 10m 7s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 19:07"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "17 days, 3h 15m 50s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 20:47"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 20:52"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "17 days, 9h 30m 19s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 21:52"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-004",
+        "duracao": "40 days, 14h 36m 17s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 22:52"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Domingo, 21 de dezembro de 2025 23:26"
+    },
+    {
+        "tipo_notificacao": "Alerta",
+        "mensagem": "O servidor Maq-009 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-009",
+        "duracao": "5m 42s (2025-12-21 23:56:16)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Segunda, 22 de dezembro de 2025 00:01"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Segunda, 22 de dezembro de 2025 00:33"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "13 days, 21h 5s (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Segunda, 22 de dezembro de 2025 00:56"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "21 days, 22h 10m 18s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Segunda, 22 de dezembro de 2025 01:07"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "17 days, 9h 20m 44s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Segunda, 22 de dezembro de 2025 02:52"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Segunda, 22 de dezembro de 2025 02:56"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-007 está com SNMP DOWN",
+        "servidor": "Maq-007",
+        "duracao": "17 days, 15h 31m 16s (2025-12-04 12:22:21)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Segunda, 22 de dezembro de 2025 03:53"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-004 ultrapassou 80% de uso de Memoria RAM.\t",
+        "servidor": "Maq-004",
+        "duracao": "40 days, 20h 36m 31s (2025-11-11 08:15:56)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Segunda, 22 de dezembro de 2025 04:52"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-009 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-009",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Segunda, 22 de dezembro de 2025 05:26"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-002 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-002",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Segunda, 22 de dezembro de 2025 06:34"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "O servidor Maq-008 ultrapassou 95% de uso de Memoria RAM",
+        "servidor": "Maq-008",
+        "duracao": "14 days, 3h 21s (2025-12-08 03:56:24)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Segunda, 22 de dezembro de 2025 06:56"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-004 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-004",
+        "duracao": "22 days, 4h 14m 50s (2025-11-30 02:57:07)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Segunda, 22 de dezembro de 2025 07:11"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "⚠️  O servidor Maq-005 está com SNMP DOWN",
+        "servidor": "Maq-005",
+        "duracao": "17 days, 15h 21m 35s (2025-12-04 17:31:40)",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Segunda, 22 de dezembro de 2025 08:53"
+    },
+    {
+        "tipo_notificacao": "Lembrete de Alerta",
+        "mensagem": "❌ O servidor Maq-006 ultrapassou 85% de uso de Memoria.",
+        "servidor": "Maq-006",
+        "duracao": "Unknown",
+        "dispositivo": "link_do_servidor",
+        "alerta": "link_do_alerta",
+        "data_alerta": "Segunda, 22 de dezembro de 2025 09:03"
+    }
+]
