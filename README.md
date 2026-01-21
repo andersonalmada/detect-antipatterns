@@ -8,20 +8,41 @@ Um catálogo de anti-padrões de observabilidade está disponível em: https://o
 
 ## Instalação
 
-### Requisitos
+Para facilitar a instalação do Observa, foi utilizado o Docker, o qual oferece isolamento completo e facilita o deployment em diferentes ambientes.
+
+**Pré-Requisitos**
 
 - Docker
 - Docker Compose
 
-### Via Docker (Recomendado)
+**Passo 1:** Clone o repositório:
 
-- Após clonar o repositório, execute os seguintes comandos:
+```
+git clone https://github.com/andersonalmada/detect-antipatterns.git
+cd detect-antipatterns
+```
 
-```bash
+**Passo 2:** Execute o docker compose:
+
+```
 cd docker
 docker compose up -d
 ```
-### Via Docker (Recomendado)
+
+**Passo 3:** Acesse o navegador:
+
+```
+http://localhost:8000
+```
+
+### Docker 
+
+- Após clonar o repositório, execute os seguintes comandos:
+
+```
+cd docker
+docker compose up -d
+```
 
 ## Execução
 
