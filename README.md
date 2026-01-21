@@ -1,19 +1,37 @@
 # Observa Framework
 
-O Observa é um framework projetado para apoiar a detecção automática de anti-padrões de observabilidade em aplicações distribuídas. Diferentemente das ferramentas convencionais de observabilidade — tradicionalmente voltadas à coleta, visualização e correlação de sinais — o Observa tem como foco avaliar a qualidade da observabilidade efetivamente implementada, identificando más práticas associadas ao uso de métricas, logs, traces, alertas e dashboards.
+O Observa é um framework para detecção automática de anti-padrões de observabilidade em aplicações distribuídas. Seu objetivo é avaliar a qualidade da observabilidade implementada a partir da análise de dados de telemetria, como métricas, logs, traces, alertas e dashboards. O framework integra diferentes fontes de dados e executa detectores especializados, sendo cada detector responsável por identificar um anti-padrão específico.
 
-Para isso, o framework integra fontes heterogêneas de dados de telemetria e emprega detectores especializados, cada um responsável por analisar evidências de um anti-padrão específico. Os anti-padrões foram previamente catalogados e podem ser visualizados em: https://observability-antipatterns.github.io/
+Um catálogo de anti-padrões de observabilidade está disponível em: https://observability-antipatterns.github.io/
 
 ---
 
 ## Instalação
 
-### Dependências
+### Requisitos
 
-```
+- Docker
+- Docker Compose
+- Python
+
+---
+
+## Execução
+
+Inicie o Observa utilizando Docker Compose:
+
+```bash
 docker compose up -d
 
-## Instalação
+Após a inicialização, acesse a interface web em:
+
+http://localhost:8000
+
+
+Para encerrar a aplicação:
+
+docker compose down
+
 
 ![Visão Geral dos Resultados da Detecção de Alertas Excessivos](images/poc-resultalerts.png)
 
