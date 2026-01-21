@@ -12,9 +12,16 @@ Um catálogo de anti-padrões de observabilidade está disponível em: https://o
 
 - Docker
 - Docker Compose
-- Python
 
----
+### Via Docker (Recomendado)
+
+- Após clonar o repositório, execute os seguintes comandos:
+
+```bash
+cd docker
+docker compose up -d
+```
+### Via Docker (Recomendado)
 
 ## Execução
 

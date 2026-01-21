@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  api:
+  observa:
     image: andersonalmada/observa
     container_name: observa
     ports:
@@ -12,11 +12,6 @@ services:
       POSTGRES_DB: antipatterns
       POSTGRES_HOST: postgres
       POSTGRES_PORT: 5432
-      SOURCES_LOCAL_NAME: alerts
-      SOURCES_LOCAL_PATH: data/alerts.json
-      DETECTOR_LOCAL_NAME: alertsdetector
-      DETECTOR_LOCAL_PATH: observa.detectors.excessive_alerts.ExcessiveAlertsDetector 
-      DETECTOR_LOCAL_AP: Alerts Excessive
     depends_on:
       - db
     restart: always
