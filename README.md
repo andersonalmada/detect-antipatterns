@@ -29,37 +29,19 @@ cd docker
 docker compose up -d
 ```
 
-**Passo 3:** Acesse o navegador:
-
-```
-http://localhost:8000
-```
-
-### Docker 
-
-- Após clonar o repositório, execute os seguintes comandos:
-
-```
-cd docker
-docker compose up -d
-```
-
 ## Execução
 
-Inicie o Observa utilizando Docker Compose:
+Uma vez iniciado os contêiners, o Observa é gerenciado de forma gráfica por meio do navegador:
 
-```bash
-docker compose up -d
-
-Após a inicialização, acesse a interface web em:
-
+```
 http://localhost:8000
+```
 
+Caso queira encerrar o Observa, execute o seguinte comando:
 
-Para encerrar a aplicação:
-
+```
 docker compose down
-
+```
 
 ![Visão Geral dos Resultados da Detecção de Alertas Excessivos](images/poc-resultalerts.png)
 
