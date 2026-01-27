@@ -728,12 +728,12 @@
     "value": 39
   },
   {
-    "host": "app-server-01",
-    "name": "TestAlert8",
-    "service": "notification-service",
+    "host": "app-server-02",
+    "name": "TestAlert1",
+    "service": "inventory-service",
     "severity": "info",
-    "timestamp": "2025-12-16T01:39:15Z",
-    "value": 42
+    "timestamp": "2025-12-16T20:30:29Z",
+    "value": 13
   },
   {
     "host": "app-server-02",
