@@ -73,15 +73,17 @@ No meu caso, o retorno foi *192.168.1.131*.
 
 **Passo 5:** Após adiciona fonte de dados e detector, o próximo passo é a execução. Clique na aba *Detection*. Para a poc, foi escolhido o modo direto, apenas uma execução, sem ser de maneira periódica, pois os dados são estáticos e não teria alteração do resultado. Clique em *Run Detector*
 
-**Passo 6:** Verifique o resultado. É possível ver a quantidade de alertas (1000) e a quantidade de elementos que foram detectados como excessivos (766).
+**Passo 6:** Verifique o resultado. É possível ver a quantidade de alertas (1000) e a quantidade de elementos que foram detectados como excessivos (767).
 
 ![Visão Geral dos Resultados da Detecção de Alertas Excessivos](images/poc-resultalerts.png)
 
 **Passo 7:** Caso queira mais detalhes, clique em *Show details*. É possível verificar o casos que são excessivos e os que não são excessivos.
 
-![Detalhes de Alertas Detectados como Excessivos](images/poc-resultsalerts2.png)
+![Detalhes de Alertas Detectados como Excessivos - Baseado em Limite](images/poc-resultsalerts2.png)
 
-![Detalhes de Alertas não Detectados como Excessivos](images/poc-resultsalerts3.png)
+![Detalhes de Alertas Detectados como Excessivos - Baseado em Redundância](images/poc-resultsalerts3.png)
+
+![Detalhes de Alertas não Detectados como Excessivos](images/poc-resultsalerts4.png)
 
 **Passo 8:** Caso queira visualizar o histórico das execuções, clique na aba *History*. Escolha a fonte de dados, o detector e o período do histórico e clique em *Search*. Você vai visualizar todas as execuções, em formato de barra vertical, e pode verificar os detalhes de cada uma delas, clicando na barra.
 
