@@ -1,72 +1,7002 @@
 [
   {
-    "timestamp": "2025-03-01T10:20:00.001Z",
     "level": "DEBUG",
-    "service": "payment-service",
-    "trace_id": "aaa111",
-    "message": "Checking payment processing loop iteration"
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:33:53.721460Z",
+    "trace_id": "bbb222"
   },
   {
-    "timestamp": "2025-03-01T10:20:00.002Z",
     "level": "DEBUG",
-    "service": "payment-service",
-    "trace_id": "aaa111",
-    "message": "Checking payment processing loop iteration"
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:53.731460Z",
+    "trace_id": "ccc333"
   },
   {
-    "timestamp": "2025-03-01T10:20:00.003Z",
-    "level": "DEBUG",
-    "service": "payment-service",
-    "trace_id": "aaa111",
-    "message": "Checking payment processing loop iteration"
-  },
-  {
-    "timestamp": "2025-03-01T10:20:00.004Z",
-    "level": "INFO",
-    "service": "payment-service",
-    "trace_id": "aaa111",
-    "message": "Payment validation complete"
-  },
-  {
-    "timestamp": "2025-03-01T10:20:00.005Z",
-    "level": "DEBUG",
-    "service": "payment-service",
-    "trace_id": "aaa111",
-    "message": "Checking payment processing loop iteration"
-  },
-  {
-    "timestamp": "2025-03-01T10:20:00.006Z",
-    "level": "WARN",
-    "service": "payment-service",
-    "trace_id": "aaa111",
-    "message": "Slow response from bank API"
-  },
-  {
-    "timestamp": "2025-03-01T10:20:00.007Z",
-    "level": "DEBUG",
-    "service": "payment-service",
-    "trace_id": "aaa111",
-    "message": "Checking payment processing loop iteration"
-  },
-  {
-    "timestamp": "2025-03-01T10:20:00.008Z",
-    "level": "DEBUG",
-    "service": "payment-service",
-    "trace_id": "aaa111",
-    "message": "Checking payment processing loop iteration"
-  },
-  {
-    "timestamp": "2025-03-01T10:20:00.009Z",
-    "level": "DEBUG",
-    "service": "payment-service",
-    "trace_id": "aaa111",
-    "message": "Checking payment processing loop iteration"
-  },
-  {
-    "timestamp": "2025-03-01T10:20:00.010Z",
     "level": "ERROR",
+    "message": "Slow response from bank API",
     "service": "payment-service",
-    "trace_id": "aaa111",
-    "message": "Failed to update payment status"
+    "timestamp": "2025-12-17T10:33:53.741460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:53.751460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:53.761460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:53.771460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:53.781460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:33:53.791460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:53.801460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:53.811460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:33:53.821460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:53.831460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:53.841460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:53.851460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:53.861460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:53.871460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:53.881460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:53.891460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:53.901460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:53.911460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:53.921460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:53.931460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:53.941460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:53.951460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:53.961460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:53.971460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "ERROR",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:53.981460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:53.991460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.001460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.011460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.021460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.031460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.041460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.051460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.061460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.071460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:33:54.081460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.091460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.101460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.111460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.121460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.131460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:33:54.141460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.151460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.161460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.171460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.181460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:33:54.191460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:33:54.201460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.211460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.221460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.231460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.241460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.251460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.261460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.271460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.281460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.291460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.301460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.311460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.321460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.331460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.341460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.351460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.361460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:33:54.371460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.381460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.391460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.401460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.411460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.421460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.431460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.441460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.451460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.461460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.471460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:33:54.481460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:33:54.491460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "ERROR",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.501460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.511460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.521460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:33:54.531460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.541460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:33:54.551460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.561460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.571460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.581460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.591460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.601460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:33:54.611460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.621460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.631460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.641460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.651460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:33:54.661460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.671460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:33:54.681460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.691460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:33:54.701460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:33:54.711460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:35:33.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:35:34.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:35:35.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:35:36.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:35:37.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:35:38.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "ERROR",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:35:39.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:35:40.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:35:41.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:35:42.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:35:43.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:35:44.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:35:45.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:35:46.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:35:47.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:35:48.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:35:49.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:35:50.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:35:51.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:35:52.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:35:53.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:35:54.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:35:55.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:35:56.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:35:57.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:35:58.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:35:59.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:00.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:36:01.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:02.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:03.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:04.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:05.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:06.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:36:07.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:08.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:36:09.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:10.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:11.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:12.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:36:13.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:14.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:15.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:36:16.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:17.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:36:18.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:36:19.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:36:20.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:36:21.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:22.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:23.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "ERROR",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:36:24.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:25.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:26.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:36:27.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:36:28.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:29.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:30.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:36:31.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:32.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:33.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:36:34.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:35.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:36.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:37.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:38.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:36:39.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:40.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:36:41.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:42.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:43.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:44.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:45.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:36:46.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:47.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:36:48.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:36:49.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:36:50.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:36:51.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:36:52.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:36:53.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:54.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:55.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:36:56.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:36:57.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:36:58.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:36:59.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:00.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "ERROR",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:37:01.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:02.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:03.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:37:04.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:05.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:06.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:07.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:37:08.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:09.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:10.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:11.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:37:12.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:13.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:14.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:15.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:37:16.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:37:17.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:18.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:37:19.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:37:20.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:21.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:22.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:37:23.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:24.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:25.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:37:26.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:27.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:37:28.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:29.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:37:30.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:31.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:32.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:37:33.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:34.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:37:35.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:36.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:37.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:38.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:39.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:40.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:37:41.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:37:42.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:43.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:37:44.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:45.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:37:46.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:47.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:37:48.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:49.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:50.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:37:51.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:52.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:37:53.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:54.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:37:55.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:56.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:37:57.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:37:58.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:37:59.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:38:00.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:01.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:02.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:03.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:04.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:05.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:06.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:38:07.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:08.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:09.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:38:10.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:38:11.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:12.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:13.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "ERROR",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:38:14.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:38:15.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:16.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:38:17.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:18.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:38:19.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:38:20.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:21.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:22.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:23.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:24.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:25.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:38:26.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:27.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:38:28.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:29.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:38:30.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:31.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:32.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:38:33.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:38:34.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:35.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:36.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:38:37.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:38:38.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:39.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:38:40.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:38:41.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:42.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:38:43.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:38:44.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:45.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:38:46.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:47.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:38:48.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:38:49.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:50.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:51.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:52.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:53.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:54.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:55.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:38:56.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:57.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:38:58.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:38:59.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:39:00.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:39:01.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:39:02.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:39:03.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:04.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:39:05.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:39:06.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:07.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:39:08.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:39:09.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:10.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:39:11.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:12.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:13.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:14.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:39:15.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "ERROR",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:16.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:17.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:39:18.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:19.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:39:20.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:39:21.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:39:22.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:23.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:39:24.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:25.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:39:26.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:27.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:39:28.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:39:29.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:30.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:39:31.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:39:32.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:33.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:39:34.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:39:35.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:36.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:39:37.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:38.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:39:39.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:39:40.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:39:41.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:39:42.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:39:43.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:39:44.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:39:45.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "ERROR",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:46.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:47.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:39:48.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:39:49.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:39:50.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:51.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:39:52.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:39:53.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:54.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:55.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:39:56.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:39:57.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:39:58.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:39:59.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:40:00.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:40:01.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:02.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:40:03.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:04.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:40:05.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:40:06.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:07.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:08.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:09.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:40:10.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:11.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:40:12.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:40:13.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:40:14.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:15.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:40:16.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:40:17.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:40:18.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:19.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:20.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:40:21.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:40:22.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:40:23.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:24.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:25.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:26.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:40:27.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:40:28.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:40:29.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:40:30.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:31.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:40:32.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:40:33.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:40:34.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:40:35.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:40:36.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:37.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:40:38.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:40:39.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:40:40.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:41.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:40:42.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:40:43.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:40:44.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:45.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:40:46.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:40:47.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:40:48.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:49.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:40:50.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:40:51.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:40:52.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:40:53.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:40:54.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:40:55.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:40:56.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:40:57.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:40:58.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:40:59.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:41:00.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:41:01.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:41:02.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:03.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:04.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:05.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:41:06.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:07.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:08.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:41:09.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:10.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:41:11.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:41:12.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:41:13.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:14.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:15.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:16.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:17.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:18.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:19.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:20.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:21.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:41:22.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:23.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:24.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:25.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:41:26.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:41:27.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:41:28.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:29.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:30.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:31.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:41:32.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "ERROR",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:41:33.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:41:34.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:35.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:36.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:41:37.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:38.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:41:39.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:40.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:41.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:42.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:41:43.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:44.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:45.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:46.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:47.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:48.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:49.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:41:50.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:51.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:41:52.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:41:53.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:41:54.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:41:55.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:56.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:41:57.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:58.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:41:59.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "ERROR",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:42:00.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:01.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "ERROR",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:42:02.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:42:03.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:42:04.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:42:05.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:42:06.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:07.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:08.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:42:09.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:10.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:11.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:42:12.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:42:13.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:14.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:42:15.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:42:16.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:17.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:42:18.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:19.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:42:20.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:42:21.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:42:22.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:42:23.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:42:24.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:25.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:42:26.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:42:27.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:42:28.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:42:29.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:42:30.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:42:31.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:42:32.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:33.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:42:34.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:42:35.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:42:36.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:42:37.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:42:38.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:39.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:40.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:42:41.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:42:42.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:42:43.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:44.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:42:45.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:42:46.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:42:47.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "ERROR",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:48.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:49.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:42:50.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:42:51.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:42:52.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:42:53.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:54.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:42:55.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:56.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:42:57.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "ERROR",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:42:58.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:42:59.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:43:00.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:43:01.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:43:02.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:43:03.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:43:04.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:05.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:06.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:43:07.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:43:08.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "ERROR",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:43:09.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:43:10.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:43:11.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:43:12.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:13.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:14.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:15.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:16.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:17.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:43:18.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:43:19.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:43:20.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:43:21.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:43:22.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:23.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:43:24.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:43:25.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:43:26.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:27.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:28.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:29.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:43:30.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:31.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:43:32.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:43:33.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:43:34.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:43:35.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:36.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:43:37.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:43:38.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:43:39.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:43:40.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:41.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:42.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:43.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:43:44.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:43:45.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:43:46.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:43:47.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:48.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:49.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:43:50.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:43:51.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:52.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:43:53.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:54.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:43:55.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:43:56.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:43:57.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:43:58.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:43:59.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:44:00.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:44:01.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:02.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:44:03.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:44:04.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:05.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:44:06.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:44:07.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:44:08.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:09.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:10.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:44:11.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:44:12.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:44:13.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:14.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:44:15.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:44:16.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:44:17.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:44:18.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:44:19.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:44:20.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:44:21.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:22.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:44:23.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:24.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:44:25.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:44:26.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:44:27.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:44:28.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:44:29.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:30.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:44:31.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:44:32.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:44:33.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:44:34.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:44:35.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:36.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:44:37.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:38.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:39.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:44:40.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:41.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:44:42.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:44:43.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:44:44.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:44:45.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:44:46.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:44:47.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:44:48.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:49.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:44:50.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:51.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:52.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:44:53.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "ERROR",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:44:54.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:55.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:56.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:57.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:44:58.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:44:59.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:00.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:01.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:02.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:45:03.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:45:04.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:45:05.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:06.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:45:07.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:45:08.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:45:09.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:45:10.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:45:11.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:45:12.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:13.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:14.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:45:15.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:45:16.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:45:17.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:45:18.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:19.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:20.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:21.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:45:22.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:45:23.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:45:24.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:25.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:45:26.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:45:27.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:45:28.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:45:29.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:45:30.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:45:31.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:45:32.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:45:33.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:45:34.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:45:35.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:45:36.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:45:37.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:45:38.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:39.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:40.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:45:41.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:42.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:45:43.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:45:44.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:45:45.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:46.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:45:47.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:48.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:45:49.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:45:50.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:51.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:52.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:45:53.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:45:54.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:45:55.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:45:56.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:45:57.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:45:58.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:45:59.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:46:00.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:01.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:46:02.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:46:03.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:46:04.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:46:05.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:46:06.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:07.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:08.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:09.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:10.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:11.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "ERROR",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:12.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:46:13.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:14.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:46:15.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:16.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:17.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:18.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "ERROR",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:19.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:20.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:21.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:46:22.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:23.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:24.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:25.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:26.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:27.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:46:28.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:46:29.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:30.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:31.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:46:32.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:33.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "ERROR",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:34.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:46:35.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:46:36.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:37.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:38.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:39.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:40.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:46:41.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:42.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:43.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:46:44.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:45.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:46.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:47.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:48.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:46:49.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:50.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:51.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:46:52.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:53.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:46:54.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:46:55.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:56.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:46:57.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:46:58.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:46:59.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:47:00.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:47:01.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:47:02.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:47:03.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:04.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:05.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:06.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:47:07.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:47:08.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:47:09.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:47:10.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:11.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:47:12.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:47:13.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:47:14.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:15.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:47:16.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:47:17.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:47:18.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:47:19.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:20.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:47:21.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:47:22.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:47:23.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:47:24.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:47:25.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:47:26.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:47:27.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:47:28.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:29.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:47:30.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:47:31.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:47:32.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:33.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:47:34.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:35.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:36.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:37.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "ERROR",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:38.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:39.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:47:40.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:41.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:42.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:47:43.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:47:44.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:47:45.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:47:46.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:47.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:48.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:47:49.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:47:50.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:47:51.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:47:52.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:47:53.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:47:54.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:47:55.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:47:56.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:47:57.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:47:58.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:47:59.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:00.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:01.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:48:02.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:03.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:48:04.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:05.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:48:06.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:48:07.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:48:08.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:48:09.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:48:10.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:48:11.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:12.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:48:13.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:48:14.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:48:15.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:16.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:48:17.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:48:18.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:48:19.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:48:20.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:48:21.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:22.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:23.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:48:24.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:48:25.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:48:26.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:48:27.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:28.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:48:29.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:48:30.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:48:31.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:48:32.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:48:33.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:34.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:48:35.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:48:36.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:37.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:48:38.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:39.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:48:40.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:48:41.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:48:42.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:48:43.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:44.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "WARN",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:45.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:48:46.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:48:47.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:48.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:48:49.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "ERROR",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:48:50.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:51.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:48:52.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:53.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:48:54.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:48:55.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:48:56.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:48:57.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:48:58.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:48:59.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:49:00.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:49:01.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:49:02.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:49:03.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:04.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:49:05.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:49:06.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:49:07.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:49:08.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:49:09.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Failed to update payment status",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:49:10.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:49:11.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "WARN",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:12.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:13.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:14.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "ERROR",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:49:15.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:49:16.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "WARN",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:17.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:49:18.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:49:19.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:20.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:49:21.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:49:22.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "DEBUG",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:49:23.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:49:24.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:49:25.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:49:26.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:27.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:28.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:29.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:49:30.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:49:31.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:49:32.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:49:33.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:49:34.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:49:35.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:36.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:49:37.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:49:38.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:39.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:49:40.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:49:41.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:42.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:49:43.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:49:44.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:49:45.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:46.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:49:47.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:49:48.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:49:49.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:49:50.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:51.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:52.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:53.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:49:54.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:55.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:49:56.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:49:57.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:49:58.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Failed to update payment status",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:49:59.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:50:00.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:50:01.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:50:02.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:50:03.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:50:04.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:50:05.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:50:06.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:50:07.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:50:08.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:50:09.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:50:10.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:50:11.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:50:12.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:50:13.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:50:14.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:50:15.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment request received",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:50:16.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:50:17.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:50:18.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Validating credit card information",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:50:19.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:50:20.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:50:21.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:50:22.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Checking payment processing loop iteration",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:50:23.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:50:24.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:50:25.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:50:26.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:50:27.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "inventory-service",
+    "timestamp": "2025-12-17T10:50:28.721460Z",
+    "trace_id": "aaa111"
+  },
+  {
+    "level": "INFO",
+    "message": "Payment validation complete",
+    "service": "payment-service",
+    "timestamp": "2025-12-17T10:50:29.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Slow response from bank API",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:50:30.721460Z",
+    "trace_id": "ccc333"
+  },
+  {
+    "level": "INFO",
+    "message": "Retrying payment authorization",
+    "service": "checkout-service",
+    "timestamp": "2025-12-17T10:50:31.721460Z",
+    "trace_id": "bbb222"
+  },
+  {
+    "level": "INFO",
+    "message": "Order created successfully",
+    "service": "order-service",
+    "timestamp": "2025-12-17T10:50:32.721460Z",
+    "trace_id": "ccc333"
   }
 ]
