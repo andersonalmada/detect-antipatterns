@@ -4,7 +4,7 @@ O Observa é um framework para detecção automática de anti-padrões de observ
 
 Um catálogo de anti-padrões de observabilidade está disponível em: https://observability-antipatterns.github.io/
 
-Um vídeo explicando a instalação e a prova de conceito está disponível em: https://youtu.be/p4Dc-eMhwpA
+Um vídeo explicando a prova de conceito está disponível em: https://youtu.be/S2cW_GIlFx8
 
 ---
 
