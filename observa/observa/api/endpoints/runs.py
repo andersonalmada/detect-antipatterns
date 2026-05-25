@@ -30,15 +30,12 @@ def execute_run(req: RunRequest):
                 detector = manager.get_detector(det)                
                 if detector.api_url:
                     detectorObj = RemoteDetector(nameAP=detector.name_ap, name=detector.name, api_url=detector.api_url)
-                    print("ok1")
                 else:
                     module_name, class_name = detector.class_path.rsplit('.', 1)
                     module = importlib.import_module(module_name)
                     cls = getattr(module, class_name)
                     detectorObj = cls(nameAP=detector.name_ap,name=detector.name)
 
-                print(detectorObj.api_url)
-                print(detectorObj.nameAP)
                 resultTemp = orchestrator.run(source=sourceObj, detector=detectorObj)                    
                 manager.register_history(source_id=source.id, detector_id=detector.id, result=resultTemp)
                     
