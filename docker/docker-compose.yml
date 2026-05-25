@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   observa:
-    image: andersonalmada/observa
+    image: andersonalmada/observa:1.0
     container_name: observa
     ports:
       - "8000:8000"

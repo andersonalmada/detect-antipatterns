@@ -322,6 +322,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    alert(newAPName.value)
+
     const payload = {
       antipattern: newAPName.value,
       name: newDetectorName.value,
